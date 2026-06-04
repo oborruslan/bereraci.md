@@ -734,6 +734,10 @@
       justify-content: center;
       padding: 22px;
       background: rgba(0, 0, 0, .92);
+      touch-action: none;
+      overscroll-behavior: contain;
+      -webkit-user-select: none;
+      user-select: none;
     }
 
     .lightbox.is-open {
@@ -746,6 +750,9 @@
       display: grid;
       justify-items: center;
       gap: 12px;
+      touch-action: none;
+      -webkit-user-select: none;
+      user-select: none;
     }
 
     .lightbox img {
@@ -756,6 +763,9 @@
       object-fit: contain;
       border-radius: 8px;
       box-shadow: 0 24px 80px rgba(0, 0, 0, .7);
+      pointer-events: none;
+      -webkit-user-select: none;
+      user-select: none;
     }
 
     .lightbox-caption {
@@ -787,6 +797,10 @@
       font-size: 30px;
       line-height: 1;
       cursor: pointer;
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
+      -webkit-user-select: none;
+      user-select: none;
     }
 
     .lightbox-nav {
@@ -802,6 +816,10 @@
       line-height: 1;
       cursor: pointer;
       transform: translateY(-50%);
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
+      -webkit-user-select: none;
+      user-select: none;
     }
 
     .lightbox-prev {
@@ -1459,6 +1477,13 @@
 
     let currentGallery = [];
     let currentGalleryIndex = 0;
+    let touchStartX = 0;
+    let touchStartY = 0;
+    let touchStarted = false;
+    let pointerStartX = 0;
+    let pointerStartY = 0;
+    let pointerStarted = false;
+    let lastGestureNavigationAt = 0;
 
     function escapeHtml(value) {
       return String(value)
@@ -1643,6 +1668,23 @@
       updateLightboxImage();
     }
 
+    function showAdjacentImageFromGesture(direction) {
+      const now = Date.now();
+      if (now - lastGestureNavigationAt < 420) {
+        return;
+      }
+      lastGestureNavigationAt = now;
+      showAdjacentImage(direction);
+    }
+
+    function showAdjacentImageFromSwipe(deltaX, deltaY) {
+      if (Math.abs(deltaX) < 52 || Math.abs(deltaX) < Math.abs(deltaY) * 1.15) {
+        return false;
+      }
+      showAdjacentImageFromGesture(deltaX < 0 ? 1 : -1);
+      return true;
+    }
+
     function hideLightbox() {
       lightbox.classList.remove("is-open");
       lightbox.setAttribute("aria-hidden", "true");
@@ -1679,6 +1721,84 @@
     closeLightbox.addEventListener("click", hideLightbox);
     previousLightbox.addEventListener("click", () => showAdjacentImage(-1));
     nextLightbox.addEventListener("click", () => showAdjacentImage(1));
+    lightbox.addEventListener("touchstart", (event) => {
+      if (!lightbox.classList.contains("is-open") || event.touches.length !== 1) {
+        touchStarted = false;
+        return;
+      }
+      touchStarted = true;
+      touchStartX = event.touches[0].clientX;
+      touchStartY = event.touches[0].clientY;
+    }, { passive: true });
+    lightbox.addEventListener("touchmove", (event) => {
+      if (!touchStarted || event.touches.length !== 1) {
+        return;
+      }
+      const deltaX = event.touches[0].clientX - touchStartX;
+      const deltaY = event.touches[0].clientY - touchStartY;
+      if (Math.abs(deltaX) > 12 && Math.abs(deltaX) > Math.abs(deltaY)) {
+        event.preventDefault();
+      }
+    }, { passive: false });
+    lightbox.addEventListener("touchend", (event) => {
+      if (!touchStarted) {
+        return;
+      }
+      const changedTouch = event.changedTouches[0];
+      const deltaX = changedTouch.clientX - touchStartX;
+      const deltaY = changedTouch.clientY - touchStartY;
+      touchStarted = false;
+      if (showAdjacentImageFromSwipe(deltaX, deltaY)) {
+        event.preventDefault();
+      }
+    }, { passive: false });
+    lightbox.addEventListener("pointerdown", (event) => {
+      if (!lightbox.classList.contains("is-open") || event.target.closest(".lightbox-nav, .lightbox-close")) {
+        pointerStarted = false;
+        return;
+      }
+      pointerStarted = true;
+      pointerStartX = event.clientX;
+      pointerStartY = event.clientY;
+    });
+    lightbox.addEventListener("pointermove", (event) => {
+      if (!pointerStarted) {
+        return;
+      }
+      const deltaX = event.clientX - pointerStartX;
+      const deltaY = event.clientY - pointerStartY;
+      if (Math.abs(deltaX) > 12 && Math.abs(deltaX) > Math.abs(deltaY)) {
+        event.preventDefault();
+      }
+    });
+    lightbox.addEventListener("pointerup", (event) => {
+      if (!pointerStarted) {
+        return;
+      }
+      const deltaX = event.clientX - pointerStartX;
+      const deltaY = event.clientY - pointerStartY;
+      pointerStarted = false;
+      if (showAdjacentImageFromSwipe(deltaX, deltaY)) {
+        event.preventDefault();
+      }
+    });
+    lightbox.addEventListener("pointercancel", () => {
+      pointerStarted = false;
+    });
+    lightbox.addEventListener("wheel", (event) => {
+      if (!lightbox.classList.contains("is-open") || currentGallery.length <= 1) {
+        return;
+      }
+      const horizontalDelta = Math.abs(event.deltaX) >= Math.abs(event.deltaY) * .8 ? event.deltaX : 0;
+      if (Math.abs(horizontalDelta) < 28) {
+        return;
+      }
+      event.preventDefault();
+      showAdjacentImageFromGesture(horizontalDelta > 0 ? 1 : -1);
+    }, { passive: false });
+    lightbox.addEventListener("dblclick", (event) => {
+      event.preventDefault();
+    });
     lightbox.addEventListener("click", (event) => {
       if (event.target === lightbox) {
         hideLightbox();
