@@ -1,3 +1,11 @@
 {
-  "products": []
+  "products": [
+    {
+      "active": true,
+      "category": "peste",
+      "title": "Sushi",
+      "image": "/assets/products/sss.webp",
+      "description": "Test test\n360 lei"
+    }
+  ]
 }
