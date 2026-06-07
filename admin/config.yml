@@ -1,0 +1,62 @@
+backend:
+  name: git-gateway
+  branch: main
+
+local_backend: true
+
+media_folder: "assets/products"
+public_folder: "/assets/products"
+
+site_url: "https://inquisitive-caramel-7f6357.netlify.app"
+display_url: "https://inquisitive-caramel-7f6357.netlify.app"
+logo_url: "/logo-raci.jpg"
+locale: "ro"
+
+collections:
+  - name: "catalog"
+    label: "Catalog"
+    files:
+      - name: "products"
+        label: "Produse noi"
+        file: "data/products.json"
+        fields:
+          - label: "Produse"
+            name: "products"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - label: "Activ pe site"
+                name: "active"
+                widget: "boolean"
+                default: true
+              - label: "Denumire produs"
+                name: "title"
+                widget: "string"
+              - label: "Categorie"
+                name: "category"
+                widget: "select"
+                default: "peste"
+                options:
+                  - { label: "Raci", value: "raci" }
+                  - { label: "Peste", value: "peste" }
+                  - { label: "Carne afumata", value: "carne-afumata" }
+                  - { label: "Bere", value: "bere" }
+              - label: "Imagine produs"
+                name: "image"
+                widget: "image"
+              - label: "Descriere"
+                name: "description"
+                widget: "text"
+                required: false
+              - label: "Specificatii"
+                name: "specs"
+                widget: "list"
+                required: false
+                field:
+                  label: "Specificatie"
+                  name: "spec"
+                  widget: "string"
+              - label: "Text alternativ imagine"
+                name: "alt"
+                widget: "string"
+                required: false

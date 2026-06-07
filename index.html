@@ -1,0 +1,1917 @@
+<!doctype html>
+<html lang="ro">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bere & Raci | BERĂRIE ÎN BĂLȚI</title>
+  <meta name="description" content="Berărie Bere & Raci în Bălți: bere rece, raci, pește uscat, carne afumată, somon roșu afumat și delicatese.">
+  <style>
+    :root {
+      --ink: #080604;
+      --charcoal: #15100b;
+      --wood: #2a1710;
+      --gold: #e6a83b;
+      --amber: #ffcf6e;
+      --red: #bb261f;
+      --map: #2d8a63;
+      --cream: #fff4df;
+      --muted: #c9b18c;
+      --line: rgba(255, 244, 223, .16);
+      --shadow: 0 22px 70px rgba(0, 0, 0, .34);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, "Segoe UI", Arial, sans-serif;
+      color: var(--cream);
+      background:
+        radial-gradient(circle at 18% 12%, rgba(187, 38, 31, .18), transparent 32rem),
+        radial-gradient(circle at 88% 0%, rgba(230, 168, 59, .15), transparent 28rem),
+        linear-gradient(180deg, #050403 0%, #15100b 48%, #080604 100%);
+      line-height: 1.5;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .shell {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(8, 6, 4, .82);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(16px);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 84px;
+      gap: 18px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      min-width: max-content;
+    }
+
+    .brand-logo {
+      width: 62px;
+      height: 62px;
+      object-fit: contain;
+      border-radius: 50%;
+      background: #000;
+      border: 1px solid rgba(230, 168, 59, .36);
+      box-shadow: 0 0 0 5px rgba(230, 168, 59, .05);
+    }
+
+    .brand-name {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.22rem, 2vw, 1.72rem);
+      font-weight: 800;
+      color: var(--amber);
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    .menu {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .menu a {
+      padding: 9px 11px;
+      border-radius: 999px;
+      color: #f5ddac;
+      font-size: .88rem;
+      border: 1px solid transparent;
+      transition: .2s ease;
+    }
+
+    .menu a:hover,
+    .menu a.is-active {
+      color: var(--ink);
+      background: var(--gold);
+      border-color: var(--gold);
+    }
+
+    .call {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-width: max-content;
+      padding: 11px 15px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--gold), var(--amber));
+      color: #1b0c04;
+      font-weight: 800;
+      box-shadow: 0 12px 26px rgba(230, 168, 59, .18);
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      min-height: calc(100svh - 84px);
+      display: grid;
+      align-items: center;
+      padding: 72px 0 46px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(5, 4, 3, .95) 0%, rgba(5, 4, 3, .72) 46%, rgba(5, 4, 3, .42) 100%),
+        url("assets/products/product-01.jpg") center / cover;
+      opacity: .9;
+      transform: scale(1.02);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 130px;
+      background: linear-gradient(0deg, #15100b, transparent);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 340px;
+      align-items: center;
+      gap: 48px;
+    }
+
+    .eyebrow {
+      margin: 0 0 14px;
+      color: var(--gold);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      font-size: .82rem;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      max-width: 780px;
+      margin-bottom: 18px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(3.1rem, 8vw, 7.5rem);
+      line-height: .92;
+      letter-spacing: 0;
+      color: #ffe7a6;
+      text-transform: uppercase;
+      text-shadow: 0 10px 36px rgba(0, 0, 0, .58);
+    }
+
+    .lead {
+      max-width: 650px;
+      color: #f3ddbb;
+      font-size: clamp(1.08rem, 2vw, 1.36rem);
+      margin-bottom: 28px;
+    }
+
+    .actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-height: 48px;
+      padding: 13px 18px;
+      border-radius: 999px;
+      font-weight: 800;
+      border: 1px solid rgba(255, 244, 223, .22);
+      background: rgba(255, 244, 223, .08);
+      color: var(--cream);
+      transition: transform .18s ease, border-color .18s ease, background .18s ease, box-shadow .18s ease;
+    }
+
+    .btn.primary {
+      background: linear-gradient(135deg, var(--red), #ec6b27);
+      border-color: rgba(255, 255, 255, .12);
+      box-shadow: 0 16px 34px rgba(187, 38, 31, .27);
+    }
+
+    .btn.map {
+      background: linear-gradient(135deg, rgba(45, 138, 99, .96), rgba(14, 61, 47, .96));
+      border-color: rgba(126, 229, 174, .22);
+      box-shadow: 0 16px 32px rgba(45, 138, 99, .18);
+    }
+
+    .btn:hover,
+    .call:hover,
+    .map-link:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn:focus-visible,
+    .call:focus-visible,
+    .map-link:focus-visible,
+    .mobile-action:focus-visible {
+      outline: 3px solid rgba(255, 207, 110, .42);
+      outline-offset: 3px;
+    }
+
+    .btn svg,
+    .call svg,
+    .map-link svg,
+    .mobile-action svg {
+      width: 19px;
+      height: 19px;
+      flex: 0 0 auto;
+    }
+
+    .hero-logo {
+      width: min(340px, 78vw);
+      justify-self: center;
+      border-radius: 28px;
+      overflow: hidden;
+      background: #000;
+      border: 1px solid rgba(230, 168, 59, .28);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-logo img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .badges {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      padding: 8px 11px;
+      border: 1px solid rgba(255, 244, 223, .18);
+      border-radius: 999px;
+      color: #f6dca8;
+      background: rgba(0, 0, 0, .22);
+      font-size: .88rem;
+    }
+
+    section {
+      padding: 78px 0;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 28px;
+    }
+
+    h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2rem, 4vw, 3.6rem);
+      line-height: 1;
+      color: #ffe1a0;
+      margin-bottom: 10px;
+    }
+
+    .section-head p,
+    .about p {
+      color: var(--muted);
+      max-width: 680px;
+    }
+
+    .catalog-shell {
+      display: grid;
+      gap: 20px;
+    }
+
+    .category-row {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      padding-bottom: 8px;
+      margin-bottom: 26px;
+      scrollbar-color: var(--gold) transparent;
+    }
+
+    .category-row a {
+      flex: 0 0 auto;
+      border: 1px solid rgba(230, 168, 59, .28);
+      color: #f9dfac;
+      border-radius: 999px;
+      padding: 10px 13px;
+      background: rgba(255, 244, 223, .06);
+      font-weight: 700;
+      font-size: .92rem;
+      transition: background .18s ease, color .18s ease, border-color .18s ease;
+    }
+
+    .category-row a:hover,
+    .category-row a.is-active {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: #180b04;
+    }
+
+    .catalog-view-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 20px;
+    }
+
+    .catalog-view-head p {
+      max-width: 680px;
+      color: var(--muted);
+      margin-bottom: 0;
+    }
+
+    .back-link {
+      border: 1px solid rgba(230, 168, 59, .3);
+      border-radius: 999px;
+      padding: 11px 15px;
+      background: rgba(255, 244, 223, .07);
+      color: #ffd27a;
+      font-weight: 800;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .category-grid,
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .category-card,
+    .product-card {
+      min-width: 0;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 244, 223, .13);
+      background: linear-gradient(180deg, rgba(255, 244, 223, .08), rgba(255, 244, 223, .035));
+      box-shadow: 0 16px 42px rgba(0, 0, 0, .22);
+    }
+
+    .category-card {
+      display: grid;
+      gap: 0;
+      width: 100%;
+      padding: 0;
+      color: inherit;
+      text-align: left;
+      cursor: pointer;
+      font: inherit;
+      transition: transform .18s ease, border-color .18s ease, background .18s ease;
+    }
+
+    .category-card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(230, 168, 59, .46);
+      background: linear-gradient(180deg, rgba(230, 168, 59, .16), rgba(255, 244, 223, .045));
+    }
+
+    .category-preview {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 6px;
+      padding: 6px;
+      background: #100b07;
+    }
+
+    .category-preview-item,
+    .product-image-button {
+      position: relative;
+      display: block;
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+      border-radius: 6px;
+      background: #100b07;
+    }
+
+    .category-preview-item.is-only {
+      grid-column: 1 / -1;
+    }
+
+    .category-preview img,
+    .product-image-button img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .category-more {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      background: rgba(8, 6, 4, .72);
+      color: #ffe0a2;
+      font-size: clamp(1.7rem, 4vw, 2.5rem);
+      font-weight: 900;
+      text-shadow: 0 2px 12px rgba(0, 0, 0, .55);
+    }
+
+    .category-body,
+    .product-body {
+      padding: 15px;
+    }
+
+    .category-title-line {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+
+    .category-card h3,
+    .product-card h3 {
+      margin-bottom: 0;
+      color: #fff0c8;
+      font-size: 1.05rem;
+    }
+
+    .category-card p,
+    .product-card p {
+      margin-bottom: 14px;
+      color: #c9b18c;
+      font-size: .92rem;
+    }
+
+    .product-specs {
+      color: #f0d58c;
+      font-weight: 800;
+    }
+
+    .category-count {
+      flex: 0 0 auto;
+      border-radius: 999px;
+      border: 1px solid rgba(230, 168, 59, .24);
+      padding: 5px 9px;
+      color: #ffd27a;
+      font-size: .78rem;
+      font-weight: 900;
+    }
+
+    .product-image-button {
+      width: 100%;
+      border: 0;
+      padding: 0;
+      border-radius: 0;
+      cursor: zoom-in;
+    }
+
+    .tag {
+      display: inline-flex;
+      margin-bottom: 9px;
+      color: var(--amber);
+      font-size: .76rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
+    .mini-link {
+      color: #ffd27a;
+      font-weight: 800;
+      font-size: .9rem;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .about-panel {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: clamp(24px, 4vw, 42px);
+      background:
+        linear-gradient(135deg, rgba(187, 38, 31, .14), transparent 44%),
+        rgba(255, 244, 223, .055);
+    }
+
+    .contact-panel {
+      border-radius: 8px;
+      border: 1px solid rgba(230, 168, 59, .22);
+      background: #0c0906;
+      overflow: hidden;
+    }
+
+    .contact-panel img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      background: #0c0906;
+    }
+
+    .contact-body {
+      padding: 22px;
+    }
+
+    .contact-line {
+      display: flex;
+      gap: 10px;
+      margin: 0 0 10px;
+      color: #f9dfac;
+      font-weight: 700;
+    }
+
+    .contact-line span:first-child {
+      color: var(--muted);
+      min-width: 92px;
+      font-weight: 800;
+    }
+
+    .address-text {
+      font-style: normal;
+    }
+
+    .address-text.location-address-link,
+    .location-address-under a {
+      color: #ffd27a;
+      font-weight: 900;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .location-address-under {
+      margin: 8px 0 4px 0;
+      color: #f9dfac;
+      font-weight: 800;
+    }
+
+    .map-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-height: 48px;
+      margin-top: 10px;
+      padding: 12px 15px;
+      border-radius: 999px;
+      border: 1px solid rgba(126, 229, 174, .24);
+      background: linear-gradient(135deg, rgba(45, 138, 99, .24), rgba(230, 168, 59, .09));
+      color: #fff1bf;
+      font-weight: 900;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, .18);
+      transition: transform .18s ease, border-color .18s ease, background .18s ease;
+    }
+
+    .contact-actions {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .contact-actions .btn {
+      width: 100%;
+      min-height: 52px;
+      padding: 12px 14px;
+    }
+
+    .mobile-action-bar {
+      display: none;
+    }
+
+    .mobile-action {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 58px;
+      padding: 10px 12px;
+      border-radius: 8px;
+      font-weight: 900;
+      text-align: left;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .mobile-action span {
+      display: block;
+      font-size: .77rem;
+      line-height: 1.15;
+      color: rgba(255, 244, 223, .82);
+      font-weight: 700;
+    }
+
+    .mobile-action strong {
+      display: block;
+      font-size: .98rem;
+      line-height: 1.1;
+    }
+
+    .mobile-action.call-now {
+      background: linear-gradient(135deg, var(--red), #f07824);
+      color: #fff7df;
+      box-shadow: 0 12px 30px rgba(187, 38, 31, .35);
+    }
+
+    .mobile-action.map-now {
+      background: linear-gradient(135deg, var(--map), #124737);
+      color: #fff7df;
+      border: 1px solid rgba(126, 229, 174, .24);
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 44px 0;
+      background: #060403;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 28px;
+    }
+
+    footer h3 {
+      color: var(--amber);
+      font-size: 1rem;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+
+    footer p,
+    footer li,
+    footer a {
+      color: #d8c29e;
+      font-size: .95rem;
+    }
+
+    footer ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    footer li {
+      margin-bottom: 7px;
+    }
+
+    .footer-note {
+      color: #9f8664;
+      margin-top: 10px;
+    }
+
+    .social-links {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      border: 1px solid rgba(230, 168, 59, .28);
+      background: rgba(255, 244, 223, .06);
+      color: #ffd27a;
+      transition: transform .2s ease, background .2s ease, color .2s ease;
+    }
+
+    .social-links a:hover {
+      transform: translateY(-2px);
+      background: var(--gold);
+      color: #160b04;
+    }
+
+    .social-links svg {
+      width: 21px;
+      height: 21px;
+      fill: currentColor;
+    }
+
+    .copyright {
+      margin-top: 28px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 244, 223, .1);
+      color: #9f8664;
+      font-size: .9rem;
+    }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 22px;
+      background: rgba(0, 0, 0, .92);
+      touch-action: none;
+      overscroll-behavior: contain;
+      -webkit-user-select: none;
+      user-select: none;
+    }
+
+    .lightbox.is-open {
+      display: flex;
+    }
+
+    .lightbox-stage {
+      width: min(1120px, 100%);
+      margin: 0;
+      display: grid;
+      justify-items: center;
+      gap: 12px;
+      touch-action: none;
+      -webkit-user-select: none;
+      user-select: none;
+    }
+
+    .lightbox img {
+      max-width: 96vw;
+      max-height: 82vh;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      border-radius: 8px;
+      box-shadow: 0 24px 80px rgba(0, 0, 0, .7);
+      pointer-events: none;
+      -webkit-user-select: none;
+      user-select: none;
+    }
+
+    .lightbox-caption {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      width: min(820px, 100%);
+      color: #f8dcaa;
+      font-weight: 800;
+      text-align: center;
+    }
+
+    .lightbox-counter {
+      color: var(--gold);
+      font-size: .92rem;
+    }
+
+    .lightbox-close {
+      position: fixed;
+      top: 18px;
+      right: 18px;
+      width: 44px;
+      height: 44px;
+      border: 1px solid rgba(255, 244, 223, .25);
+      border-radius: 50%;
+      background: rgba(8, 6, 4, .82);
+      color: var(--cream);
+      font-size: 30px;
+      line-height: 1;
+      cursor: pointer;
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
+      -webkit-user-select: none;
+      user-select: none;
+    }
+
+    .lightbox-nav {
+      position: fixed;
+      top: 50%;
+      width: 52px;
+      height: 52px;
+      border: 1px solid rgba(255, 244, 223, .25);
+      border-radius: 50%;
+      background: rgba(8, 6, 4, .82);
+      color: var(--cream);
+      font-size: 34px;
+      line-height: 1;
+      cursor: pointer;
+      transform: translateY(-50%);
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
+      -webkit-user-select: none;
+      user-select: none;
+    }
+
+    .lightbox-prev {
+      left: 18px;
+    }
+
+    .lightbox-next {
+      right: 18px;
+    }
+
+    .lightbox-nav:disabled {
+      opacity: .35;
+      cursor: default;
+    }
+
+    @media (max-width: 980px) {
+      .nav {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        padding: 12px 0;
+      }
+
+      .brand {
+        grid-column: 1;
+        grid-row: 1;
+      }
+
+      .call {
+        grid-column: 2;
+        grid-row: 1;
+        justify-self: end;
+      }
+
+      .menu {
+        grid-column: 1 / -1;
+        grid-row: 2;
+        justify-content: flex-start;
+      }
+
+      .hero-content,
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-logo {
+        justify-self: start;
+        width: 240px;
+      }
+
+      .category-grid,
+      .product-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 720px) {
+      body {
+        padding-bottom: calc(86px + env(safe-area-inset-bottom));
+      }
+
+      .shell {
+        width: min(100% - 22px, 1180px);
+      }
+
+      .nav {
+        min-height: auto;
+      }
+
+      .brand-logo {
+        width: 52px;
+        height: 52px;
+      }
+
+      .call {
+        padding: 10px 11px;
+        font-size: .86rem;
+      }
+
+      .call span {
+        display: none;
+      }
+
+      .menu {
+        gap: 6px;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding-bottom: 4px;
+        justify-content: flex-start;
+      }
+
+      .menu a {
+        flex: 0 0 auto;
+        font-size: .83rem;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 48px 0 34px;
+      }
+
+      .hero::before {
+        background:
+          linear-gradient(180deg, rgba(5, 4, 3, .92) 0%, rgba(5, 4, 3, .72) 100%),
+          url("assets/products/product-01.jpg") center / cover;
+      }
+
+      .hero-logo {
+        width: 190px;
+      }
+
+      .actions {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .actions .btn {
+        width: 100%;
+        min-height: 52px;
+        padding: 12px 10px;
+      }
+
+      .actions .btn.primary {
+        grid-column: 1 / -1;
+      }
+
+      section {
+        padding: 54px 0;
+      }
+
+      .section-head {
+        display: block;
+      }
+
+      .category-grid,
+      .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .category-body,
+      .product-body {
+        padding: 13px;
+      }
+
+      .catalog-view-head {
+        display: grid;
+        align-items: start;
+      }
+
+      .back-link {
+        justify-self: start;
+      }
+
+      .lightbox-nav {
+        top: auto;
+        bottom: 24px;
+        transform: none;
+      }
+
+      .lightbox-prev {
+        left: 22px;
+      }
+
+      .lightbox-next {
+        right: 22px;
+      }
+
+      .contact-line {
+        align-items: flex-start;
+      }
+
+      .contact-line span:first-child {
+        min-width: 78px;
+      }
+
+      .map-link {
+        width: 100%;
+      }
+
+      .contact-actions {
+        grid-template-columns: 1fr;
+      }
+
+      .mobile-action-bar {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 95;
+        display: block;
+        padding: 10px 11px calc(10px + env(safe-area-inset-bottom));
+        border-top: 1px solid rgba(255, 244, 223, .14);
+        background: rgba(8, 6, 4, .94);
+        backdrop-filter: blur(16px);
+        box-shadow: 0 -18px 44px rgba(0, 0, 0, .38);
+      }
+
+      .mobile-action-inner {
+        display: grid;
+        grid-template-columns: 1.1fr .9fr;
+        gap: 10px;
+        width: min(100%, 480px);
+        margin: 0 auto;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 460px) {
+      .brand-name {
+        display: none;
+      }
+
+      .category-grid,
+      .product-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .category-preview {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .mobile-action {
+        min-height: 56px;
+        padding: 9px 10px;
+      }
+
+      .mobile-action span {
+        font-size: .72rem;
+      }
+    }
+  </style>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Brewery",
+      "name": "Bere & Raci",
+      "legalName": "SRL BERE & RACI",
+      "description": "BERĂRIE ÎN BĂLȚI cu bere, raci, pește uscat, carne afumată și delicatese.",
+      "telephone": "+37378767849",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Strada Ștefan cel Mare 178 / Str. Ștefan cel Mare 180",
+        "addressLocality": "Bălți",
+        "postalCode": "3100",
+        "addressCountry": "MD"
+      },
+      "servesCuisine": ["Raci", "Pește uscat", "Carne afumată", "Bere"],
+      "openingHoursSpecification": [
+        {"@type": "OpeningHoursSpecification", "dayOfWeek": "Monday", "opens": "12:00", "closes": "23:00"},
+        {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday", "Wednesday", "Thursday"], "opens": "11:00", "closes": "23:00"},
+        {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday", "Saturday", "Sunday"], "opens": "10:00", "closes": "23:00"}
+      ]
+    }
+  </script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="shell nav">
+      <a class="brand" href="#acasa" aria-label="Bere & Raci acasă">
+        <img class="brand-logo" src="logo-raci.jpg" alt="Logo Bere & Raci">
+        <span class="brand-name">Bere & Raci</span>
+      </a>
+
+      <nav class="menu" aria-label="Categorii produse">
+        <a href="#catalog" data-route="categories">Categorii</a>
+        <a href="#toate-produsele" data-route="all">Toate produsele</a>
+        <a href="#categorie-raci" data-route="category" data-category="raci">Raci</a>
+        <a href="#categorie-peste" data-route="category" data-category="peste">Peste</a>
+        <a href="#categorie-carne-afumata" data-route="category" data-category="carne-afumata">Carne afumata</a>
+        <a href="#categorie-bere" data-route="category" data-category="bere">Bere</a>
+      </nav>
+
+      <a class="call" href="tel:+37378767849" aria-label="Suna la Bere si Raci, +373 78 767849">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none">
+          <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.7 19.7 0 0 1-8.6-3.1 19.3 19.3 0 0 1-6-6A19.7 19.7 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>+373 (78) 767849</span>
+      </a>
+    </div>
+  </header>
+
+  <main id="acasa">
+    <section class="hero">
+      <div class="shell hero-content">
+        <div>
+          <p class="eyebrow">BERĂRIE ÎN BĂLȚI</p>
+          <h1>Bere & Raci</h1>
+          <p class="lead">Berărie "Bere & Raci", operată de SRL BERE & RACI, cu bere rece, raci savuroși, pește uscat, carne afumată, somon roșu afumat și delicatese pentru mese cu gust intens.</p>
+          <div class="actions">
+            <a class="btn primary" href="#toate-produsele" data-route="all">Vezi produsele</a>
+            <a class="btn" href="tel:+37378767849" aria-label="Suna acum la Bere si Raci">
+              <svg viewBox="0 0 24 24" aria-hidden="true" fill="none">
+                <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.7 19.7 0 0 1-8.6-3.1 19.3 19.3 0 0 1-6-6A19.7 19.7 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Suna acum
+            </a>
+            <a class="btn map" href="https://www.google.com/maps/dir/?api=1&destination=Strada%20%C8%98tefan%20cel%20Mare%20178%2C%20B%C4%83l%C8%9Bi%2C%20Moldova%203100&travelmode=driving" target="_blank" rel="noopener noreferrer" aria-label="Vezi Bere si Raci pe harta">
+              <svg viewBox="0 0 24 24" aria-hidden="true" fill="none">
+                <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2"/>
+              </svg>
+              Vezi pe harta
+            </a>
+          </div>
+          <div class="badges" aria-label="Avantaje magazin">
+            <span class="badge">Produse alese</span>
+            <span class="badge">Gust afumat</span>
+            <span class="badge">Comanda telefonic</span>
+          </div>
+        </div>
+
+        <div class="hero-logo" aria-label="Logo Bere & Raci">
+          <img src="logo-raci.jpg" alt="Bere & Raci - logo cu halbă și raci">
+        </div>
+      </div>
+    </section>
+
+    <section id="catalog">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Catalog vizual</p>
+            <h2>Produse pentru pofta serioasă</h2>
+            <p>Selecție vizuală de produse disponibile la berărie. Pentru disponibilitate, prețuri și recomandări, sună direct la Bere & Raci.</p>
+          </div>
+        </div>
+
+        <div class="category-row" id="catalogNav" aria-label="Navigare rapida categorii">
+          <a href="#catalog" data-route="categories">Categorii</a>
+          <a href="#toate-produsele" data-route="all">Toate produsele</a>
+          <a href="#categorie-raci" data-route="category" data-category="raci">Raci</a>
+          <a href="#categorie-peste" data-route="category" data-category="peste">Peste</a>
+          <a href="#categorie-carne-afumata" data-route="category" data-category="carne-afumata">Carne afumata</a>
+          <a href="#categorie-bere" data-route="category" data-category="bere">Bere</a>
+        </div>
+
+        <div class="catalog-shell" id="catalogApp">
+          <div id="catalogContent" aria-live="polite"></div>
+        </div>
+
+        <template id="legacyCatalog">
+          <article class="card">
+            <figure><img src="https://i.imgur.com/Ag7e3OD.jpeg" alt="Produs Bere si Raci 1" loading="eager"></figure>
+            <div class="card-body"><span class="tag">Produse noi</span><h3>Selectie proaspata</h3><p>O alegere potrivita pentru platouri si seri cu bere rece.</p><a class="mini-link" href="tel:+37378767849">Comanda telefonic</a></div>
+          </article>
+          <article class="card">
+            <figure><img src="https://i.imgur.com/K4th85h.jpeg" alt="Produs Bere si Raci 2" loading="lazy"></figure>
+            <div class="card-body"><span class="tag">Bere</span><h3>Bere pentru gustari</h3><p>Combinatii bune langa raci, peste uscat si produse afumate.</p><a class="mini-link" href="tel:+37378767849">Comanda telefonic</a></div>
+          </article>
+          <article class="card">
+            <figure><img src="https://i.imgur.com/qQINk9r.jpeg" alt="Produs Bere si Raci 3" loading="lazy"></figure>
+            <div class="card-body"><span class="tag">Peste uscat</span><h3>Peste uscat</h3><p>Gust sarat, intens si perfect pentru o bere rece.</p><a class="mini-link" href="tel:+37378767849">Comanda telefonic</a></div>
+          </article>
+          <article class="card">
+            <figure><img src="https://i.imgur.com/BxdV9OY.jpeg" alt="Produs Bere si Raci 4" loading="lazy"></figure>
+            <div class="card-body"><span class="tag">Carne afumata</span><h3>Carne afumata</h3><p>Arome pline, textura apetisanta si aspect de vitrina premium.</p><a class="mini-link" href="tel:+37378767849">Comanda telefonic</a></div>
+          </article>
+          <article class="card">
+            <figure><img src="https://i.imgur.com/aHh7krQ.jpeg" alt="Produs Bere si Raci 5" loading="lazy"></figure>
+            <div class="card-body"><span class="tag">Raci</span><h3>Raci savurosi</h3><p>Produsul semnatura pentru mese cu prieteni si gust marin.</p><a class="mini-link" href="tel:+37378767849">Comanda telefonic</a></div>
+          </article>
+          <article class="card">
+            <figure><img src="https://i.imgur.com/HoMO8N3.jpeg" alt="Produs Bere si Raci 6" loading="lazy"></figure>
+            <div class="card-body"><span class="tag">Caracatita</span><h3>Caracatita afumata</h3><p>O delicatesa cu personalitate, pentru clienti care cauta ceva special.</p><a class="mini-link" href="tel:+37378767849">Comanda telefonic</a></div>
+          </article>
+          <article class="card">
+            <figure><img src="https://i.imgur.com/aPgKDw4.jpeg" alt="Produs Bere si Raci 7" loading="lazy"></figure>
+            <div class="card-body"><span class="tag">Somon rosu</span><h3>Somon rosu afumat</h3><p>Fin, aromat si potrivit pentru platouri reci.</p><a class="mini-link" href="tel:+37378767849">Comanda telefonic</a></div>
+          </article>
+          <article class="card">
+            <figure><img src="https://i.imgur.com/B01Ft8k.jpeg" alt="Produs Bere si Raci 8" loading="lazy"></figure>
+            <div class="card-body"><span class="tag">Delicatese</span><h3>Gustari alese</h3><p>Produse pentru completarea platourilor gourmet.</p><a class="mini-link" href="tel:+37378767849">Comanda telefonic</a></div>
+          </article>
+          <article class="card">
+            <figure><img src="https://i.imgur.com/T9iOB1G.jpeg" alt="Produs Bere si Raci 9" loading="lazy"></figure>
+            <div class="card-body"><span class="tag">Produse noi</span><h3>Recomandarea casei</h3><p>Arome puternice, selectate pentru clienti pofticiosi.</p><a class="mini-link" href="tel:+37378767849">Comanda telefonic</a></div>
+          </article>
+          <article class="card">
+            <figure><img src="https://i.imgur.com/ZCxCb2t.jpeg" alt="Produs Bere si Raci 11" loading="lazy"></figure>
+            <div class="card-body"><span class="tag">Afumaturi</span><h3>Afumatura de vitrina</h3><p>Pregatita pentru prezentare curata si alegere rapida.</p><a class="mini-link" href="tel:+37378767849">Comanda telefonic</a></div>
+          </article>
+          <article class="card">
+            <figure><img src="https://i.imgur.com/099slau.jpeg" alt="Produs Bere si Raci 12" loading="lazy"></figure>
+            <div class="card-body"><span class="tag">Bere</span><h3>Pereche pentru bere</h3><p>Gustari care merg natural langa bauturi reci.</p><a class="mini-link" href="tel:+37378767849">Comanda telefonic</a></div>
+          </article>
+          <article class="card">
+            <figure><img src="https://i.imgur.com/osF34xN.jpeg" alt="Produs Bere si Raci 13" loading="lazy"></figure>
+            <div class="card-body"><span class="tag">Raci</span><h3>Mix marin</h3><p>Produse cu personalitate pentru mese relaxate.</p><a class="mini-link" href="tel:+37378767849">Comanda telefonic</a></div>
+          </article>
+          <article class="card">
+            <figure><img src="https://i.imgur.com/MRBIhV0.jpeg" alt="Produs Bere si Raci 14" loading="lazy"></figure>
+            <div class="card-body"><span class="tag">Carne afumata</span><h3>Felii afumate</h3><p>Aspect apetisant si gust bogat pentru platouri.</p><a class="mini-link" href="tel:+37378767849">Comanda telefonic</a></div>
+          </article>
+          <article class="card">
+            <figure><img src="https://i.imgur.com/t1ZiAb3.jpeg" alt="Produs Bere si Raci 15" loading="lazy"></figure>
+            <div class="card-body"><span class="tag">Somon rosu</span><h3>Somon pentru platouri</h3><p>O optiune fina pentru clienti care vor ceva premium.</p><a class="mini-link" href="tel:+37378767849">Comanda telefonic</a></div>
+          </article>
+          <article class="card">
+            <figure><img src="https://i.imgur.com/xhf6KZa.jpeg" alt="Produs Bere si Raci 16" loading="lazy"></figure>
+            <div class="card-body"><span class="tag">Caracatita</span><h3>Specialitate afumata</h3><p>Un produs memorabil, bun de scos in fata in catalog.</p><a class="mini-link" href="tel:+37378767849">Comanda telefonic</a></div>
+          </article>
+          <article class="card">
+            <figure><img src="https://i.imgur.com/9sJ7k3M.jpeg" alt="Produs Bere si Raci 17" loading="lazy"></figure>
+            <div class="card-body"><span class="tag">Delicatese</span><h3>Alegere gourmet</h3><p>Pentru completarea cosului cu produse deosebite.</p><a class="mini-link" href="tel:+37378767849">Comanda telefonic</a></div>
+          </article>
+          <article class="card">
+            <figure><img src="https://i.imgur.com/UesiYpq.jpeg" alt="Produs Bere si Raci 18" loading="lazy"></figure>
+            <div class="card-body"><span class="tag">Peste uscat</span><h3>Gust marin</h3><p>Produs potrivit pentru pofta de sarat si afumat.</p><a class="mini-link" href="tel:+37378767849">Comanda telefonic</a></div>
+          </article>
+          <article class="card">
+            <figure><img src="https://i.imgur.com/RaaNyta.jpeg" alt="Produs Bere si Raci 19" loading="lazy"></figure>
+            <div class="card-body"><span class="tag">Afumaturi</span><h3>Platou afumat</h3><p>Un reper vizual bun pentru oferta magazinului.</p><a class="mini-link" href="tel:+37378767849">Comanda telefonic</a></div>
+          </article>
+          <article class="card">
+            <figure><img src="https://i.imgur.com/rhATkZj.jpeg" alt="Produs Bere si Raci 20" loading="lazy"></figure>
+            <div class="card-body"><span class="tag">Produse noi</span><h3>Produs de sezon</h3><p>Disponibilitatea poate fi confirmata rapid telefonic.</p><a class="mini-link" href="tel:+37378767849">Comanda telefonic</a></div>
+          </article>
+          <article class="card">
+            <figure><img src="https://i.imgur.com/rTn3Vbl.jpeg" alt="Produs Bere si Raci 21" loading="lazy"></figure>
+            <div class="card-body"><span class="tag">Bere</span><h3>Gustare pentru bere</h3><p>O combinatie simpla, clara si usor de comandat.</p><a class="mini-link" href="tel:+37378767849">Comanda telefonic</a></div>
+          </article>
+          <article class="card">
+            <figure><img src="https://i.imgur.com/aaFDK1V.jpeg" alt="Produs Bere si Raci 23" loading="lazy"></figure>
+            <div class="card-body"><span class="tag">Carne afumata</span><h3>Afumatura consistenta</h3><p>O categorie usor de remarcat in catalogul vizual.</p><a class="mini-link" href="tel:+37378767849">Comanda telefonic</a></div>
+          </article>
+          <article class="card">
+            <figure><img src="https://i.imgur.com/zNPW4dJ.jpeg" alt="Produs Bere si Raci 24" loading="lazy"></figure>
+            <div class="card-body"><span class="tag">Raci</span><h3>Oferta pentru raci</h3><p>Disponibila pentru comenzi si detalii la telefon.</p><a class="mini-link" href="tel:+37378767849">Comanda telefonic</a></div>
+          </article>
+          <article class="card">
+            <figure><img src="https://i.imgur.com/IGvcDnP.jpeg" alt="Produs Bere si Raci 25" loading="lazy"></figure>
+            <div class="card-body"><span class="tag">Somon rosu</span><h3>Delicatesa rosie</h3><p>Aspect premium pentru prezentarea produselor fine.</p><a class="mini-link" href="tel:+37378767849">Comanda telefonic</a></div>
+          </article>
+          <article class="card">
+            <figure><img src="https://i.imgur.com/te79zpG.jpeg" alt="Produs Bere si Raci 26" loading="lazy"></figure>
+            <div class="card-body"><span class="tag">Caracatita</span><h3>Aroma afumata</h3><p>Produs diferit, bun pentru clienti curiosi.</p><a class="mini-link" href="tel:+37378767849">Comanda telefonic</a></div>
+          </article>
+          <article class="card">
+            <figure><img src="https://i.imgur.com/AIkyNpg.jpeg" alt="Produs Bere si Raci 27" loading="lazy"></figure>
+            <div class="card-body"><span class="tag">Delicatese</span><h3>Specialitate gourmet</h3><p>Un accent bun pentru diversitatea magazinului.</p><a class="mini-link" href="tel:+37378767849">Comanda telefonic</a></div>
+          </article>
+          <article class="card">
+            <figure><img src="https://i.imgur.com/AiJATJA.jpeg" alt="Produs Bere si Raci 28" loading="lazy"></figure>
+            <div class="card-body"><span class="tag">Produse noi</span><h3>Noutate in raft</h3><p>Poate fi actualizata rapid cu numele exact al produsului.</p><a class="mini-link" href="tel:+37378767849">Comanda telefonic</a></div>
+          </article>
+          <article class="card">
+            <figure><img src="https://i.imgur.com/d4fSI30.jpeg" alt="Produs Bere si Raci 29" loading="lazy"></figure>
+            <div class="card-body"><span class="tag">Peste uscat</span><h3>Produs pescaresti</h3><p>O optiune vizuala buna pentru zona de peste si bere.</p><a class="mini-link" href="tel:+37378767849">Comanda telefonic</a></div>
+          </article>
+          <article class="card">
+            <figure><img src="https://i.imgur.com/30H2bIp.jpeg" alt="Produs Bere si Raci 30" loading="lazy"></figure>
+            <div class="card-body"><span class="tag">Carne afumata</span><h3>Gust intens</h3><p>Produs cu impact vizual pentru sectiunea de afumaturi.</p><a class="mini-link" href="tel:+37378767849">Comanda telefonic</a></div>
+          </article>
+          <article class="card">
+            <figure><img src="https://i.imgur.com/qjinQOG.jpeg" alt="Produs Bere si Raci 31" loading="lazy"></figure>
+            <div class="card-body"><span class="tag">Recomandari</span><h3>Produs recomandat</h3><p>Pregatit pentru descrierea exacta dupa validarea clientului.</p><a class="mini-link" href="tel:+37378767849">Comanda telefonic</a></div>
+          </article>
+        </template>
+      </div>
+    </section>
+
+    <section class="about">
+      <div class="shell about-grid">
+        <div class="about-panel">
+          <p class="eyebrow">Despre berărie</p>
+          <h2>Gusturi alese, servite simplu</h2>
+          <p>Bere & Raci este o berărie din or. BĂLȚI, administrată de SRL BERE & RACI, pentru clienții care apreciază gustul intens: bere rece, raci, pește uscat, carne afumată, somon roșu afumat și alte delicatese pregătite pentru mese memorabile.</p>
+          <p>Punem accent pe prospețime, calitate și combinații care merg perfect cu o bere bună. Pentru disponibilitate, prețuri și recomandări, clienții pot suna direct la berărie.</p>
+        </div>
+
+        <aside class="contact-panel">
+          <img src="assets/contact.jpg" alt="Contact Bere si Raci" loading="lazy">
+          <div class="contact-body">
+            <h3>Date berărie</h3>
+            <p class="contact-line"><span>Tip:</span> Berărie</p>
+            <p class="contact-line"><span>Operator:</span> SRL BERE & RACI</p>
+            <p class="contact-line"><span>Oraș:</span> or. BĂLȚI</p>
+            <p class="contact-line"><span>Telefon:</span> <a href="tel:+37378767849">+373 (78) 767849</a></p>
+            <p class="contact-line"><span>Prima locație:</span> <a class="address-text location-address-link" href="https://www.google.com/maps/search/?api=1&query=Str.%20%C8%98tefan%20cel%20Mare%20180%2C%20B%C4%83l%C8%9Bi%2C%20Moldova" target="_blank" rel="noopener noreferrer">Str. Ștefan cel Mare 180</a></p>
+            <a class="map-link" href="https://www.google.com/maps/dir/?api=1&destination=Str.%20%C8%98tefan%20cel%20Mare%20180%2C%20B%C4%83l%C8%9Bi%2C%20Moldova&travelmode=driving" target="_blank" rel="noopener noreferrer" aria-label="Deschide traseul spre prima locatie Bere si Raci in Google Maps">
+              <svg viewBox="0 0 24 24" aria-hidden="true" fill="none">
+                <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2"/>
+              </svg>
+              Vezi prima locație
+            </a>
+            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Strada%20%C8%98tefan%20cel%20Mare%20178%2C%20B%C4%83l%C8%9Bi%2C%20Moldova%203100" target="_blank" rel="noopener noreferrer" aria-label="Deschide a doua locatie Bere si Raci in Google Maps">
+              <svg viewBox="0 0 24 24" aria-hidden="true" fill="none">
+                <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2"/>
+              </svg>
+              A doua locație
+            </a>
+            <p class="location-address-under"><a href="https://www.google.com/maps/search/?api=1&query=Strada%20%C8%98tefan%20cel%20Mare%20178%2C%20B%C4%83l%C8%9Bi%2C%20Moldova%203100" target="_blank" rel="noopener noreferrer">Strada Ștefan cel Mare 178, Bălți, Молдова, Balti, Moldova 3100</a></p>
+            <div class="contact-actions">
+              <a class="btn primary" href="tel:+37378767849" aria-label="Apelează berăria Bere și Raci">
+                <svg viewBox="0 0 24 24" aria-hidden="true" fill="none">
+                  <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.7 19.7 0 0 1-8.6-3.1 19.3 19.3 0 0 1-6-6A19.7 19.7 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Suna acum
+              </a>
+              <a class="btn map" href="https://wa.me/37378767849" target="_blank" rel="noopener noreferrer" aria-label="Scrie pe WhatsApp la Bere si Raci">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill="currentColor" d="M12.04 2a9.85 9.85 0 0 1 8.5 14.83L21.8 22l-5.3-1.2A9.85 9.85 0 1 1 12.04 2Zm.01 2a7.86 7.86 0 0 0-6.7 11.97l.28.45-.75 3.06 3.12-.7.43.25A7.85 7.85 0 1 0 12.05 4Zm-3.3 3.95c.17 0 .35 0 .5.01.13.01.32-.05.5.38.2.48.64 1.66.7 1.78.05.12.08.26.02.42-.06.16-.09.26-.18.4-.09.14-.2.31-.28.42-.09.12-.18.25-.08.48.1.23.45.74.97 1.2.67.6 1.23.79 1.46.89.23.1.36.08.5-.06.15-.17.58-.68.73-.91.15-.23.3-.19.5-.11.2.07 1.3.61 1.53.72.23.11.38.17.43.26.05.09.05.53-.13 1.04-.18.51-1.06.98-1.47 1.01-.38.03-.86.14-2.78-.65-2.35-.96-3.83-3.36-3.95-3.52-.11-.15-.94-1.25-.94-2.39 0-1.14.6-1.7.81-1.93.21-.23.46-.29.62-.29Z"/>
+                </svg>
+                WhatsApp
+              </a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <nav class="mobile-action-bar" aria-label="Actiuni rapide mobile">
+    <div class="mobile-action-inner">
+      <a class="mobile-action call-now" href="tel:+37378767849" aria-label="Suna acum la Bere si Raci">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none">
+          <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.7 19.7 0 0 1-8.6-3.1 19.3 19.3 0 0 1-6-6A19.7 19.7 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span><strong>Suna acum</strong><span>+373 78 767849</span></span>
+      </a>
+      <a class="mobile-action map-now" href="https://www.google.com/maps/dir/?api=1&destination=Strada%20%C8%98tefan%20cel%20Mare%20178%2C%20B%C4%83l%C8%9Bi%2C%20Moldova%203100&travelmode=driving" target="_blank" rel="noopener noreferrer" aria-label="Vezi traseul spre Bere si Raci pe harta">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none">
+          <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2"/>
+        </svg>
+        <span><strong>Harta</strong><span>Traseu rapid</span></span>
+      </a>
+    </div>
+  </nav>
+
+  <footer>
+    <div class="shell">
+      <div class="footer-grid">
+        <div>
+          <h3>Legal</h3>
+          <ul>
+            <li><a href="termeni-si-conditii.html">Termeni și condiții</a></li>
+            <li><a href="politica-de-confidentialitate.html">Politica de confidențialitate</a></li>
+            <li><a href="protectia-consumatorului.html">Protecția consumatorului</a></li>
+          </ul>
+          <div class="social-links" aria-label="Retele sociale">
+            <a href="https://www.instagram.com/raci.balti?igsh=ZGVxcHhmNnJicWpm" target="_blank" rel="noreferrer" aria-label="Instagram Bere si Raci">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2Zm0 2A3.8 3.8 0 0 0 4 7.8v8.4A3.8 3.8 0 0 0 7.8 20h8.4a3.8 3.8 0 0 0 3.8-3.8V7.8A3.8 3.8 0 0 0 16.2 4H7.8Zm4.2 3.2a4.8 4.8 0 1 1 0 9.6 4.8 4.8 0 0 1 0-9.6Zm0 2a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 0 0 0-5.6Zm5-1.75a1.15 1.15 0 1 1 0 2.3 1.15 1.15 0 0 1 0-2.3Z"/>
+              </svg>
+            </a>
+            <a href="https://www.tiktok.com/@bere.raci?_r=1&_t=ZS-96n6DZ2PbcK" target="_blank" rel="noreferrer" aria-label="TikTok Bere si Raci">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M16.7 2c.35 2.45 1.7 3.9 4.05 4.05v3.02a7.4 7.4 0 0 1-4.02-1.2v6.74c0 3.44-2.34 6.09-5.83 6.36-3.22.25-6.15-2.1-6.58-5.3-.48-3.58 2.3-6.63 5.78-6.63.45 0 .9.05 1.34.16v3.18a3.02 3.02 0 0 0-1.54-.28 2.88 2.88 0 0 0-2.57 3.28 2.88 2.88 0 0 0 3.15 2.5c1.76-.18 2.88-1.47 2.88-3.38V2h3.34Z"/>
+              </svg>
+            </a>
+            <a href="https://wa.me/37378767849" target="_blank" rel="noreferrer" aria-label="WhatsApp Bere si Raci">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12.04 2a9.85 9.85 0 0 1 8.5 14.83L21.8 22l-5.3-1.2A9.85 9.85 0 1 1 12.04 2Zm.01 2a7.86 7.86 0 0 0-6.7 11.97l.28.45-.75 3.06 3.12-.7.43.25A7.85 7.85 0 1 0 12.05 4Zm-3.3 3.95c.17 0 .35 0 .5.01.13.01.32-.05.5.38.2.48.64 1.66.7 1.78.05.12.08.26.02.42-.06.16-.09.26-.18.4-.09.14-.2.31-.28.42-.09.12-.18.25-.08.48.1.23.45.74.97 1.2.67.6 1.23.79 1.46.89.23.1.36.08.5-.06.15-.17.58-.68.73-.91.15-.23.3-.19.5-.11.2.07 1.3.61 1.53.72.23.11.38.17.43.26.05.09.05.53-.13 1.04-.18.51-1.06.98-1.47 1.01-.38.03-.86.14-2.78-.65-2.35-.96-3.83-3.36-3.95-3.52-.11-.15-.94-1.25-.94-2.39 0-1.14.6-1.7.81-1.93.21-.23.46-.29.62-.29Z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h3>Date de contact</h3>
+          <p>Berărie</p>
+          <p>SRL BERE & RACI</p>
+          <p>or. BĂLȚI</p>
+          <p>Telefon: <a href="tel:+37378767849">+373 (78) 767849</a></p>
+          <p><a href="https://www.google.com/maps/search/?api=1&query=Str.%20%C8%98tefan%20cel%20Mare%20180%2C%20B%C4%83l%C8%9Bi%2C%20Moldova" target="_blank" rel="noreferrer">Str. Ștefan cel Mare 180</a></p>
+          <p><a href="https://www.google.com/maps/search/?api=1&query=Strada%20%C8%98tefan%20cel%20Mare%20178%2C%20B%C4%83l%C8%9Bi%2C%20Moldova%203100" target="_blank" rel="noreferrer">Strada Ștefan cel Mare 178, Bălți, Молдова, Balti, Moldova 3100</a></p>
+          <p class="footer-note">Pentru date juridice complete precum IDNO, e-mail oficial sau autorizații, acestea se publică după confirmarea administratorului.</p>
+        </div>
+
+        <div>
+          <h3>Orar</h3>
+          <ul>
+            <li>Luni: 12:00 - 23:00</li>
+            <li>Marti: 11:00 - 23:00</li>
+            <li>Miercuri: 11:00 - 23:00</li>
+            <li>Joi: 11:00 - 23:00</li>
+            <li>Vineri: 10:00 - 23:00</li>
+            <li>Sambata: 10:00 - 23:00</li>
+            <li>Duminica: 10:00 - 23:00</li>
+            <li>Pauza: 14:00 - 14:30</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="copyright">© 2026 Bere & Raci. Toate drepturile rezervate.</p>
+    </div>
+  </footer>
+
+  <div class="lightbox" id="imageLightbox" aria-hidden="true" role="dialog" aria-label="Imagine produs">
+    <button class="lightbox-close" type="button" aria-label="Inchide imaginea">&times;</button>
+    <button class="lightbox-nav lightbox-prev" type="button" aria-label="Imaginea precedenta">&lsaquo;</button>
+    <figure class="lightbox-stage">
+      <img src="" alt="">
+      <figcaption class="lightbox-caption">
+        <span id="lightboxTitle">Produs Bere & Raci</span>
+        <span class="lightbox-counter" id="lightboxCounter">1 / 1</span>
+      </figcaption>
+    </figure>
+    <button class="lightbox-nav lightbox-next" type="button" aria-label="Imaginea urmatoare">&rsaquo;</button>
+  </div>
+
+  <script>
+    const catalogSection = document.getElementById("catalog");
+    const catalogContent = document.getElementById("catalogContent");
+    const lightbox = document.getElementById("imageLightbox");
+    const lightboxImage = lightbox.querySelector("img");
+    const closeLightbox = lightbox.querySelector(".lightbox-close");
+    const previousLightbox = lightbox.querySelector(".lightbox-prev");
+    const nextLightbox = lightbox.querySelector(".lightbox-next");
+    const lightboxTitle = document.getElementById("lightboxTitle");
+    const lightboxCounter = document.getElementById("lightboxCounter");
+
+    const baseProducts = Array.from({ length: 29 }, (_, index) => {
+      const number = index + 1;
+      const src = `assets/products/product-${String(number).padStart(2, "0")}.jpg`;
+      return {
+        number,
+        src,
+        title: `Poza ${number}`,
+        alt: `Produs Bere si Raci ${number}`
+      };
+    });
+    let products = [...baseProducts];
+
+    let productByNumber = new Map();
+    const categoryConfig = [
+      {
+        id: "raci",
+        title: "Raci",
+        description: "Raci pregatiti pentru mese cu bere rece si gust intens.",
+        productNumbers: [3, 6, 28]
+      },
+      {
+        id: "peste",
+        title: "Peste",
+        description: "Selectie de produse din peste, uscate si afumate.",
+        productNumbers: [1, 2, 4, 5, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 26, 27]
+      },
+      {
+        id: "carne-afumata",
+        title: "Carne afumata",
+        description: "Categoria pentru afumaturi din carne, pregatita pentru produse noi.",
+        productNumbers: [products[products.length - 1].number]
+      },
+      {
+        id: "bere",
+        title: "Bere",
+        description: "Bere si imaginea dedicata categoriei de bauturi.",
+        productNumbers: [25]
+      }
+    ];
+    let categories = [];
+
+    let currentGallery = [];
+    let currentGalleryIndex = 0;
+    let touchStartX = 0;
+    let touchStartY = 0;
+    let touchStarted = false;
+    let pointerStartX = 0;
+    let pointerStartY = 0;
+    let pointerStarted = false;
+    let lastGestureNavigationAt = 0;
+
+    function escapeHtml(value) {
+      return String(value)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+    }
+
+    function slugify(value) {
+      return String(value || "produs")
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-+|-+$/g, "") || "produs";
+    }
+
+    function normalizeManagedProduct(product, index) {
+      const title = product.title || product.name || `Produs nou ${index + 1}`;
+      const image = product.image || product.src || "";
+      if (!image || product.active === false || product.draft === true) {
+        return null;
+      }
+      return {
+        number: `admin-${product.id || slugify(title)}-${index}`,
+        src: image,
+        title,
+        alt: product.alt || title,
+        category: product.category || "peste",
+        description: product.description || "Disponibilitatea si detaliile se confirma rapid la telefon.",
+        specs: Array.isArray(product.specs) ? product.specs.filter(Boolean) : [],
+        managed: true
+      };
+    }
+
+    function rebuildCategories() {
+      productByNumber = new Map(products.map((product) => [product.number, product]));
+      categories = categoryConfig.map((category) => {
+        const legacyProducts = category.productNumbers.map((number) => productByNumber.get(number)).filter(Boolean);
+        const managedProducts = products.filter((product) => product.managed && product.category === category.id);
+        return {
+          ...category,
+          products: [...managedProducts, ...legacyProducts]
+        };
+      });
+    }
+
+    async function loadManagedProducts() {
+      try {
+        const response = await fetch("data/products.json", { cache: "no-store" });
+        if (!response.ok) {
+          throw new Error("Nu exista produse administrate inca.");
+        }
+        const data = await response.json();
+        const managedProducts = (Array.isArray(data) ? data : data.products || [])
+          .map(normalizeManagedProduct)
+          .filter(Boolean);
+        products = [...managedProducts, ...baseProducts];
+      } catch (error) {
+        products = [...baseProducts];
+      }
+      rebuildCategories();
+    }
+
+    function getCategory(id) {
+      return categories.find((category) => category.id === id);
+    }
+
+    function getProductCategoryTitle(product) {
+      const category = categories.find((item) => item.products.some((categoryProduct) => categoryProduct.number === product.number));
+      return category ? category.title : "Catalog";
+    }
+
+    function routeFromHash() {
+      const hash = decodeURIComponent(window.location.hash.replace("#", ""));
+      if (hash === "toate-produsele") {
+        return { type: "all" };
+      }
+      if (hash.startsWith("categorie-")) {
+        const categoryId = hash.replace("categorie-", "");
+        if (getCategory(categoryId)) {
+          return { type: "category", categoryId };
+        }
+      }
+      return { type: "categories" };
+    }
+
+    function hashForRoute(route, categoryId) {
+      if (route === "all") {
+        return "#toate-produsele";
+      }
+      if (route === "category") {
+        return `#categorie-${categoryId}`;
+      }
+      return "#catalog";
+    }
+
+    function updateActiveNavigation(route) {
+      document.querySelectorAll("[data-route]").forEach((link) => {
+        const isActive =
+          (route.type === "categories" && link.dataset.route === "categories") ||
+          (route.type === "all" && link.dataset.route === "all") ||
+          (route.type === "category" && link.dataset.category === route.categoryId);
+        link.classList.toggle("is-active", isActive);
+      });
+    }
+
+    function scrollToCatalog() {
+      catalogSection.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+
+    function navigateTo(hash) {
+      if (window.location.hash === hash) {
+        renderCatalog();
+        scrollToCatalog();
+        return;
+      }
+      window.location.hash = hash;
+    }
+
+    function renderCategoryPreview(category) {
+      const previewProducts = category.products.slice(0, 4);
+      const remainingProducts = Math.max(category.products.length - previewProducts.length, 0);
+      return previewProducts.map((product, index) => {
+        const onlyClass = previewProducts.length === 1 ? " is-only" : "";
+        const overlay = index === 3 && remainingProducts > 0 ? `<span class="category-more">+${remainingProducts}</span>` : "";
+        return `
+          <span class="category-preview-item${onlyClass}">
+            <img src="${product.src}" alt="${escapeHtml(product.alt)}" loading="${index === 0 ? "eager" : "lazy"}">
+            ${overlay}
+          </span>
+        `;
+      }).join("");
+    }
+
+    function renderCategories() {
+      currentGallery = [];
+      catalogContent.innerHTML = `
+        <div class="catalog-view-head">
+          <div>
+            <p class="eyebrow">Categorii produse</p>
+            <h3>Alege categoria</h3>
+            <p>Raci, peste, carne afumata si bere, grupate dupa pozele indicate.</p>
+          </div>
+        </div>
+        <div class="category-grid">
+          ${categories.map((category) => `
+            <button class="category-card" type="button" data-open-category="${category.id}" aria-label="Deschide categoria ${escapeHtml(category.title)}">
+              <div class="category-preview">${renderCategoryPreview(category)}</div>
+              <div class="category-body">
+                <div class="category-title-line">
+                  <h3>${escapeHtml(category.title)}</h3>
+                  <span class="category-count">${category.products.length} ${category.products.length === 1 ? "poza" : "poze"}</span>
+                </div>
+                <p>${escapeHtml(category.description)}</p>
+                <span class="mini-link">Vezi categoria</span>
+              </div>
+            </button>
+          `).join("")}
+        </div>
+      `;
+      updateActiveNavigation({ type: "categories" });
+    }
+
+    function renderProductView(title, description, productList, route) {
+      currentGallery = productList;
+      catalogContent.innerHTML = `
+        <div class="catalog-view-head">
+          <div>
+            <p class="eyebrow">${route.type === "all" ? "Catalog complet" : "Categorie produse"}</p>
+            <h3>${escapeHtml(title)}</h3>
+            <p>${escapeHtml(description)}</p>
+          </div>
+          <button class="back-link" type="button" data-open-categories>Inapoi la categorii</button>
+        </div>
+        <div class="product-grid">
+          ${productList.map((product, index) => `
+            <article class="product-card">
+              <button class="product-image-button" type="button" data-gallery-index="${index}" aria-label="Deschide ${escapeHtml(product.title)}">
+                <img src="${product.src}" alt="${escapeHtml(product.alt)}" loading="${index < 4 ? "eager" : "lazy"}">
+              </button>
+              <div class="product-body">
+                <span class="tag">${escapeHtml(route.type === "all" ? getProductCategoryTitle(product) : title)}</span>
+                <h3>${escapeHtml(product.title)}</h3>
+                <p>${escapeHtml(product.description || "Disponibilitatea si detaliile se confirma rapid la telefon.")}</p>
+                ${product.specs && product.specs.length ? `<p class="product-specs">${escapeHtml(product.specs.join(" | "))}</p>` : ""}
+                <a class="mini-link" href="tel:+37378767849">Comanda telefonic</a>
+              </div>
+            </article>
+          `).join("")}
+        </div>
+      `;
+      updateActiveNavigation(route);
+    }
+
+    function renderCatalog() {
+      const route = routeFromHash();
+      if (route.type === "all") {
+        renderProductView("Toate produsele", "Toate pozele din catalog sunt afisate aici, in ordinea existenta pe pagina.", products, route);
+        return;
+      }
+      if (route.type === "category") {
+        const category = getCategory(route.categoryId);
+        renderProductView(category.title, category.description, category.products, route);
+        return;
+      }
+      renderCategories();
+    }
+
+    function openLightbox(gallery, index) {
+      if (!gallery.length) {
+        return;
+      }
+      currentGallery = gallery;
+      currentGalleryIndex = index;
+      updateLightboxImage();
+      lightbox.classList.add("is-open");
+      lightbox.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    }
+
+    function updateLightboxImage() {
+      const product = currentGallery[currentGalleryIndex];
+      lightboxImage.src = product.src;
+      lightboxImage.alt = product.alt || "Imagine produs";
+      lightboxTitle.textContent = product.title;
+      lightboxCounter.textContent = `${currentGalleryIndex + 1} / ${currentGallery.length}`;
+      previousLightbox.disabled = currentGallery.length <= 1;
+      nextLightbox.disabled = currentGallery.length <= 1;
+    }
+
+    function showAdjacentImage(direction) {
+      if (currentGallery.length <= 1) {
+        return;
+      }
+      currentGalleryIndex = (currentGalleryIndex + direction + currentGallery.length) % currentGallery.length;
+      updateLightboxImage();
+    }
+
+    function showAdjacentImageFromGesture(direction) {
+      const now = Date.now();
+      if (now - lastGestureNavigationAt < 420) {
+        return;
+      }
+      lastGestureNavigationAt = now;
+      showAdjacentImage(direction);
+    }
+
+    function showAdjacentImageFromSwipe(deltaX, deltaY) {
+      if (Math.abs(deltaX) < 52 || Math.abs(deltaX) < Math.abs(deltaY) * 1.15) {
+        return false;
+      }
+      showAdjacentImageFromGesture(deltaX < 0 ? 1 : -1);
+      return true;
+    }
+
+    function hideLightbox() {
+      lightbox.classList.remove("is-open");
+      lightbox.setAttribute("aria-hidden", "true");
+      lightboxImage.src = "";
+      document.body.style.overflow = "";
+    }
+
+    document.addEventListener("click", (event) => {
+      const routeLink = event.target.closest("[data-route]");
+      if (routeLink) {
+        event.preventDefault();
+        navigateTo(hashForRoute(routeLink.dataset.route, routeLink.dataset.category));
+        return;
+      }
+
+      const categoryButton = event.target.closest("[data-open-category]");
+      if (categoryButton) {
+        navigateTo(hashForRoute("category", categoryButton.dataset.openCategory));
+        return;
+      }
+
+      const backButton = event.target.closest("[data-open-categories]");
+      if (backButton) {
+        navigateTo("#catalog");
+        return;
+      }
+
+      const imageButton = event.target.closest("[data-gallery-index]");
+      if (imageButton) {
+        openLightbox(currentGallery, Number(imageButton.dataset.galleryIndex));
+      }
+    });
+
+    closeLightbox.addEventListener("click", hideLightbox);
+    previousLightbox.addEventListener("click", () => showAdjacentImage(-1));
+    nextLightbox.addEventListener("click", () => showAdjacentImage(1));
+    lightbox.addEventListener("touchstart", (event) => {
+      if (!lightbox.classList.contains("is-open") || event.touches.length !== 1) {
+        touchStarted = false;
+        return;
+      }
+      touchStarted = true;
+      touchStartX = event.touches[0].clientX;
+      touchStartY = event.touches[0].clientY;
+    }, { passive: true });
+    lightbox.addEventListener("touchmove", (event) => {
+      if (!touchStarted || event.touches.length !== 1) {
+        return;
+      }
+      const deltaX = event.touches[0].clientX - touchStartX;
+      const deltaY = event.touches[0].clientY - touchStartY;
+      if (Math.abs(deltaX) > 12 && Math.abs(deltaX) > Math.abs(deltaY)) {
+        event.preventDefault();
+      }
+    }, { passive: false });
+    lightbox.addEventListener("touchend", (event) => {
+      if (!touchStarted) {
+        return;
+      }
+      const changedTouch = event.changedTouches[0];
+      const deltaX = changedTouch.clientX - touchStartX;
+      const deltaY = changedTouch.clientY - touchStartY;
+      touchStarted = false;
+      if (showAdjacentImageFromSwipe(deltaX, deltaY)) {
+        event.preventDefault();
+      }
+    }, { passive: false });
+    lightbox.addEventListener("pointerdown", (event) => {
+      if (!lightbox.classList.contains("is-open") || event.target.closest(".lightbox-nav, .lightbox-close")) {
+        pointerStarted = false;
+        return;
+      }
+      pointerStarted = true;
+      pointerStartX = event.clientX;
+      pointerStartY = event.clientY;
+    });
+    lightbox.addEventListener("pointermove", (event) => {
+      if (!pointerStarted) {
+        return;
+      }
+      const deltaX = event.clientX - pointerStartX;
+      const deltaY = event.clientY - pointerStartY;
+      if (Math.abs(deltaX) > 12 && Math.abs(deltaX) > Math.abs(deltaY)) {
+        event.preventDefault();
+      }
+    });
+    lightbox.addEventListener("pointerup", (event) => {
+      if (!pointerStarted) {
+        return;
+      }
+      const deltaX = event.clientX - pointerStartX;
+      const deltaY = event.clientY - pointerStartY;
+      pointerStarted = false;
+      if (showAdjacentImageFromSwipe(deltaX, deltaY)) {
+        event.preventDefault();
+      }
+    });
+    lightbox.addEventListener("pointercancel", () => {
+      pointerStarted = false;
+    });
+    lightbox.addEventListener("wheel", (event) => {
+      if (!lightbox.classList.contains("is-open") || currentGallery.length <= 1) {
+        return;
+      }
+      const horizontalDelta = Math.abs(event.deltaX) >= Math.abs(event.deltaY) * .8 ? event.deltaX : 0;
+      if (Math.abs(horizontalDelta) < 28) {
+        return;
+      }
+      event.preventDefault();
+      showAdjacentImageFromGesture(horizontalDelta > 0 ? 1 : -1);
+    }, { passive: false });
+    lightbox.addEventListener("dblclick", (event) => {
+      event.preventDefault();
+    });
+    lightbox.addEventListener("click", (event) => {
+      if (event.target === lightbox) {
+        hideLightbox();
+      }
+    });
+    window.addEventListener("hashchange", () => {
+      renderCatalog();
+      if (window.location.hash === "#toate-produsele" || window.location.hash.startsWith("#categorie-")) {
+        scrollToCatalog();
+      }
+    });
+    document.addEventListener("keydown", (event) => {
+      if (!lightbox.classList.contains("is-open")) {
+        return;
+      }
+      if (event.key === "Escape") {
+        hideLightbox();
+      }
+      if (event.key === "ArrowLeft") {
+        showAdjacentImage(-1);
+      }
+      if (event.key === "ArrowRight") {
+        showAdjacentImage(1);
+      }
+    });
+
+    async function initCatalog() {
+      await loadManagedProducts();
+      renderCatalog();
+    }
+
+    initCatalog();
+  </script>
+</body>
+</html>
