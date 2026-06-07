@@ -1,3 +1,10 @@
 {
-  "products": []
+  "products": [
+    {
+      "active": true,
+      "category": "peste",
+      "image": "/assets/products/sushi.jpg",
+      "title": "test"
+    }
+  ]
 }
