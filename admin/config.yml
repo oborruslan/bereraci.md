@@ -7,8 +7,8 @@ local_backend: true
 media_folder: "assets/products"
 public_folder: "/assets/products"
 
-site_url: "https://inquisitive-caramel-7f6357.netlify.app"
-display_url: "https://inquisitive-caramel-7f6357.netlify.app"
+site_url: "https://genuine-cajeta-3c68c6.netlify.app"
+display_url: "https://genuine-cajeta-3c68c6.netlify.app"
 logo_url: "/logo-raci.jpg"
 locale: "ro"
 
