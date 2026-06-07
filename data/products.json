@@ -1,11 +1,3 @@
 {
-  "products": [
-    {
-      "active": true,
-      "category": "peste",
-      "title": "Sushi",
-      "image": "/assets/products/images.jpg",
-      "description": "360 LEI"
-    }
-  ]
+  "products": []
 }
