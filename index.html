@@ -1528,9 +1528,20 @@
         .replace(/^-+|-+$/g, "") || "produs";
     }
 
+    function normalizeImagePath(value) {
+      const image = String(value || "").trim();
+      if (!image) {
+        return "";
+      }
+      if (/^(?:https?:|data:|blob:)/i.test(image)) {
+        return image;
+      }
+      return image.startsWith("/") ? image : `/${image.replace(/^\.?\//, "")}`;
+    }
+
     function normalizeManagedProduct(product, index) {
       const title = product.title || product.name || `Produs nou ${index + 1}`;
-      const image = product.image || product.src || "";
+      const image = normalizeImagePath(product.image || product.src || "");
       if (!image || product.active === false || product.draft === true) {
         return null;
       }
