@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Bere & Raci | BERĂRIE ÎN BĂLȚI</title>
   <meta name="description" content="Berărie Bere & Raci în Bălți: bere rece, raci, pește uscat, carne afumată, somon roșu afumat și delicatese.">
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <style>
     :root {
       --ink: #080604;
@@ -1912,6 +1913,18 @@
     }
 
     initCatalog();
+
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", (user) => {
+        const hasIdentityToken = /(?:confirmation|invite|recovery|email_change)_token=/.test(window.location.hash);
+        if (!user && hasIdentityToken) {
+          window.netlifyIdentity.open();
+        }
+      });
+      window.netlifyIdentity.on("login", () => {
+        window.location.href = "/admin/";
+      });
+    }
   </script>
 </body>
 </html>
