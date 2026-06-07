@@ -1536,7 +1536,7 @@
       if (/^(?:https?:|data:|blob:)/i.test(image)) {
         return image;
       }
-      return image.startsWith("/") ? image : `/${image.replace(/^\.?\//, "")}`;
+      return image.replace(/^\/+/, "").replace(/^\.?\//, "");
     }
 
     function normalizeManagedProduct(product, index) {

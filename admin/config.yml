@@ -5,7 +5,7 @@ backend:
 local_backend: true
 
 media_folder: "assets/products"
-public_folder: "/assets/products"
+public_folder: "assets/products"
 
 site_url: "https://genuine-cajeta-3c68c6.netlify.app"
 display_url: "https://genuine-cajeta-3c68c6.netlify.app"
