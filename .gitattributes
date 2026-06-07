@@ -10,4 +10,5 @@
 *.png binary
 *.gif binary
 *.webp binary
+*.avif binary
 *.zip binary

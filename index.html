@@ -1470,6 +1470,7 @@
       };
     });
     let products = [...baseProducts];
+    let managedAssetsVersion = Date.now();
 
     let productByNumber = new Map();
     const categoryConfig = [
@@ -1539,6 +1540,19 @@
       return image.replace(/^\/+/, "").replace(/^\.?\//, "");
     }
 
+    function cacheBustImage(src) {
+      if (!src || /^(?:data:|blob:)/i.test(src)) {
+        return src;
+      }
+      const separator = src.includes("?") ? "&" : "?";
+      return `${src}${separator}v=${managedAssetsVersion}`;
+    }
+
+    function imageSrcForProduct(product) {
+      const src = product.managed ? cacheBustImage(product.src) : product.src;
+      return escapeHtml(src);
+    }
+
     function normalizeManagedProduct(product, index) {
       const title = product.title || product.name || `Produs nou ${index + 1}`;
       const image = normalizeImagePath(product.image || product.src || "");
@@ -1579,6 +1593,7 @@
         const managedProducts = (Array.isArray(data) ? data : data.products || [])
           .map(normalizeManagedProduct)
           .filter(Boolean);
+        managedAssetsVersion = Date.now();
         products = [...managedProducts, ...baseProducts];
       } catch (error) {
         products = [...baseProducts];
@@ -1650,7 +1665,7 @@
         const overlay = index === 3 && remainingProducts > 0 ? `<span class="category-more">+${remainingProducts}</span>` : "";
         return `
           <span class="category-preview-item${onlyClass}">
-            <img src="${product.src}" alt="${escapeHtml(product.alt)}" loading="${index === 0 ? "eager" : "lazy"}">
+            <img src="${imageSrcForProduct(product)}" alt="${escapeHtml(product.alt)}" loading="${index === 0 ? "eager" : "lazy"}" data-product-image="${escapeHtml(product.src)}">
             ${overlay}
           </span>
         `;
@@ -1701,7 +1716,7 @@
           ${productList.map((product, index) => `
             <article class="product-card">
               <button class="product-image-button" type="button" data-gallery-index="${index}" aria-label="Deschide ${escapeHtml(product.title)}">
-                <img src="${product.src}" alt="${escapeHtml(product.alt)}" loading="${index < 4 ? "eager" : "lazy"}">
+                <img src="${imageSrcForProduct(product)}" alt="${escapeHtml(product.alt)}" loading="${index < 4 ? "eager" : "lazy"}" data-product-image="${escapeHtml(product.src)}">
               </button>
               <div class="product-body">
                 <span class="tag">${escapeHtml(route.type === "all" ? getProductCategoryTitle(product) : title)}</span>
@@ -1745,7 +1760,7 @@
 
     function updateLightboxImage() {
       const product = currentGallery[currentGalleryIndex];
-      lightboxImage.src = product.src;
+      lightboxImage.src = product.managed ? cacheBustImage(product.src) : product.src;
       lightboxImage.alt = product.alt || "Imagine produs";
       lightboxTitle.textContent = product.title;
       lightboxCounter.textContent = `${currentGalleryIndex + 1} / ${currentGallery.length}`;
@@ -1810,6 +1825,15 @@
         openLightbox(currentGallery, Number(imageButton.dataset.galleryIndex));
       }
     });
+    document.addEventListener("error", (event) => {
+      const image = event.target;
+      if (!(image instanceof HTMLImageElement) || !image.dataset.productImage || image.dataset.fallbackTried === "true") {
+        return;
+      }
+      image.dataset.fallbackTried = "true";
+      const fallbackSrc = normalizeImagePath(image.dataset.productImage);
+      image.src = cacheBustImage(fallbackSrc);
+    }, true);
 
     closeLightbox.addEventListener("click", hideLightbox);
     previousLightbox.addEventListener("click", () => showAdjacentImage(-1));

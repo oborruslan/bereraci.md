@@ -45,7 +45,7 @@ collections:
                 name: "image"
                 widget: "image"
                 required: true
-                hint: "Accepta JPG, PNG sau WEBP."
+                hint: "Accepta imagini web: PNG, JPG, JPEG, WEBP, GIF sau AVIF."
               - label: "Descriere"
                 name: "description"
                 widget: "text"
