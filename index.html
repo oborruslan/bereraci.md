@@ -1915,15 +1915,22 @@
     initCatalog();
 
     if (window.netlifyIdentity) {
-      window.netlifyIdentity.on("init", (user) => {
+      const openIdentityForToken = () => {
         const hasIdentityToken = /(?:confirmation|invite|recovery|email_change)_token=/.test(window.location.hash);
-        if (!user && hasIdentityToken) {
+        if (hasIdentityToken) {
           window.netlifyIdentity.open();
+        }
+      };
+      window.netlifyIdentity.on("init", (user) => {
+        if (!user) {
+          openIdentityForToken();
         }
       });
       window.netlifyIdentity.on("login", () => {
         window.location.href = "/admin/";
       });
+      openIdentityForToken();
+      window.addEventListener("load", openIdentityForToken);
     }
   </script>
 </body>
