@@ -139,6 +139,146 @@
       "description": "Peste afumat, potrivit pentru bere si platouri reci.",
       "specs": [],
       "alt": "Peste afumat Bere si Raci"
+    },
+    {
+      "id": "bere-01",
+      "active": true,
+      "title": "Bere",
+      "category": "bere",
+      "image": "https://i.imgur.com/uWX8Uu2.jpeg",
+      "description": "Bere disponibila la Bere si Raci.",
+      "specs": [],
+      "alt": "Bere Bere si Raci"
+    },
+    {
+      "id": "bere-02",
+      "active": true,
+      "title": "Bere",
+      "category": "bere",
+      "image": "https://i.imgur.com/0RmvsSH.jpeg",
+      "description": "Bere disponibila la Bere si Raci.",
+      "specs": [],
+      "alt": "Bere Bere si Raci"
+    },
+    {
+      "id": "bere-03",
+      "active": true,
+      "title": "Bere",
+      "category": "bere",
+      "image": "https://i.imgur.com/hT6ReGR.jpeg",
+      "description": "Bere disponibila la Bere si Raci.",
+      "specs": [],
+      "alt": "Bere Bere si Raci"
+    },
+    {
+      "id": "bere-04",
+      "active": true,
+      "title": "Bere",
+      "category": "bere",
+      "image": "https://i.imgur.com/Q75ectI.jpeg",
+      "description": "Bere disponibila la Bere si Raci.",
+      "specs": [],
+      "alt": "Bere Bere si Raci"
+    },
+    {
+      "id": "bere-05",
+      "active": true,
+      "title": "Bere",
+      "category": "bere",
+      "image": "https://i.imgur.com/Ox5lSiG.jpeg",
+      "description": "Bere disponibila la Bere si Raci.",
+      "specs": [],
+      "alt": "Bere Bere si Raci"
+    },
+    {
+      "id": "bere-06",
+      "active": true,
+      "title": "Bere",
+      "category": "bere",
+      "image": "https://i.imgur.com/xhyW2XX.jpeg",
+      "description": "Bere disponibila la Bere si Raci.",
+      "specs": [],
+      "alt": "Bere Bere si Raci"
+    },
+    {
+      "id": "bere-07",
+      "active": true,
+      "title": "Bere",
+      "category": "bere",
+      "image": "https://i.imgur.com/le7S5vr.jpeg",
+      "description": "Bere disponibila la Bere si Raci.",
+      "specs": [],
+      "alt": "Bere Bere si Raci"
+    },
+    {
+      "id": "bere-08",
+      "active": true,
+      "title": "Bere",
+      "category": "bere",
+      "image": "https://i.imgur.com/XQFbl1C.jpeg",
+      "description": "Bere disponibila la Bere si Raci.",
+      "specs": [],
+      "alt": "Bere Bere si Raci"
+    },
+    {
+      "id": "bere-09",
+      "active": true,
+      "title": "Bere",
+      "category": "bere",
+      "image": "https://i.imgur.com/twJWpJI.jpeg",
+      "description": "Bere disponibila la Bere si Raci.",
+      "specs": [],
+      "alt": "Bere Bere si Raci"
+    },
+    {
+      "id": "bere-10",
+      "active": true,
+      "title": "Bere",
+      "category": "bere",
+      "image": "https://i.imgur.com/WXHtQC1.jpeg",
+      "description": "Bere disponibila la Bere si Raci.",
+      "specs": [],
+      "alt": "Bere Bere si Raci"
+    },
+    {
+      "id": "bere-11",
+      "active": true,
+      "title": "Bere",
+      "category": "bere",
+      "image": "https://i.imgur.com/QI7O3qL.jpeg",
+      "description": "Bere disponibila la Bere si Raci.",
+      "specs": [],
+      "alt": "Bere Bere si Raci"
+    },
+    {
+      "id": "bere-12",
+      "active": true,
+      "title": "Bere",
+      "category": "bere",
+      "image": "https://i.imgur.com/VmX3HIa.jpeg",
+      "description": "Bere disponibila la Bere si Raci.",
+      "specs": [],
+      "alt": "Bere Bere si Raci"
+    },
+    {
+      "id": "bere-13",
+      "active": true,
+      "title": "Bere",
+      "category": "bere",
+      "image": "https://i.imgur.com/R2tQkjU.jpeg",
+      "description": "Bere disponibila la Bere si Raci.",
+      "specs": [],
+      "alt": "Bere Bere si Raci"
+    },
+    {
+      "id": "bere-14",
+      "active": true,
+      "title": "Bere",
+      "category": "bere",
+      "image": "https://i.imgur.com/w0Bmq6F.jpeg",
+      "description": "Bere disponibila la Bere si Raci.",
+      "specs": [],
+      "alt": "Bere Bere si Raci"
     }
   ]
 }
