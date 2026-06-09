@@ -1135,7 +1135,7 @@
         "postalCode": "3100",
         "addressCountry": "MD"
       },
-      "servesCuisine": ["Raci", "Pește uscat", "Carne afumată", "Bere"],
+      "servesCuisine": ["Raci", "Pește uscat", "Carne afumată", "Cascaval", "Bere"],
       "openingHoursSpecification": [
         {"@type": "OpeningHoursSpecification", "dayOfWeek": "Monday", "opens": "12:00", "closes": "23:00"},
         {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday", "Wednesday", "Thursday"], "opens": "11:00", "closes": "23:00"},
@@ -1158,6 +1158,7 @@
         <a href="#categorie-raci" data-route="category" data-category="raci">Raci</a>
         <a href="#categorie-peste" data-route="category" data-category="peste">Peste</a>
         <a href="#categorie-carne-afumata" data-route="category" data-category="carne-afumata">Carne afumata</a>
+        <a href="#categorie-cascaval" data-route="category" data-category="cascaval">Cascaval</a>
         <a href="#categorie-bere" data-route="category" data-category="bere">Bere</a>
       </nav>
 
@@ -1222,6 +1223,7 @@
           <a href="#categorie-raci" data-route="category" data-category="raci">Raci</a>
           <a href="#categorie-peste" data-route="category" data-category="peste">Peste</a>
           <a href="#categorie-carne-afumata" data-route="category" data-category="carne-afumata">Carne afumata</a>
+          <a href="#categorie-cascaval" data-route="category" data-category="cascaval">Cascaval</a>
           <a href="#categorie-bere" data-route="category" data-category="bere">Bere</a>
         </div>
 
@@ -1504,6 +1506,7 @@
     const lightboxTitle = document.getElementById("lightboxTitle");
     const lightboxCounter = document.getElementById("lightboxCounter");
 
+    const hiddenLegacyProductNumbers = new Set([1, 2, 4, 5, 8, 27]);
     const baseProducts = Array.from({ length: 29 }, (_, index) => {
       const number = index + 1;
       const src = `assets/products/product-${String(number).padStart(2, "0")}.jpg`;
@@ -1513,7 +1516,7 @@
         title: `Poza ${number}`,
         alt: `Produs Bere si Raci ${number}`
       };
-    });
+    }).filter((product) => !hiddenLegacyProductNumbers.has(product.number));
     let products = [...baseProducts];
     let managedAssetsVersion = Date.now();
 
@@ -1529,13 +1532,19 @@
         id: "peste",
         title: "Peste",
         description: "Selectie de produse din peste, uscate si afumate.",
-        productNumbers: [1, 2, 4, 5, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 26, 27]
+        productNumbers: [9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 26]
       },
       {
         id: "carne-afumata",
         title: "Carne afumata",
         description: "Categoria pentru afumaturi din carne, pregatita pentru produse noi.",
         productNumbers: [products[products.length - 1].number]
+      },
+      {
+        id: "cascaval",
+        title: "Cascaval",
+        description: "Cascaval impletit si gustari sarate pentru bere.",
+        productNumbers: []
       },
       {
         id: "bere",

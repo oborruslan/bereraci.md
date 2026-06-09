@@ -1,3 +1,144 @@
 {
-  "products": []
+  "products": [
+    {
+      "id": "cascaval-impletit-01",
+      "active": true,
+      "title": "Cascaval impletit",
+      "category": "cascaval",
+      "image": "https://i.imgur.com/5hpmvMO.jpeg",
+      "description": "Cascaval impletit pentru platouri si gustari la bere.",
+      "specs": [],
+      "alt": "Cascaval impletit Bere si Raci"
+    },
+    {
+      "id": "peste-afumat-01",
+      "active": true,
+      "title": "Peste afumat",
+      "category": "peste",
+      "image": "https://i.imgur.com/nMZ8wVd.jpeg",
+      "description": "Produs din peste afumat, disponibil pentru comenzi.",
+      "specs": [],
+      "alt": "Peste afumat Bere si Raci"
+    },
+    {
+      "id": "peste-uscat-01",
+      "active": true,
+      "title": "Peste uscat",
+      "category": "peste",
+      "image": "https://i.imgur.com/Ib7dzH0.jpeg",
+      "description": "Peste uscat pentru gustari sarate la bere.",
+      "specs": [],
+      "alt": "Peste uscat Bere si Raci"
+    },
+    {
+      "id": "somon-afumat-01",
+      "active": true,
+      "title": "Somon afumat",
+      "category": "peste",
+      "image": "https://i.imgur.com/IVKVZwM.jpeg",
+      "description": "Somon afumat, pregatit pentru platouri si servire rece.",
+      "specs": [],
+      "alt": "Somon afumat Bere si Raci"
+    },
+    {
+      "id": "raci-produs-01",
+      "active": true,
+      "title": "Raci",
+      "category": "raci",
+      "image": "https://i.imgur.com/jZmsmt9.jpeg",
+      "description": "Produs din categoria raci, disponibilitatea se confirma la telefon.",
+      "specs": [],
+      "alt": "Raci Bere si Raci"
+    },
+    {
+      "id": "peste-afumat-02",
+      "active": true,
+      "title": "Peste afumat",
+      "category": "peste",
+      "image": "https://i.imgur.com/VaOvc8W.jpeg",
+      "description": "Peste afumat, pregatit pentru mese cu bere rece.",
+      "specs": [],
+      "alt": "Peste afumat Bere si Raci"
+    },
+    {
+      "id": "fileu-somon-afumat-01",
+      "active": true,
+      "title": "Fileu de somon afumat",
+      "category": "peste",
+      "image": "https://i.imgur.com/dlbSq8b.jpeg",
+      "description": "Fileu de somon afumat cu textura frageda si gust intens.",
+      "specs": [],
+      "alt": "Fileu somon afumat Bere si Raci"
+    },
+    {
+      "id": "carne-afumata-01",
+      "active": true,
+      "title": "Carne afumata",
+      "category": "carne-afumata",
+      "image": "https://i.imgur.com/MtaGz05.jpeg",
+      "description": "Afumaturi din carne pentru platouri si gustari.",
+      "specs": [],
+      "alt": "Carne afumata Bere si Raci"
+    },
+    {
+      "id": "urechi-afumate-01",
+      "active": true,
+      "title": "Afumaturi din carne",
+      "category": "carne-afumata",
+      "image": "https://i.imgur.com/zlKsZpu.jpeg",
+      "description": "Afumaturi din carne, ideale pentru servire cu bere.",
+      "specs": [],
+      "alt": "Afumaturi din carne Bere si Raci"
+    },
+    {
+      "id": "raci-fierti-01",
+      "active": true,
+      "title": "Raci fierti",
+      "category": "raci",
+      "image": "https://i.imgur.com/PaOn8xn.jpeg",
+      "description": "Raci fierti, pregatiti pentru mese cu bere rece.",
+      "specs": [],
+      "alt": "Raci fierti Bere si Raci"
+    },
+    {
+      "id": "peste-afumat-03",
+      "active": true,
+      "title": "Peste afumat",
+      "category": "peste",
+      "image": "https://i.imgur.com/Tsr4snS.jpeg",
+      "description": "Peste afumat, disponibil pentru platouri si gustari.",
+      "specs": [],
+      "alt": "Peste afumat Bere si Raci"
+    },
+    {
+      "id": "carnati-afumati-01",
+      "active": true,
+      "title": "Carnati afumati",
+      "category": "carne-afumata",
+      "image": "https://i.imgur.com/xWFyNaE.jpeg",
+      "description": "Carnati afumati pentru platouri si gustari sarate.",
+      "specs": [],
+      "alt": "Carnati afumati Bere si Raci"
+    },
+    {
+      "id": "peste-afumat-04",
+      "active": true,
+      "title": "Peste afumat",
+      "category": "peste",
+      "image": "https://i.imgur.com/eRlrmIt.jpeg",
+      "description": "Peste afumat, pregatit pentru servire si comenzi.",
+      "specs": [],
+      "alt": "Peste afumat Bere si Raci"
+    },
+    {
+      "id": "peste-afumat-05",
+      "active": true,
+      "title": "Peste afumat",
+      "category": "peste",
+      "image": "https://i.imgur.com/qrHXV7H.jpeg",
+      "description": "Peste afumat, potrivit pentru bere si platouri reci.",
+      "specs": [],
+      "alt": "Peste afumat Bere si Raci"
+    }
+  ]
 }
