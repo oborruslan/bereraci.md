@@ -165,6 +165,66 @@
       "price": "45 lei"
     },
     {
+      "id": "asorti-platou-01",
+      "active": true,
+      "title": "Asorti",
+      "category": "carne-afumata",
+      "image": "https://i.imgur.com/XOhBPYw.jpeg",
+      "description": "Pret negociabil",
+      "specs": [],
+      "alt": "Asorti Bere si Raci",
+      "unit": "",
+      "price": "Negociabil"
+    },
+    {
+      "id": "niestru-01",
+      "active": true,
+      "title": "Niestru",
+      "category": "peste",
+      "image": "https://i.imgur.com/7aLLcqQ.jpeg",
+      "description": "100g",
+      "specs": [],
+      "alt": "Niestru Bere si Raci",
+      "unit": "100g",
+      "price": "85 lei"
+    },
+    {
+      "id": "cascaval-01",
+      "active": true,
+      "title": "Cascaval",
+      "category": "cascaval",
+      "image": "https://i.imgur.com/u1Dp8X2.jpeg",
+      "description": "100g",
+      "specs": [],
+      "alt": "Cascaval Bere si Raci",
+      "unit": "100g",
+      "price": "44 lei"
+    },
+    {
+      "id": "cascaval-02",
+      "active": true,
+      "title": "Cascaval",
+      "category": "cascaval",
+      "image": "https://i.imgur.com/cwUbAo2.jpeg",
+      "description": "100g",
+      "specs": [],
+      "alt": "Cascaval Bere si Raci",
+      "unit": "100g",
+      "price": "44 lei"
+    },
+    {
+      "id": "caracatita-01",
+      "active": true,
+      "title": "Caracatita",
+      "category": "peste",
+      "image": "https://i.imgur.com/hy3IVa5.jpeg",
+      "description": "100g",
+      "specs": [],
+      "alt": "Caracatita Bere si Raci",
+      "unit": "100g",
+      "price": "43 lei"
+    },
+    {
       "id": "bere-14",
       "active": true,
       "title": "Bere & Raci Blond Lager",

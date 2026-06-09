@@ -1258,7 +1258,7 @@
         "postalCode": "3100",
         "addressCountry": "MD"
       },
-      "servesCuisine": ["Raci", "Pește uscat", "Carne afumată", "Cascaval", "Bere"],
+      "servesCuisine": ["Raci", "Pește uscat", "Carne afumată", "Cascaval", "Scaksuri", "Bere"],
       "openingHoursSpecification": [
         {"@type": "OpeningHoursSpecification", "dayOfWeek": "Monday", "opens": "12:00", "closes": "23:00"},
         {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday", "Wednesday", "Thursday"], "opens": "11:00", "closes": "23:00"},
@@ -1282,6 +1282,7 @@
         <a href="#categorie-peste" data-route="category" data-category="peste">Peste</a>
         <a href="#categorie-carne-afumata" data-route="category" data-category="carne-afumata">Carne afumata</a>
         <a href="#categorie-cascaval" data-route="category" data-category="cascaval">Cascaval</a>
+        <a href="#categorie-scaksuri" data-route="category" data-category="scaksuri">Scaksuri</a>
         <a href="#categorie-bere" data-route="category" data-category="bere">Bere</a>
       </nav>
 
@@ -1347,6 +1348,7 @@
           <a href="#categorie-peste" data-route="category" data-category="peste">Peste</a>
           <a href="#categorie-carne-afumata" data-route="category" data-category="carne-afumata">Carne afumata</a>
           <a href="#categorie-cascaval" data-route="category" data-category="cascaval">Cascaval</a>
+          <a href="#categorie-scaksuri" data-route="category" data-category="scaksuri">Scaksuri</a>
           <a href="#categorie-bere" data-route="category" data-category="bere">Bere</a>
         </div>
 
@@ -1637,14 +1639,18 @@
     const lightboxProductDetail = document.getElementById("lightboxProductDetail");
     const lightboxProductPrice = document.getElementById("lightboxProductPrice");
 
-    const hiddenLegacyProductNumbers = new Set([1, 2, 4, 5, 8, 27]);
+    const hiddenLegacyProductNumbers = new Set([1, 2, 4, 5, 8, 9, 12, 16, 17, 19, 22, 27]);
     const legacyProductDetails = {
+      10: { title: "Icre", description: "100g", price: "80 lei", unit: "100g" },
+      11: { title: "Sudac", description: "", price: "", unit: "" },
       13: { title: "Cihoni", description: "100g", price: "59 lei", unit: "100g" },
       15: { title: "Cadou Mix", description: "Pret negociabil", price: "Pret negociabil", unit: "" },
       18: { title: "Sticsuri din carne", description: "100g", price: "50 lei", unit: "100g" },
       20: { title: "Platica cu icre", description: "100g", price: "42 lei", unit: "100g" },
+      21: { title: "Asorti carne afumata", description: "100g", price: "50 lei", unit: "100g" },
       23: { title: "Rosioara", description: "100g", price: "49 lei", unit: "100g" },
-      24: { title: "Nesetru", description: "100g", price: "85 lei", unit: "100g" }
+      24: { title: "Nesetru", description: "100g", price: "85 lei", unit: "100g" },
+      26: { title: "Asorti", description: "Pret negociabil", price: "Negociabil", unit: "" }
     };
     const baseProducts = Array.from({ length: 29 }, (_, index) => {
       const number = index + 1;
@@ -1675,18 +1681,24 @@
         id: "peste",
         title: "Peste",
         description: "Selectie de produse din peste, uscate si afumate.",
-        productNumbers: [9, 10, 11, 12, 13, 14, 15, 16, 17, 19, 20, 21, 22, 23, 24, 26]
+        productNumbers: [10, 11, 13, 14, 15, 20, 23, 24, 26]
       },
       {
         id: "carne-afumata",
         title: "Carne afumata",
         description: "Categoria pentru afumaturi din carne, pregatita pentru produse noi.",
-        productNumbers: [18, products[products.length - 1].number]
+        productNumbers: [18, 21, products[products.length - 1].number]
       },
       {
         id: "cascaval",
         title: "Cascaval",
         description: "Cascaval impletit si gustari sarate pentru bere.",
+        productNumbers: []
+      },
+      {
+        id: "scaksuri",
+        title: "Scaksuri",
+        description: "Gustari si scaksuri pentru bere, pregatite pentru produse noi.",
         productNumbers: []
       },
       {
