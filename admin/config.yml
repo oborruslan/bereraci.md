@@ -41,7 +41,7 @@ collections:
                   - { label: "Peste", value: "peste" }
                   - { label: "Carne afumata", value: "carne-afumata" }
                   - { label: "Cascaval", value: "cascaval" }
-                  - { label: "Scaksuri", value: "scaksuri" }
+                  - { label: "Snaksuri", value: "snaksuri" }
                   - { label: "Bere", value: "bere" }
               - label: "Imagine produs"
                 name: "image"
