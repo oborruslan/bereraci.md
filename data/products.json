@@ -143,16 +143,6 @@
       "price": "50 lei"
     },
     {
-      "id": "peste-afumat-04",
-      "active": true,
-      "title": "Peste afumat",
-      "category": "peste",
-      "image": "https://i.imgur.com/eRlrmIt.jpeg",
-      "description": "Peste afumat, pregatit pentru servire si comenzi.",
-      "specs": [],
-      "alt": "Peste afumat Bere si Raci"
-    },
-    {
       "id": "peste-afumat-05",
       "active": true,
       "title": "Verezub",
@@ -230,141 +220,167 @@
       "title": "Bere & Raci Blond Lager",
       "category": "bere",
       "image": "https://i.imgur.com/w0Bmq6F.jpeg",
-      "description": "Bere disponibila la Bere si Raci.",
+      "description": "1L",
       "specs": [],
       "alt": "Bere & Raci Blond Lager Bere si Raci",
-      "unit": "",
+      "unit": "1L",
       "price": "38 lei"
     },
     {
       "id": "bere-01",
       "active": true,
-      "title": "Bere",
+      "title": "Project 22 Hazy IPA",
       "category": "bere",
       "image": "https://i.imgur.com/uWX8Uu2.jpeg",
-      "description": "Bere disponibila la Bere si Raci.",
+      "description": "1L",
       "specs": [],
-      "alt": "Bere Bere si Raci"
+      "alt": "Project 22 Hazy IPA Bere si Raci",
+      "unit": "1L",
+      "price": "50 lei"
     },
     {
       "id": "bere-02",
       "active": true,
-      "title": "Bere",
+      "title": "Zlata Praha Lager 4.7%",
       "category": "bere",
       "image": "https://i.imgur.com/0RmvsSH.jpeg",
-      "description": "Bere disponibila la Bere si Raci.",
+      "description": "1L",
       "specs": [],
-      "alt": "Bere Bere si Raci"
+      "alt": "Zlata Praha Lager 4.7% Bere si Raci",
+      "unit": "1L",
+      "price": "68 lei"
     },
     {
       "id": "bere-03",
       "active": true,
-      "title": "Bere",
+      "title": "Zlata Praha Ale 5%",
       "category": "bere",
       "image": "https://i.imgur.com/hT6ReGR.jpeg",
-      "description": "Bere disponibila la Bere si Raci.",
+      "description": "1L",
       "specs": [],
-      "alt": "Bere Bere si Raci"
+      "alt": "Zlata Praha Ale 5% Bere si Raci",
+      "unit": "1L",
+      "price": "50 lei"
     },
     {
       "id": "bere-04",
       "active": true,
-      "title": "Bere",
+      "title": "Hopfenbrau Pils",
       "category": "bere",
       "image": "https://i.imgur.com/Q75ectI.jpeg",
-      "description": "Bere disponibila la Bere si Raci.",
+      "description": "1L",
       "specs": [],
-      "alt": "Bere Bere si Raci"
+      "alt": "Hopfenbrau Pils Bere si Raci",
+      "unit": "1L",
+      "price": "48 lei"
     },
     {
       "id": "bere-05",
       "active": true,
-      "title": "Bere",
+      "title": "Beermaster 110 Ale",
       "category": "bere",
       "image": "https://i.imgur.com/Ox5lSiG.jpeg",
-      "description": "Bere disponibila la Bere si Raci.",
+      "description": "1L",
       "specs": [],
-      "alt": "Bere Bere si Raci"
+      "alt": "Beermaster 110 Ale Bere si Raci",
+      "unit": "1L",
+      "price": "55 lei"
     },
     {
       "id": "bere-06",
       "active": true,
-      "title": "Bere",
+      "title": "Harap Alb Blanche Beer",
       "category": "bere",
       "image": "https://i.imgur.com/xhyW2XX.jpeg",
-      "description": "Bere disponibila la Bere si Raci.",
+      "description": "1L",
       "specs": [],
-      "alt": "Bere Bere si Raci"
+      "alt": "Harap Alb Blanche Beer Bere si Raci",
+      "unit": "1L",
+      "price": "52 lei"
     },
     {
       "id": "bere-07",
       "active": true,
-      "title": "Bere",
+      "title": "Mojito fara alcool",
       "category": "bere",
       "image": "https://i.imgur.com/le7S5vr.jpeg",
-      "description": "Bere disponibila la Bere si Raci.",
+      "description": "1L",
       "specs": [],
-      "alt": "Bere Bere si Raci"
+      "alt": "Mojito fara alcool Bere si Raci",
+      "unit": "1L",
+      "price": "30 lei"
     },
     {
       "id": "bere-08",
       "active": true,
-      "title": "Bere",
+      "title": "Cvas fermentat",
       "category": "bere",
       "image": "https://i.imgur.com/XQFbl1C.jpeg",
-      "description": "Bere disponibila la Bere si Raci.",
+      "description": "1L",
       "specs": [],
-      "alt": "Bere Bere si Raci"
+      "alt": "Cvas fermentat Bere si Raci",
+      "unit": "1L",
+      "price": "24 lei"
     },
     {
       "id": "bere-09",
       "active": true,
-      "title": "Bere",
+      "title": "Jigulevskoe Lager",
       "category": "bere",
       "image": "https://i.imgur.com/twJWpJI.jpeg",
-      "description": "Bere disponibila la Bere si Raci.",
+      "description": "1L",
       "specs": [],
-      "alt": "Bere Bere si Raci"
+      "alt": "Jigulevskoe Lager Bere si Raci",
+      "unit": "1L",
+      "price": "38 lei"
     },
     {
       "id": "bere-10",
       "active": true,
-      "title": "Bere",
+      "title": "Marul viu",
       "category": "bere",
       "image": "https://i.imgur.com/WXHtQC1.jpeg",
-      "description": "Bere disponibila la Bere si Raci.",
+      "description": "1L",
       "specs": [],
-      "alt": "Bere Bere si Raci"
+      "alt": "Marul viu Bere si Raci",
+      "unit": "1L",
+      "price": "30 lei"
     },
     {
       "id": "bere-11",
       "active": true,
-      "title": "Bere",
+      "title": "Beermaster Weizen",
       "category": "bere",
       "image": "https://i.imgur.com/QI7O3qL.jpeg",
-      "description": "Bere disponibila la Bere si Raci.",
+      "description": "1L",
       "specs": [],
-      "alt": "Bere Bere si Raci"
+      "alt": "Beermaster Weizen Bere si Raci",
+      "unit": "1L",
+      "price": "51 lei"
     },
     {
       "id": "bere-12",
       "active": true,
-      "title": "Bere",
+      "title": "Golden Lager",
       "category": "bere",
       "image": "https://i.imgur.com/VmX3HIa.jpeg",
-      "description": "Bere disponibila la Bere si Raci.",
+      "description": "1L",
       "specs": [],
-      "alt": "Bere Bere si Raci"
+      "alt": "Golden Lager Bere si Raci",
+      "unit": "1L",
+      "price": "43 lei"
     },
     {
       "id": "bere-13",
       "active": true,
-      "title": "Bere",
+      "title": "231 City Lager",
       "category": "bere",
       "image": "https://i.imgur.com/R2tQkjU.jpeg",
-      "description": "Bere disponibila la Bere si Raci.",
+      "description": "1L",
       "specs": [],
-      "alt": "Bere Bere si Raci"
+      "alt": "231 City Lager Bere si Raci",
+      "unit": "1L",
+      "price": "51 lei"
     }
   ]
 }

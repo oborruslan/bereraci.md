@@ -1639,7 +1639,7 @@
     const lightboxProductDetail = document.getElementById("lightboxProductDetail");
     const lightboxProductPrice = document.getElementById("lightboxProductPrice");
 
-    const hiddenLegacyProductNumbers = new Set([1, 2, 4, 5, 8, 9, 12, 16, 17, 19, 22, 27]);
+    const hiddenLegacyProductNumbers = new Set([1, 2, 4, 5, 8, 9, 12, 14, 16, 17, 19, 22, 27, 29]);
     const legacyProductDetails = {
       10: { title: "Icre", description: "100g", price: "80 lei", unit: "100g" },
       11: { title: "Sudac", description: "", price: "", unit: "" },
@@ -1681,13 +1681,13 @@
         id: "peste",
         title: "Peste",
         description: "Selectie de produse din peste, uscate si afumate.",
-        productNumbers: [10, 11, 13, 14, 15, 20, 23, 24, 26]
+        productNumbers: [10, 11, 13, 15, 20, 23, 24, 26]
       },
       {
         id: "carne-afumata",
         title: "Carne afumata",
         description: "Categoria pentru afumaturi din carne, pregatita pentru produse noi.",
-        productNumbers: [18, 21, products[products.length - 1].number]
+        productNumbers: [18, 21]
       },
       {
         id: "cascaval",
