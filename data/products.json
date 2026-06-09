@@ -6,39 +6,47 @@
       "title": "Cascaval impletit",
       "category": "cascaval",
       "image": "https://i.imgur.com/5hpmvMO.jpeg",
-      "description": "Cascaval impletit pentru platouri si gustari la bere.",
+      "description": "100g",
       "specs": [],
-      "alt": "Cascaval impletit Bere si Raci"
+      "alt": "Cascaval impletit Bere si Raci",
+      "unit": "100g",
+      "price": "44 lei"
     },
     {
       "id": "peste-afumat-01",
       "active": true,
-      "title": "Peste afumat",
+      "title": "Tolstolop",
       "category": "peste",
       "image": "https://i.imgur.com/nMZ8wVd.jpeg",
-      "description": "Produs din peste afumat, disponibil pentru comenzi.",
+      "description": "100g",
       "specs": [],
-      "alt": "Peste afumat Bere si Raci"
+      "alt": "Tolstolop Bere si Raci",
+      "unit": "100g",
+      "price": "40 lei"
     },
     {
       "id": "peste-uscat-01",
       "active": true,
-      "title": "Peste uscat",
+      "title": "Vobla",
       "category": "peste",
       "image": "https://i.imgur.com/Ib7dzH0.jpeg",
-      "description": "Peste uscat pentru gustari sarate la bere.",
+      "description": "100g",
       "specs": [],
-      "alt": "Peste uscat Bere si Raci"
+      "alt": "Vobla Bere si Raci",
+      "unit": "100g",
+      "price": "40 lei"
     },
     {
       "id": "somon-afumat-01",
       "active": true,
-      "title": "Somon afumat",
+      "title": "Rulada din Marlin, Maslenii, Fareli, Tuneț",
       "category": "peste",
       "image": "https://i.imgur.com/IVKVZwM.jpeg",
-      "description": "Somon afumat, pregatit pentru platouri si servire rece.",
+      "description": "100g",
       "specs": [],
-      "alt": "Somon afumat Bere si Raci"
+      "alt": "Rulada din Marlin, Maslenii, Fareli, Tuneț Bere si Raci",
+      "unit": "100g",
+      "price": "59 lei"
     },
     {
       "id": "raci-produs-01",
@@ -53,72 +61,86 @@
     {
       "id": "peste-afumat-02",
       "active": true,
-      "title": "Peste afumat",
+      "title": "Somn afumat",
       "category": "peste",
       "image": "https://i.imgur.com/VaOvc8W.jpeg",
-      "description": "Peste afumat, pregatit pentru mese cu bere rece.",
+      "description": "100g",
       "specs": [],
-      "alt": "Peste afumat Bere si Raci"
+      "alt": "Somn afumat Bere si Raci",
+      "unit": "100g",
+      "price": "45 lei"
     },
     {
       "id": "fileu-somon-afumat-01",
       "active": true,
-      "title": "Fileu de somon afumat",
+      "title": "Yukola",
       "category": "peste",
       "image": "https://i.imgur.com/dlbSq8b.jpeg",
-      "description": "Fileu de somon afumat cu textura frageda si gust intens.",
+      "description": "100g",
       "specs": [],
-      "alt": "Fileu somon afumat Bere si Raci"
+      "alt": "Yukola Bere si Raci",
+      "unit": "100g",
+      "price": "79 lei"
     },
     {
       "id": "carne-afumata-01",
       "active": true,
-      "title": "Carne afumata",
-      "category": "carne-afumata",
+      "title": "Icre zvantate",
+      "category": "peste",
       "image": "https://i.imgur.com/MtaGz05.jpeg",
-      "description": "Afumaturi din carne pentru platouri si gustari.",
+      "description": "100g",
       "specs": [],
-      "alt": "Carne afumata Bere si Raci"
+      "alt": "Icre zvantate Bere si Raci",
+      "unit": "100g",
+      "price": "80 lei"
     },
     {
       "id": "urechi-afumate-01",
       "active": true,
-      "title": "Afumaturi din carne",
+      "title": "Urechi porc, de casa",
       "category": "carne-afumata",
       "image": "https://i.imgur.com/zlKsZpu.jpeg",
-      "description": "Afumaturi din carne, ideale pentru servire cu bere.",
+      "description": "100g",
       "specs": [],
-      "alt": "Afumaturi din carne Bere si Raci"
+      "alt": "Urechi porc, de casa Bere si Raci",
+      "unit": "100g",
+      "price": "44 lei"
     },
     {
       "id": "raci-fierti-01",
       "active": true,
-      "title": "Raci fierti",
+      "title": "Raci",
       "category": "raci",
       "image": "https://i.imgur.com/PaOn8xn.jpeg",
-      "description": "Raci fierti, pregatiti pentru mese cu bere rece.",
+      "description": "Galeata",
       "specs": [],
-      "alt": "Raci fierti Bere si Raci"
+      "alt": "Raci Bere si Raci",
+      "unit": "Galeata",
+      "price": "480 lei"
     },
     {
       "id": "peste-afumat-03",
       "active": true,
-      "title": "Peste afumat",
+      "title": "File tolstolop",
       "category": "peste",
       "image": "https://i.imgur.com/Tsr4snS.jpeg",
-      "description": "Peste afumat, disponibil pentru platouri si gustari.",
+      "description": "100g",
       "specs": [],
-      "alt": "Peste afumat Bere si Raci"
+      "alt": "File tolstolop Bere si Raci",
+      "unit": "100g",
+      "price": "40 lei"
     },
     {
       "id": "carnati-afumati-01",
       "active": true,
-      "title": "Carnati afumati",
-      "category": "carne-afumata",
+      "title": "Ugric",
+      "category": "peste",
       "image": "https://i.imgur.com/xWFyNaE.jpeg",
-      "description": "Carnati afumati pentru platouri si gustari sarate.",
+      "description": "100g",
       "specs": [],
-      "alt": "Carnati afumati Bere si Raci"
+      "alt": "Ugric Bere si Raci",
+      "unit": "100g",
+      "price": "50 lei"
     },
     {
       "id": "peste-afumat-04",
@@ -133,12 +155,26 @@
     {
       "id": "peste-afumat-05",
       "active": true,
-      "title": "Peste afumat",
+      "title": "Verezub",
       "category": "peste",
       "image": "https://i.imgur.com/qrHXV7H.jpeg",
-      "description": "Peste afumat, potrivit pentru bere si platouri reci.",
+      "description": "100g",
       "specs": [],
-      "alt": "Peste afumat Bere si Raci"
+      "alt": "Verezub Bere si Raci",
+      "unit": "100g",
+      "price": "45 lei"
+    },
+    {
+      "id": "bere-14",
+      "active": true,
+      "title": "Bere & Raci Blond Lager",
+      "category": "bere",
+      "image": "https://i.imgur.com/w0Bmq6F.jpeg",
+      "description": "Bere disponibila la Bere si Raci.",
+      "specs": [],
+      "alt": "Bere & Raci Blond Lager Bere si Raci",
+      "unit": "",
+      "price": "38 lei"
     },
     {
       "id": "bere-01",
@@ -266,16 +302,6 @@
       "title": "Bere",
       "category": "bere",
       "image": "https://i.imgur.com/R2tQkjU.jpeg",
-      "description": "Bere disponibila la Bere si Raci.",
-      "specs": [],
-      "alt": "Bere Bere si Raci"
-    },
-    {
-      "id": "bere-14",
-      "active": true,
-      "title": "Bere",
-      "category": "bere",
-      "image": "https://i.imgur.com/w0Bmq6F.jpeg",
       "description": "Bere disponibila la Bere si Raci.",
       "specs": [],
       "alt": "Bere Bere si Raci"

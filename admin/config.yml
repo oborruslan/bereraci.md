@@ -51,6 +51,16 @@ collections:
                 name: "description"
                 widget: "text"
                 required: false
+              - label: "Pret"
+                name: "price"
+                widget: "string"
+                required: false
+                hint: "Exemplu: 44 lei sau Pret negociabil."
+              - label: "Gramaj / unitate"
+                name: "unit"
+                widget: "string"
+                required: false
+                hint: "Exemplu: 100g sau Galeata."
               - label: "Specificatii"
                 name: "specs"
                 widget: "list"

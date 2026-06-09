@@ -495,6 +495,50 @@
       font-size: .92rem;
     }
 
+    .product-info-row {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      margin: 9px 0 14px;
+    }
+
+    .product-info-row p {
+      flex: 1 1 auto;
+      min-width: 0;
+      margin: 0;
+    }
+
+    .price-pill {
+      flex: 0 0 auto;
+      min-width: 82px;
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1px;
+      border: 1px solid rgba(255, 244, 223, .2);
+      border-radius: 8px;
+      padding: 7px 10px;
+      background: linear-gradient(180deg, #ffd66f, #e6a83b);
+      color: #180b04;
+      font-size: .92rem;
+      font-weight: 950;
+      line-height: 1.05;
+      text-align: center;
+      box-shadow: 0 10px 24px rgba(230, 168, 59, .22);
+      cursor: default;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .price-pill small {
+      color: rgba(24, 11, 4, .72);
+      font-size: .68rem;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
     .product-specs {
       color: #f0d58c;
       font-weight: 800;
@@ -827,6 +871,52 @@
       font-size: .92rem;
     }
 
+    .lightbox-product-info {
+      position: fixed;
+      top: 18px;
+      right: 74px;
+      z-index: 102;
+      display: grid;
+      gap: 4px;
+      max-width: min(430px, calc(100vw - 150px));
+      border: 1px solid rgba(255, 244, 223, .18);
+      border-radius: 8px;
+      padding: 10px 12px;
+      background: rgba(8, 6, 4, .86);
+      color: #fff0c8;
+      text-align: right;
+      box-shadow: 0 16px 42px rgba(0, 0, 0, .35);
+      backdrop-filter: blur(14px);
+    }
+
+    .lightbox-product-info strong {
+      color: #fff4df;
+      font-size: .98rem;
+      line-height: 1.15;
+    }
+
+    .lightbox-product-detail {
+      color: #d6bd95;
+      font-size: .86rem;
+      font-weight: 800;
+    }
+
+    .lightbox-product-price {
+      justify-self: end;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      padding: 6px 10px;
+      background: linear-gradient(180deg, #ffd66f, #e6a83b);
+      color: #180b04;
+      font-size: .9rem;
+      font-weight: 950;
+      line-height: 1;
+      box-shadow: 0 10px 24px rgba(230, 168, 59, .24);
+      pointer-events: none;
+    }
+
     .lightbox-close {
       position: fixed;
       top: 18px;
@@ -1026,7 +1116,31 @@
       .lightbox {
         align-items: center;
         justify-content: center;
-        padding: 58px 14px calc(100px + env(safe-area-inset-bottom));
+        padding: 128px 14px calc(100px + env(safe-area-inset-bottom));
+      }
+
+      .lightbox-product-info {
+        top: 12px;
+        right: 66px;
+        left: 12px;
+        max-width: none;
+        grid-template-columns: minmax(0, 1fr) auto;
+        align-items: center;
+        text-align: left;
+      }
+
+      .lightbox-product-info strong {
+        min-width: 0;
+      }
+
+      .lightbox-product-detail {
+        grid-column: 1 / -1;
+      }
+
+      .lightbox-product-price {
+        grid-row: 1;
+        grid-column: 2;
+        white-space: nowrap;
       }
 
       .lightbox-stage {
@@ -1038,8 +1152,8 @@
 
       .lightbox img {
         max-width: 100%;
-        max-height: calc(100vh - 190px);
-        max-height: calc(100dvh - 190px);
+        max-height: calc(100vh - 260px);
+        max-height: calc(100dvh - 260px);
       }
 
       .lightbox-prev {
@@ -1107,6 +1221,15 @@
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
+      .product-info-row {
+        gap: 9px;
+      }
+
+      .price-pill {
+        min-width: 76px;
+        padding: 7px 8px;
+      }
+
       .mobile-action {
         min-height: 56px;
         padding: 9px 10px;
@@ -1130,7 +1253,7 @@
       "telephone": "+37378767849",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Strada Ștefan cel Mare 178 / Str. Ștefan cel Mare 180",
+        "streetAddress": "Str. Ștefan cel Mare 180 / Independentei Street 72, Bălți, Moldova",
         "addressLocality": "Bălți",
         "postalCode": "3100",
         "addressCountry": "MD"
@@ -1186,7 +1309,7 @@
               </svg>
               Suna acum
             </a>
-            <a class="btn map" href="https://www.google.com/maps/dir/?api=1&destination=Strada%20%C8%98tefan%20cel%20Mare%20178%2C%20B%C4%83l%C8%9Bi%2C%20Moldova%203100&travelmode=driving" target="_blank" rel="noopener noreferrer" aria-label="Vezi Bere si Raci pe harta">
+            <a class="btn map" href="https://www.google.com/maps/dir/?api=1&destination=Independentei%20Street%2072%2C%20B%C4%83l%C8%9Bi%2C%20Moldova&travelmode=driving" target="_blank" rel="noopener noreferrer" aria-label="Vezi Bere si Raci pe harta">
               <svg viewBox="0 0 24 24" aria-hidden="true" fill="none">
                 <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2"/>
@@ -1377,14 +1500,14 @@
               </svg>
               Vezi prima locație
             </a>
-            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Strada%20%C8%98tefan%20cel%20Mare%20178%2C%20B%C4%83l%C8%9Bi%2C%20Moldova%203100" target="_blank" rel="noopener noreferrer" aria-label="Deschide a doua locatie Bere si Raci in Google Maps">
+            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Independentei%20Street%2072%2C%20B%C4%83l%C8%9Bi%2C%20Moldova" target="_blank" rel="noopener noreferrer" aria-label="Deschide a doua locatie Bere si Raci in Google Maps">
               <svg viewBox="0 0 24 24" aria-hidden="true" fill="none">
                 <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2"/>
               </svg>
               A doua locație
             </a>
-            <p class="location-address-under"><a href="https://www.google.com/maps/search/?api=1&query=Strada%20%C8%98tefan%20cel%20Mare%20178%2C%20B%C4%83l%C8%9Bi%2C%20Moldova%203100" target="_blank" rel="noopener noreferrer">Strada Ștefan cel Mare 178, Bălți, Молдова, Balti, Moldova 3100</a></p>
+            <p class="location-address-under"><a href="https://www.google.com/maps/search/?api=1&query=Independentei%20Street%2072%2C%20B%C4%83l%C8%9Bi%2C%20Moldova" target="_blank" rel="noopener noreferrer">Independentei Street 72, Bălți, Moldova</a></p>
             <div class="contact-actions">
               <a class="btn primary" href="tel:+37378767849" aria-label="Apelează berăria Bere și Raci">
                 <svg viewBox="0 0 24 24" aria-hidden="true" fill="none">
@@ -1413,7 +1536,7 @@
         </svg>
         <span><strong>Suna acum</strong><span>+373 78 767849</span></span>
       </a>
-      <a class="mobile-action map-now" href="https://www.google.com/maps/dir/?api=1&destination=Strada%20%C8%98tefan%20cel%20Mare%20178%2C%20B%C4%83l%C8%9Bi%2C%20Moldova%203100&travelmode=driving" target="_blank" rel="noopener noreferrer" aria-label="Vezi traseul spre Bere si Raci pe harta">
+      <a class="mobile-action map-now" href="https://www.google.com/maps/dir/?api=1&destination=Independentei%20Street%2072%2C%20B%C4%83l%C8%9Bi%2C%20Moldova&travelmode=driving" target="_blank" rel="noopener noreferrer" aria-label="Vezi traseul spre Bere si Raci pe harta">
         <svg viewBox="0 0 24 24" aria-hidden="true" fill="none">
           <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2"/>
@@ -1459,7 +1582,7 @@
           <p>or. BĂLȚI</p>
           <p>Telefon: <a href="tel:+37378767849">+373 (78) 767849</a></p>
           <p><a href="https://www.google.com/maps/search/?api=1&query=Str.%20%C8%98tefan%20cel%20Mare%20180%2C%20B%C4%83l%C8%9Bi%2C%20Moldova" target="_blank" rel="noreferrer">Str. Ștefan cel Mare 180</a></p>
-          <p><a href="https://www.google.com/maps/search/?api=1&query=Strada%20%C8%98tefan%20cel%20Mare%20178%2C%20B%C4%83l%C8%9Bi%2C%20Moldova%203100" target="_blank" rel="noreferrer">Strada Ștefan cel Mare 178, Bălți, Молдова, Balti, Moldova 3100</a></p>
+          <p><a href="https://www.google.com/maps/search/?api=1&query=Independentei%20Street%2072%2C%20B%C4%83l%C8%9Bi%2C%20Moldova" target="_blank" rel="noreferrer">Independentei Street 72, Bălți, Moldova</a></p>
           <p class="footer-note">Pentru date juridice complete precum IDNO, e-mail oficial sau autorizații, acestea se publică după confirmarea administratorului.</p>
         </div>
 
@@ -1484,6 +1607,11 @@
 
   <div class="lightbox" id="imageLightbox" aria-hidden="true" role="dialog" aria-label="Imagine produs">
     <button class="lightbox-close" type="button" aria-label="Inchide imaginea">&times;</button>
+    <div class="lightbox-product-info" id="lightboxProductInfo">
+      <strong id="lightboxProductName">Produs Bere & Raci</strong>
+      <span class="lightbox-product-detail" id="lightboxProductDetail"></span>
+      <span class="lightbox-product-price" id="lightboxProductPrice" hidden></span>
+    </div>
     <button class="lightbox-nav lightbox-prev" type="button" aria-label="Imaginea precedenta">&lsaquo;</button>
     <figure class="lightbox-stage">
       <img src="" alt="">
@@ -1505,16 +1633,31 @@
     const nextLightbox = lightbox.querySelector(".lightbox-next");
     const lightboxTitle = document.getElementById("lightboxTitle");
     const lightboxCounter = document.getElementById("lightboxCounter");
+    const lightboxProductName = document.getElementById("lightboxProductName");
+    const lightboxProductDetail = document.getElementById("lightboxProductDetail");
+    const lightboxProductPrice = document.getElementById("lightboxProductPrice");
 
     const hiddenLegacyProductNumbers = new Set([1, 2, 4, 5, 8, 27]);
+    const legacyProductDetails = {
+      13: { title: "Cihoni", description: "100g", price: "59 lei", unit: "100g" },
+      15: { title: "Cadou Mix", description: "Pret negociabil", price: "Pret negociabil", unit: "" },
+      18: { title: "Sticsuri din carne", description: "100g", price: "50 lei", unit: "100g" },
+      20: { title: "Platica cu icre", description: "100g", price: "42 lei", unit: "100g" },
+      23: { title: "Rosioara", description: "100g", price: "49 lei", unit: "100g" },
+      24: { title: "Nesetru", description: "100g", price: "85 lei", unit: "100g" }
+    };
     const baseProducts = Array.from({ length: 29 }, (_, index) => {
       const number = index + 1;
       const src = `assets/products/product-${String(number).padStart(2, "0")}.jpg`;
+      const details = legacyProductDetails[number] || {};
       return {
         number,
         src,
-        title: `Poza ${number}`,
-        alt: `Produs Bere si Raci ${number}`
+        title: details.title || `Poza ${number}`,
+        alt: details.alt || details.title || `Produs Bere si Raci ${number}`,
+        description: details.description || "",
+        price: details.price || "",
+        unit: details.unit || ""
       };
     }).filter((product) => !hiddenLegacyProductNumbers.has(product.number));
     let products = [...baseProducts];
@@ -1532,13 +1675,13 @@
         id: "peste",
         title: "Peste",
         description: "Selectie de produse din peste, uscate si afumate.",
-        productNumbers: [9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 26]
+        productNumbers: [9, 10, 11, 12, 13, 14, 15, 16, 17, 19, 20, 21, 22, 23, 24, 26]
       },
       {
         id: "carne-afumata",
         title: "Carne afumata",
         description: "Categoria pentru afumaturi din carne, pregatita pentru produse noi.",
-        productNumbers: [products[products.length - 1].number]
+        productNumbers: [18, products[products.length - 1].number]
       },
       {
         id: "cascaval",
@@ -1607,6 +1750,27 @@
       return escapeHtml(src);
     }
 
+    function productDetailText(product) {
+      return product.description || product.unit || "Disponibilitatea si detaliile se confirma rapid la telefon.";
+    }
+
+    function productPriceLabel(product) {
+      const price = String(product.price || "").trim();
+      if (!price) {
+        return "";
+      }
+      return price;
+    }
+
+    function productPriceBadge(product) {
+      const price = productPriceLabel(product);
+      if (!price) {
+        return "";
+      }
+      const unit = String(product.unit || "").trim();
+      return `<span class="price-pill" aria-label="${escapeHtml(unit ? `${price}, ${unit}` : price)}"><span>${escapeHtml(price)}</span>${unit ? `<small>${escapeHtml(unit)}</small>` : ""}</span>`;
+    }
+
     function normalizeManagedProduct(product, index) {
       const title = product.title || product.name || `Produs nou ${index + 1}`;
       const image = normalizeImagePath(product.image || product.src || "");
@@ -1620,6 +1784,8 @@
         alt: product.alt || title,
         category: product.category || "peste",
         description: product.description || "Disponibilitatea si detaliile se confirma rapid la telefon.",
+        price: product.price || "",
+        unit: product.unit || "",
         specs: Array.isArray(product.specs) ? product.specs.filter(Boolean) : [],
         managed: true
       };
@@ -1775,7 +1941,10 @@
               <div class="product-body">
                 <span class="tag">${escapeHtml(route.type === "all" ? getProductCategoryTitle(product) : title)}</span>
                 <h3>${escapeHtml(product.title)}</h3>
-                <p>${escapeHtml(product.description || "Disponibilitatea si detaliile se confirma rapid la telefon.")}</p>
+                <div class="product-info-row">
+                  <p>${escapeHtml(productDetailText(product))}</p>
+                  ${productPriceBadge(product)}
+                </div>
                 ${product.specs && product.specs.length ? `<p class="product-specs">${escapeHtml(product.specs.join(" | "))}</p>` : ""}
                 <a class="mini-link" href="tel:+37378767849">Comanda telefonic</a>
               </div>
@@ -1818,6 +1987,17 @@
       lightboxImage.alt = product.alt || "Imagine produs";
       lightboxTitle.textContent = product.title;
       lightboxCounter.textContent = `${currentGalleryIndex + 1} / ${currentGallery.length}`;
+      lightboxProductName.textContent = product.title;
+      lightboxProductDetail.textContent = productDetailText(product);
+      const price = productPriceLabel(product);
+      const unit = String(product.unit || "").trim();
+      if (price) {
+        lightboxProductPrice.textContent = unit ? `${price} / ${unit}` : price;
+        lightboxProductPrice.hidden = false;
+      } else {
+        lightboxProductPrice.textContent = "";
+        lightboxProductPrice.hidden = true;
+      }
       previousLightbox.disabled = currentGallery.length <= 1;
       nextLightbox.disabled = currentGallery.length <= 1;
     }
