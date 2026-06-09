@@ -1639,10 +1639,11 @@
     const lightboxProductDetail = document.getElementById("lightboxProductDetail");
     const lightboxProductPrice = document.getElementById("lightboxProductPrice");
 
-    const hiddenLegacyProductNumbers = new Set([1, 2, 4, 5, 8, 9, 12, 14, 16, 17, 19, 22, 27, 29]);
+    const hiddenLegacyProductNumbers = new Set([1, 2, 4, 5, 8, 9, 11, 12, 14, 16, 17, 19, 22, 27, 29]);
     const legacyProductDetails = {
+      3: { title: "Raci", description: "Galeata", price: "480 lei", unit: "Galeata" },
+      6: { title: "Raci", description: "Galeata", price: "480 lei", unit: "Galeata" },
       10: { title: "Icre", description: "100g", price: "80 lei", unit: "100g" },
-      11: { title: "Sudac", description: "", price: "", unit: "" },
       13: { title: "Cihoni", description: "100g", price: "59 lei", unit: "100g" },
       15: { title: "Cadou Mix", description: "Pret negociabil", price: "Pret negociabil", unit: "" },
       18: { title: "Sticsuri din carne", description: "100g", price: "50 lei", unit: "100g" },
@@ -1650,6 +1651,7 @@
       21: { title: "Asorti carne afumata", description: "100g", price: "50 lei", unit: "100g" },
       23: { title: "Rosioara", description: "100g", price: "49 lei", unit: "100g" },
       24: { title: "Nesetru", description: "100g", price: "85 lei", unit: "100g" },
+      25: { title: "Pompa de bere", description: "Pret negociabil", price: "Negociabil", unit: "" },
       26: { title: "Asorti", description: "Pret negociabil", price: "Negociabil", unit: "" }
     };
     const baseProducts = Array.from({ length: 29 }, (_, index) => {
@@ -1681,7 +1683,7 @@
         id: "peste",
         title: "Peste",
         description: "Selectie de produse din peste, uscate si afumate.",
-        productNumbers: [10, 11, 13, 15, 20, 23, 24, 26]
+        productNumbers: [10, 13, 15, 20, 23, 24, 26]
       },
       {
         id: "carne-afumata",

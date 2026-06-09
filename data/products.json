@@ -54,9 +54,11 @@
       "title": "Raci",
       "category": "raci",
       "image": "https://i.imgur.com/jZmsmt9.jpeg",
-      "description": "Produs din categoria raci, disponibilitatea se confirma la telefon.",
+      "description": "Galeata",
       "specs": [],
-      "alt": "Raci Bere si Raci"
+      "alt": "Raci Bere si Raci",
+      "unit": "Galeata",
+      "price": "480 lei"
     },
     {
       "id": "peste-afumat-02",
