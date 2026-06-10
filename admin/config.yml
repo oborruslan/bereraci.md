@@ -7,8 +7,8 @@ local_backend: true
 media_folder: "assets/products"
 public_folder: "assets/products"
 
-site_url: "https://genuine-cajeta-3c68c6.netlify.app"
-display_url: "https://genuine-cajeta-3c68c6.netlify.app"
+site_url: "https://bereraci.md"
+display_url: "https://bereraci.md"
 logo_url: "/logo-raci.jpg"
 locale: "ro"
 
@@ -38,36 +38,36 @@ collections:
                 default: "peste"
                 options:
                   - { label: "Raci", value: "raci" }
-                  - { label: "Peste", value: "peste" }
-                  - { label: "Carne afumata", value: "carne-afumata" }
-                  - { label: "Cascaval", value: "cascaval" }
-                  - { label: "Snaksuri", value: "snaksuri" }
+                  - { label: "Pește", value: "peste" }
+                  - { label: "Carne afumată", value: "carne-afumata" }
+                  - { label: "Cașcaval", value: "cascaval" }
+                  - { label: "Snacksuri", value: "snaksuri" }
                   - { label: "Bere", value: "bere" }
               - label: "Imagine produs"
                 name: "image"
                 widget: "image"
                 required: true
-                hint: "Accepta imagini web: PNG, JPG, JPEG, WEBP, GIF sau AVIF."
+                hint: "Acceptă imagini web: PNG, JPG, JPEG, WEBP, GIF sau AVIF."
               - label: "Descriere"
                 name: "description"
                 widget: "text"
                 required: false
-              - label: "Pret"
+              - label: "Preț"
                 name: "price"
                 widget: "string"
                 required: false
-                hint: "Exemplu: 44 lei sau Pret negociabil."
+                hint: "Exemplu: 44 lei sau Preț negociabil."
               - label: "Gramaj / unitate"
                 name: "unit"
                 widget: "string"
                 required: false
-                hint: "Exemplu: 100g sau Galeata."
-              - label: "Specificatii"
+                hint: "Exemplu: 100g sau Găleată."
+              - label: "Specificații"
                 name: "specs"
                 widget: "list"
                 required: false
                 field:
-                  label: "Specificatie"
+                  label: "Specificație"
                   name: "spec"
                   widget: "string"
               - label: "Text alternativ imagine"

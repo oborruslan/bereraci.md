@@ -3,12 +3,12 @@
     {
       "id": "cascaval-impletit-01",
       "active": true,
-      "title": "Cascaval impletit",
+      "title": "Cașcaval împletit",
       "category": "cascaval",
       "image": "https://i.imgur.com/5hpmvMO.jpeg",
       "description": "100g",
       "specs": [],
-      "alt": "Cascaval impletit Bere si Raci",
+      "alt": "Cașcaval împletit Bere și Raci",
       "unit": "100g",
       "price": "44 lei"
     },
@@ -20,7 +20,7 @@
       "image": "https://i.imgur.com/nMZ8wVd.jpeg",
       "description": "100g",
       "specs": [],
-      "alt": "Tolstolop Bere si Raci",
+      "alt": "Tolstolop Bere și Raci",
       "unit": "100g",
       "price": "40 lei"
     },
@@ -32,19 +32,19 @@
       "image": "https://i.imgur.com/Ib7dzH0.jpeg",
       "description": "100g",
       "specs": [],
-      "alt": "Vobla Bere si Raci",
+      "alt": "Vobla Bere și Raci",
       "unit": "100g",
       "price": "40 lei"
     },
     {
       "id": "somon-afumat-01",
       "active": true,
-      "title": "Rulada din Marlin, Maslenii, Fareli, Tuneț",
+      "title": "Ruladă din Marlin, Maslenii, Fareli, Tuneț",
       "category": "peste",
       "image": "https://i.imgur.com/IVKVZwM.jpeg",
       "description": "100g",
       "specs": [],
-      "alt": "Rulada din Marlin, Maslenii, Fareli, Tuneț Bere si Raci",
+      "alt": "Ruladă din Marlin, Maslenii, Fareli, Tuneț Bere și Raci",
       "unit": "100g",
       "price": "59 lei"
     },
@@ -54,10 +54,10 @@
       "title": "Raci",
       "category": "raci",
       "image": "https://i.imgur.com/jZmsmt9.jpeg",
-      "description": "Galeata",
+      "description": "Găleată",
       "specs": [],
-      "alt": "Raci Bere si Raci",
-      "unit": "Galeata",
+      "alt": "Raci Bere și Raci",
+      "unit": "Găleată",
       "price": "480 lei"
     },
     {
@@ -68,7 +68,7 @@
       "image": "https://i.imgur.com/VaOvc8W.jpeg",
       "description": "100g",
       "specs": [],
-      "alt": "Somn afumat Bere si Raci",
+      "alt": "Somn afumat Bere și Raci",
       "unit": "100g",
       "price": "45 lei"
     },
@@ -80,31 +80,31 @@
       "image": "https://i.imgur.com/dlbSq8b.jpeg",
       "description": "100g",
       "specs": [],
-      "alt": "Yukola Bere si Raci",
+      "alt": "Yukola Bere și Raci",
       "unit": "100g",
       "price": "79 lei"
     },
     {
       "id": "carne-afumata-01",
       "active": true,
-      "title": "Icre zvantate",
+      "title": "Icre zvântate",
       "category": "peste",
       "image": "https://i.imgur.com/MtaGz05.jpeg",
       "description": "100g",
       "specs": [],
-      "alt": "Icre zvantate Bere si Raci",
+      "alt": "Icre zvântate Bere și Raci",
       "unit": "100g",
       "price": "80 lei"
     },
     {
       "id": "urechi-afumate-01",
       "active": true,
-      "title": "Urechi porc, de casa",
+      "title": "Urechi porc, de casă",
       "category": "carne-afumata",
       "image": "https://i.imgur.com/zlKsZpu.jpeg",
       "description": "100g",
       "specs": [],
-      "alt": "Urechi porc, de casa Bere si Raci",
+      "alt": "Urechi porc, de casă Bere și Raci",
       "unit": "100g",
       "price": "44 lei"
     },
@@ -114,10 +114,10 @@
       "title": "Raci",
       "category": "raci",
       "image": "https://i.imgur.com/PaOn8xn.jpeg",
-      "description": "Galeata",
+      "description": "Găleată",
       "specs": [],
-      "alt": "Raci Bere si Raci",
-      "unit": "Galeata",
+      "alt": "Raci Bere și Raci",
+      "unit": "Găleată",
       "price": "480 lei"
     },
     {
@@ -128,7 +128,7 @@
       "image": "https://i.imgur.com/Tsr4snS.jpeg",
       "description": "100g",
       "specs": [],
-      "alt": "File tolstolop Bere si Raci",
+      "alt": "File tolstolop Bere și Raci",
       "unit": "100g",
       "price": "40 lei"
     },
@@ -140,7 +140,7 @@
       "image": "https://i.imgur.com/xWFyNaE.jpeg",
       "description": "100g",
       "specs": [],
-      "alt": "Ugric Bere si Raci",
+      "alt": "Ugric Bere și Raci",
       "unit": "100g",
       "price": "50 lei"
     },
@@ -152,7 +152,7 @@
       "image": "https://i.imgur.com/qrHXV7H.jpeg",
       "description": "100g",
       "specs": [],
-      "alt": "Verezub Bere si Raci",
+      "alt": "Verezub Bere și Raci",
       "unit": "100g",
       "price": "45 lei"
     },
@@ -162,9 +162,9 @@
       "title": "Asorti",
       "category": "carne-afumata",
       "image": "https://i.imgur.com/XOhBPYw.jpeg",
-      "description": "Pret negociabil",
+      "description": "Preț negociabil",
       "specs": [],
-      "alt": "Asorti Bere si Raci",
+      "alt": "Asorti Bere și Raci",
       "unit": "",
       "price": "Negociabil"
     },
@@ -176,43 +176,43 @@
       "image": "https://i.imgur.com/7aLLcqQ.jpeg",
       "description": "100g",
       "specs": [],
-      "alt": "Niestru Bere si Raci",
+      "alt": "Niestru Bere și Raci",
       "unit": "100g",
       "price": "85 lei"
     },
     {
       "id": "cascaval-01",
       "active": true,
-      "title": "Cascaval",
+      "title": "Cașcaval",
       "category": "cascaval",
       "image": "https://i.imgur.com/u1Dp8X2.jpeg",
       "description": "100g",
       "specs": [],
-      "alt": "Cascaval Bere si Raci",
+      "alt": "Cașcaval Bere și Raci",
       "unit": "100g",
       "price": "44 lei"
     },
     {
       "id": "cascaval-02",
       "active": true,
-      "title": "Cascaval",
+      "title": "Cașcaval",
       "category": "cascaval",
       "image": "https://i.imgur.com/cwUbAo2.jpeg",
       "description": "100g",
       "specs": [],
-      "alt": "Cascaval Bere si Raci",
+      "alt": "Cașcaval Bere și Raci",
       "unit": "100g",
       "price": "44 lei"
     },
     {
       "id": "caracatita-01",
       "active": true,
-      "title": "Caracatita",
+      "title": "Caracatiță",
       "category": "peste",
       "image": "https://i.imgur.com/hy3IVa5.jpeg",
       "description": "100g",
       "specs": [],
-      "alt": "Caracatita Bere si Raci",
+      "alt": "Caracatiță Bere și Raci",
       "unit": "100g",
       "price": "43 lei"
     },
@@ -224,7 +224,7 @@
       "image": "https://i.imgur.com/JAyME85.jpeg",
       "description": "100g",
       "specs": [],
-      "alt": "Calmar Bere si Raci",
+      "alt": "Calmar Bere și Raci",
       "unit": "100g",
       "price": "50 lei"
     },
@@ -236,7 +236,7 @@
       "image": "https://i.imgur.com/OSMoO5v.jpeg",
       "description": "100g",
       "specs": [],
-      "alt": "Anceous Bere si Raci",
+      "alt": "Anceous Bere și Raci",
       "unit": "100g",
       "price": "50 lei"
     },
@@ -248,7 +248,7 @@
       "image": "https://i.imgur.com/3CH55oM.jpeg",
       "description": "100g",
       "specs": [],
-      "alt": "Marlin Bere si Raci",
+      "alt": "Marlin Bere și Raci",
       "unit": "100g",
       "price": "50 lei"
     },
@@ -260,7 +260,7 @@
       "image": "https://i.imgur.com/qXbUe5F.jpeg",
       "description": "100g",
       "specs": [],
-      "alt": "Marlin Bere si Raci",
+      "alt": "Marlin Bere și Raci",
       "unit": "100g",
       "price": "50 lei"
     },
@@ -272,7 +272,7 @@
       "image": "https://i.imgur.com/biiCfEx.jpeg",
       "description": "100g",
       "specs": [],
-      "alt": "Marlin alb Bere si Raci",
+      "alt": "Marlin alb Bere și Raci",
       "unit": "100g",
       "price": "50 lei"
     },
@@ -284,7 +284,7 @@
       "image": "https://i.imgur.com/oOIwgYj.jpeg",
       "description": "100g",
       "specs": [],
-      "alt": "Marlin Bere si Raci",
+      "alt": "Marlin Bere și Raci",
       "unit": "100g",
       "price": "50 lei"
     },
@@ -296,7 +296,7 @@
       "image": "https://i.imgur.com/ZI7tTsm.jpeg",
       "description": "100g",
       "specs": [],
-      "alt": "Stavrid Bere si Raci",
+      "alt": "Stavrid Bere și Raci",
       "unit": "100g",
       "price": "50 lei"
     },
@@ -308,7 +308,7 @@
       "image": "https://i.imgur.com/w0Bmq6F.jpeg",
       "description": "1L",
       "specs": [],
-      "alt": "Bere & Raci Blond Lager Bere si Raci",
+      "alt": "Bere & Raci Blond Lager Bere și Raci",
       "unit": "1L",
       "price": "38 lei"
     },
@@ -320,7 +320,7 @@
       "image": "https://i.imgur.com/uWX8Uu2.jpeg",
       "description": "1L",
       "specs": [],
-      "alt": "Project 22 Hazy IPA Bere si Raci",
+      "alt": "Project 22 Hazy IPA Bere și Raci",
       "unit": "1L",
       "price": "50 lei"
     },
@@ -332,7 +332,7 @@
       "image": "https://i.imgur.com/0RmvsSH.jpeg",
       "description": "1L",
       "specs": [],
-      "alt": "Zlata Praha Lager 4.7% Bere si Raci",
+      "alt": "Zlata Praha Lager 4.7% Bere și Raci",
       "unit": "1L",
       "price": "68 lei"
     },
@@ -344,7 +344,7 @@
       "image": "https://i.imgur.com/hT6ReGR.jpeg",
       "description": "1L",
       "specs": [],
-      "alt": "Zlata Praha Ale 5% Bere si Raci",
+      "alt": "Zlata Praha Ale 5% Bere și Raci",
       "unit": "1L",
       "price": "50 lei"
     },
@@ -356,7 +356,7 @@
       "image": "https://i.imgur.com/Q75ectI.jpeg",
       "description": "1L",
       "specs": [],
-      "alt": "Hopfenbrau Pils Bere si Raci",
+      "alt": "Hopfenbrau Pils Bere și Raci",
       "unit": "1L",
       "price": "48 lei"
     },
@@ -368,7 +368,7 @@
       "image": "https://i.imgur.com/Ox5lSiG.jpeg",
       "description": "1L",
       "specs": [],
-      "alt": "Beermaster 110 Ale Bere si Raci",
+      "alt": "Beermaster 110 Ale Bere și Raci",
       "unit": "1L",
       "price": "55 lei"
     },
@@ -380,19 +380,19 @@
       "image": "https://i.imgur.com/xhyW2XX.jpeg",
       "description": "1L",
       "specs": [],
-      "alt": "Harap Alb Blanche Beer Bere si Raci",
+      "alt": "Harap Alb Blanche Beer Bere și Raci",
       "unit": "1L",
       "price": "52 lei"
     },
     {
       "id": "bere-07",
       "active": true,
-      "title": "Mojito fara alcool",
+      "title": "Mojito fără alcool",
       "category": "bere",
       "image": "https://i.imgur.com/le7S5vr.jpeg",
       "description": "1L",
       "specs": [],
-      "alt": "Mojito fara alcool Bere si Raci",
+      "alt": "Mojito fără alcool Bere și Raci",
       "unit": "1L",
       "price": "30 lei"
     },
@@ -404,7 +404,7 @@
       "image": "https://i.imgur.com/XQFbl1C.jpeg",
       "description": "1L",
       "specs": [],
-      "alt": "Cvas fermentat Bere si Raci",
+      "alt": "Cvas fermentat Bere și Raci",
       "unit": "1L",
       "price": "24 lei"
     },
@@ -416,19 +416,19 @@
       "image": "https://i.imgur.com/twJWpJI.jpeg",
       "description": "1L",
       "specs": [],
-      "alt": "Jigulevskoe Lager Bere si Raci",
+      "alt": "Jigulevskoe Lager Bere și Raci",
       "unit": "1L",
       "price": "38 lei"
     },
     {
       "id": "bere-10",
       "active": true,
-      "title": "Marul viu",
+      "title": "Mărul viu",
       "category": "bere",
       "image": "https://i.imgur.com/WXHtQC1.jpeg",
       "description": "1L",
       "specs": [],
-      "alt": "Marul viu Bere si Raci",
+      "alt": "Mărul viu Bere și Raci",
       "unit": "1L",
       "price": "30 lei"
     },
@@ -440,7 +440,7 @@
       "image": "https://i.imgur.com/QI7O3qL.jpeg",
       "description": "1L",
       "specs": [],
-      "alt": "Beermaster Weizen Bere si Raci",
+      "alt": "Beermaster Weizen Bere și Raci",
       "unit": "1L",
       "price": "51 lei"
     },
@@ -452,7 +452,7 @@
       "image": "https://i.imgur.com/VmX3HIa.jpeg",
       "description": "1L",
       "specs": [],
-      "alt": "Golden Lager Bere si Raci",
+      "alt": "Golden Lager Bere și Raci",
       "unit": "1L",
       "price": "43 lei"
     },
@@ -464,7 +464,7 @@
       "image": "https://i.imgur.com/R2tQkjU.jpeg",
       "description": "1L",
       "specs": [],
-      "alt": "231 City Lager Bere si Raci",
+      "alt": "231 City Lager Bere și Raci",
       "unit": "1L",
       "price": "51 lei"
     }
