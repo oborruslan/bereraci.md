@@ -2,7 +2,13 @@
 <html lang="ro">
 <head>
   <meta charset="utf-8">
+  <script>
+    if (location.protocol === "http:" && /^(www\.)?bereraci\.md$/i.test(location.hostname)) {
+      location.replace(`https://bereraci.md${location.pathname}${location.search}${location.hash}`);
+    }
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
   <title>Termeni și condiții | Bere & Raci</title>
   <meta name="description" content="Termeni și condiții pentru site-ul berăriei Bere & Raci din Bălți, Republica Moldova.">
   <meta name="robots" content="index, follow">

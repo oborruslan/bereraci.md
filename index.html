@@ -2,13 +2,24 @@
 <html lang="ro">
 <head>
   <meta charset="utf-8">
+  <script>
+    if (location.protocol === "http:" && /^(www\.)?bereraci\.md$/i.test(location.hostname)) {
+      location.replace(`https://bereraci.md${location.pathname}${location.search}${location.hash}`);
+    }
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
   <title>Bere & Raci | Berărie în Bălți</title>
   <meta name="description" content="Bere & Raci este o berărie în Bălți cu bere rece, raci, pește uscat, carne afumată, cașcaval, snacksuri și delicatese.">
   <meta name="robots" content="index, follow">
   <meta name="author" content="Bere & Raci">
   <meta name="application-name" content="Bere & Raci">
+  <meta name="keywords" content="bereraci.md, Bere & Raci, Bere și Raci, berărie Bălți, bere Bălți, raci Bălți, pește uscat Bălți, carne afumată Bălți, snacksuri pentru bere">
+  <meta name="geo.region" content="MD-BA">
+  <meta name="geo.placename" content="Bălți">
   <link rel="canonical" href="https://bereraci.md/">
+  <link rel="alternate" hreflang="ro-MD" href="https://bereraci.md/">
+  <link rel="sitemap" type="application/xml" href="https://bereraci.md/sitemap.xml">
   <link rel="preconnect" href="https://identity.netlify.com">
   <link rel="preconnect" href="https://i.imgur.com">
   <link rel="icon" href="/favicon.ico" sizes="any">
