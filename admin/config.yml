@@ -43,6 +43,7 @@ collections:
                   - { label: "Cașcaval", value: "cascaval" }
                   - { label: "Snacksuri", value: "snaksuri" }
                   - { label: "Bere", value: "bere" }
+                  - { label: "Sucuri fresh", value: "sucuri-fresh" }
               - label: "Imagine produs"
                 name: "image"
                 widget: "image"
