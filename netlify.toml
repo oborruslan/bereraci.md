@@ -1,6 +1,24 @@
 [build]
   publish = "."
 
+[[redirects]]
+  from = "http://bereraci.md/*"
+  to = "https://bereraci.md/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.bereraci.md/*"
+  to = "https://bereraci.md/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.bereraci.md/*"
+  to = "https://bereraci.md/:splat"
+  status = 301
+  force = true
+
 [[headers]]
   for = "/*"
   [headers.values]
