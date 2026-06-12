@@ -211,6 +211,18 @@
       gap: 48px;
     }
 
+    .hero-kicker-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      max-width: 650px;
+    }
+
+    .hero-kicker-row .eyebrow {
+      flex: 1 1 auto;
+    }
+
     .eyebrow {
       margin: 0 0 14px;
       color: var(--gold);
@@ -289,7 +301,8 @@
     .btn:focus-visible,
     .call:focus-visible,
     .map-link:focus-visible,
-    .mobile-action:focus-visible {
+    .mobile-action:focus-visible,
+    .hero-social-links a:focus-visible {
       outline: 3px solid rgba(255, 207, 110, .42);
       outline-offset: 3px;
     }
@@ -301,6 +314,51 @@
       width: 19px;
       height: 19px;
       flex: 0 0 auto;
+    }
+
+    .hero-visual {
+      justify-self: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .hero-social-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .hero-social-links-mobile {
+      display: none;
+    }
+
+    .hero-social-links a {
+      width: 54px;
+      height: 54px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(5, 4, 3, .68);
+      border: 1px solid rgba(230, 168, 59, .48);
+      color: var(--gold);
+      box-shadow: 0 12px 26px rgba(0, 0, 0, .36);
+      transition: transform .18s ease, background .18s ease, border-color .18s ease;
+    }
+
+    .hero-social-links a:hover {
+      transform: translateY(-1px);
+      background: rgba(230, 168, 59, .14);
+      border-color: rgba(255, 207, 110, .68);
+    }
+
+    .hero-social-links svg {
+      width: 26px;
+      height: 26px;
+      fill: currentColor;
     }
 
     .hero-logo {
@@ -1029,6 +1087,11 @@
         width: 240px;
       }
 
+      .hero-visual {
+        justify-self: start;
+        align-items: flex-start;
+      }
+
       .category-grid,
       .product-grid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1088,6 +1151,35 @@
 
       .hero-logo {
         width: 190px;
+      }
+
+      .hero-kicker-row {
+        max-width: 100%;
+        margin-bottom: 14px;
+      }
+
+      .hero-kicker-row .eyebrow {
+        margin: 0;
+      }
+
+      .hero-social-links-desktop {
+        display: none;
+      }
+
+      .hero-social-links-mobile {
+        display: flex;
+        flex: 0 0 auto;
+        gap: 8px;
+      }
+
+      .hero-social-links-mobile a {
+        width: 38px;
+        height: 38px;
+      }
+
+      .hero-social-links-mobile svg {
+        width: 19px;
+        height: 19px;
       }
 
       .actions {
@@ -1292,7 +1384,7 @@
         "https://www.instagram.com/raci.balti",
         "https://www.tiktok.com/@bere.raci"
       ],
-      "servesCuisine": ["Raci", "Pește uscat", "Carne afumată", "Cașcaval", "Snacksuri", "Bere", "Sucuri fresh"],
+      "servesCuisine": ["Raci", "Pește uscat", "Carne afumată", "Cașcaval", "Snacksuri", "Bere", "Termocheguri", "Sucuri fresh"],
       "openingHoursSpecification": [
         {"@type": "OpeningHoursSpecification", "dayOfWeek": "Monday", "opens": "12:00", "closes": "23:00"},
         {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday", "Wednesday", "Thursday"], "opens": "11:00", "closes": "23:00"},
@@ -1318,6 +1410,7 @@
         <a href="#categorie-cascaval" data-route="category" data-category="cascaval">Cașcaval</a>
         <a href="#categorie-snaksuri" data-route="category" data-category="snaksuri">Snacksuri</a>
         <a href="#categorie-bere" data-route="category" data-category="bere">Bere</a>
+        <a href="#categorie-termocheguri" data-route="category" data-category="termocheguri">Termocheguri</a>
         <a href="#categorie-sucuri-fresh" data-route="category" data-category="sucuri-fresh">Sucuri fresh</a>
       </nav>
 
@@ -1334,7 +1427,26 @@
     <section class="hero">
       <div class="shell hero-content">
         <div>
-          <p class="eyebrow">BERĂRIE ÎN BĂLȚI</p>
+          <div class="hero-kicker-row">
+            <p class="eyebrow">BERĂRIE ÎN BĂLȚI</p>
+            <div class="hero-social-links hero-social-links-mobile" aria-label="Retele sociale">
+              <a href="https://www.instagram.com/raci.balti?igsh=ZGVxcHhmNnJicWpm" target="_blank" rel="noopener noreferrer" aria-label="Instagram Bere & Raci">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2Zm0 2A3.8 3.8 0 0 0 4 7.8v8.4A3.8 3.8 0 0 0 7.8 20h8.4a3.8 3.8 0 0 0 3.8-3.8V7.8A3.8 3.8 0 0 0 16.2 4H7.8Zm4.2 3.2a4.8 4.8 0 1 1 0 9.6 4.8 4.8 0 0 1 0-9.6Zm0 2a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 0 0 0-5.6Zm5-1.75a1.15 1.15 0 1 1 0 2.3 1.15 1.15 0 0 1 0-2.3Z"/>
+                </svg>
+              </a>
+              <a href="https://www.tiktok.com/@bere.raci?_r=1&_t=ZS-96n6DZ2PbcK" target="_blank" rel="noopener noreferrer" aria-label="TikTok Bere & Raci">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M16.7 2c.35 2.45 1.7 3.9 4.05 4.05v3.02a7.4 7.4 0 0 1-4.02-1.2v6.74c0 3.44-2.34 6.09-5.83 6.36-3.22.25-6.15-2.1-6.58-5.3-.48-3.58 2.3-6.63 5.78-6.63.45 0 .9.05 1.34.16v3.18a3.02 3.02 0 0 0-1.54-.28 2.88 2.88 0 0 0-2.57 3.28 2.88 2.88 0 0 0 3.15 2.5c1.76-.18 2.88-1.47 2.88-3.38V2h3.34Z"/>
+                </svg>
+              </a>
+              <a href="https://wa.me/37378767849" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Bere & Raci">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12.04 2a9.85 9.85 0 0 1 8.5 14.83L21.8 22l-5.3-1.2A9.85 9.85 0 1 1 12.04 2Zm.01 2a7.86 7.86 0 0 0-6.7 11.97l.28.45-.75 3.06 3.12-.7.43.25A7.85 7.85 0 1 0 12.05 4Zm-3.3 3.95c.17 0 .35 0 .5.01.13.01.32-.05.5.38.2.48.64 1.66.7 1.78.05.12.08.26.02.42-.06.16-.09.26-.18.4-.09.14-.2.31-.28.42-.09.12-.18.25-.08.48.1.23.45.74.97 1.2.67.6 1.23.79 1.46.89.23.1.36.08.5-.06.15-.17.58-.68.73-.91.15-.23.3-.19.5-.11.2.07 1.3.61 1.53.72.23.11.38.17.43.26.05.09.05.53-.13 1.04-.18.51-1.06.98-1.47 1.01-.38.03-.86.14-2.78-.65-2.35-.96-3.83-3.36-3.95-3.52-.11-.15-.94-1.25-.94-2.39 0-1.14.6-1.7.81-1.93.21-.23.46-.29.62-.29Z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
           <h1>Bere & Raci</h1>
           <p class="lead">Berărie "Bere & Raci", operată de SRL BERE & RACI, cu bere rece, raci savuroși, pește uscat, carne afumată, somon roșu afumat și delicatese pentru mese cu gust intens.</p>
           <div class="actions">
@@ -1360,8 +1472,27 @@
           </div>
         </div>
 
-        <div class="hero-logo" aria-label="Logo Bere & Raci">
-          <img src="logo-raci.jpg" alt="Bere & Raci - logo cu halbă și raci">
+        <div class="hero-visual">
+          <div class="hero-social-links hero-social-links-desktop" aria-label="Retele sociale">
+            <a href="https://www.instagram.com/raci.balti?igsh=ZGVxcHhmNnJicWpm" target="_blank" rel="noopener noreferrer" aria-label="Instagram Bere & Raci">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2Zm0 2A3.8 3.8 0 0 0 4 7.8v8.4A3.8 3.8 0 0 0 7.8 20h8.4a3.8 3.8 0 0 0 3.8-3.8V7.8A3.8 3.8 0 0 0 16.2 4H7.8Zm4.2 3.2a4.8 4.8 0 1 1 0 9.6 4.8 4.8 0 0 1 0-9.6Zm0 2a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 0 0 0-5.6Zm5-1.75a1.15 1.15 0 1 1 0 2.3 1.15 1.15 0 0 1 0-2.3Z"/>
+              </svg>
+            </a>
+            <a href="https://www.tiktok.com/@bere.raci?_r=1&_t=ZS-96n6DZ2PbcK" target="_blank" rel="noopener noreferrer" aria-label="TikTok Bere & Raci">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M16.7 2c.35 2.45 1.7 3.9 4.05 4.05v3.02a7.4 7.4 0 0 1-4.02-1.2v6.74c0 3.44-2.34 6.09-5.83 6.36-3.22.25-6.15-2.1-6.58-5.3-.48-3.58 2.3-6.63 5.78-6.63.45 0 .9.05 1.34.16v3.18a3.02 3.02 0 0 0-1.54-.28 2.88 2.88 0 0 0-2.57 3.28 2.88 2.88 0 0 0 3.15 2.5c1.76-.18 2.88-1.47 2.88-3.38V2h3.34Z"/>
+              </svg>
+            </a>
+            <a href="https://wa.me/37378767849" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Bere & Raci">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12.04 2a9.85 9.85 0 0 1 8.5 14.83L21.8 22l-5.3-1.2A9.85 9.85 0 1 1 12.04 2Zm.01 2a7.86 7.86 0 0 0-6.7 11.97l.28.45-.75 3.06 3.12-.7.43.25A7.85 7.85 0 1 0 12.05 4Zm-3.3 3.95c.17 0 .35 0 .5.01.13.01.32-.05.5.38.2.48.64 1.66.7 1.78.05.12.08.26.02.42-.06.16-.09.26-.18.4-.09.14-.2.31-.28.42-.09.12-.18.25-.08.48.1.23.45.74.97 1.2.67.6 1.23.79 1.46.89.23.1.36.08.5-.06.15-.17.58-.68.73-.91.15-.23.3-.19.5-.11.2.07 1.3.61 1.53.72.23.11.38.17.43.26.05.09.05.53-.13 1.04-.18.51-1.06.98-1.47 1.01-.38.03-.86.14-2.78-.65-2.35-.96-3.83-3.36-3.95-3.52-.11-.15-.94-1.25-.94-2.39 0-1.14.6-1.7.81-1.93.21-.23.46-.29.62-.29Z"/>
+              </svg>
+            </a>
+          </div>
+          <div class="hero-logo" aria-label="Logo Bere & Raci">
+            <img src="logo-raci.jpg" alt="Bere & Raci - logo cu halbă și raci">
+          </div>
         </div>
       </div>
     </section>
@@ -1385,6 +1516,7 @@
           <a href="#categorie-cascaval" data-route="category" data-category="cascaval">Cașcaval</a>
           <a href="#categorie-snaksuri" data-route="category" data-category="snaksuri">Snacksuri</a>
           <a href="#categorie-bere" data-route="category" data-category="bere">Bere</a>
+          <a href="#categorie-termocheguri" data-route="category" data-category="termocheguri">Termocheguri</a>
           <a href="#categorie-sucuri-fresh" data-route="category" data-category="sucuri-fresh">Sucuri fresh</a>
         </div>
 
@@ -1746,6 +1878,12 @@
         id: "bere",
         title: "Bere",
         description: "",
+        productNumbers: []
+      },
+      {
+        id: "termocheguri",
+        title: "Termocheguri",
+        description: "Termocheguri și accesorii pentru bere, cu preț negociabil.",
         productNumbers: [25]
       },
       {
@@ -1855,9 +1993,12 @@
       categories = categoryConfig.map((category) => {
         const legacyProducts = category.productNumbers.map((number) => productByNumber.get(number)).filter(Boolean);
         const managedProducts = products.filter((product) => product.managed && product.category === category.id);
+        const categoryProducts = category.id === "termocheguri"
+          ? [...legacyProducts, ...managedProducts]
+          : [...managedProducts, ...legacyProducts];
         return {
           ...category,
-          products: [...managedProducts, ...legacyProducts]
+          products: categoryProducts
         };
       });
     }

@@ -467,6 +467,18 @@
       "alt": "231 City Lager Bere și Raci",
       "unit": "1L",
       "price": "51 lei"
+    },
+    {
+      "id": "termocheguri-02",
+      "active": true,
+      "title": "Termocheg",
+      "category": "termocheguri",
+      "image": "assets/products/termocheg-02.jpeg",
+      "description": "Preț negociabil",
+      "specs": [],
+      "alt": "Termocheg Bere & Raci",
+      "unit": "",
+      "price": "Negociabil"
     }
   ]
 }
