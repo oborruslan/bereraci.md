@@ -38,6 +38,7 @@ collections:
                 default: "peste"
                 options:
                   - { label: "Raci", value: "raci" }
+                  - { label: "Raci vii", value: "raci-vii" }
                   - { label: "Pește", value: "peste" }
                   - { label: "Carne afumată", value: "carne-afumata" }
                   - { label: "Cașcaval", value: "cascaval" }

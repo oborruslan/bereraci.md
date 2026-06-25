@@ -61,6 +61,18 @@
       "price": "480 lei"
     },
     {
+      "id": "raci-vii-01",
+      "active": true,
+      "title": "Raci",
+      "category": "raci-vii",
+      "image": "https://i.imgur.com/jZmsmt9.jpeg",
+      "description": "Găleată",
+      "specs": [],
+      "alt": "Raci Bere și Raci",
+      "unit": "Găleată",
+      "price": "400 lei"
+    },
+    {
       "id": "peste-afumat-02",
       "active": true,
       "title": "Somn afumat",
