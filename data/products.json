@@ -49,18 +49,6 @@
       "price": "59 lei"
     },
     {
-      "id": "raci-produs-01",
-      "active": true,
-      "title": "Raci",
-      "category": "raci",
-      "image": "https://i.imgur.com/jZmsmt9.jpeg",
-      "description": "Găleată",
-      "specs": [],
-      "alt": "Raci Bere și Raci",
-      "unit": "Găleată",
-      "price": "480 lei"
-    },
-    {
       "id": "raci-vii-01",
       "active": true,
       "title": "Raci",
