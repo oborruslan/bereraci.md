@@ -54,10 +54,10 @@
       "title": "Raci",
       "category": "raci-vii",
       "image": "https://i.imgur.com/jZmsmt9.jpeg",
-      "description": "Găleată",
+      "description": "1 Kilogram de Raci Vii.",
       "specs": [],
       "alt": "Raci Bere și Raci",
-      "unit": "Găleată",
+      "unit": "1kg",
       "price": "400 lei"
     },
     {
@@ -66,7 +66,7 @@
       "title": "Raci Vii",
       "category": "raci-vii",
       "image": "assets/products/raci-vii-01.jpg",
-      "description": "1kg",
+      "description": "1 Kilogram de Raci Vii.",
       "specs": [],
       "alt": "Raci vii Bere și Raci",
       "unit": "1kg",
