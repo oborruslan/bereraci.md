@@ -21,7 +21,6 @@
   <link rel="alternate" hreflang="ro-MD" href="https://bereraci.md/">
   <link rel="sitemap" type="application/xml" href="https://bereraci.md/sitemap.xml">
   <link rel="preconnect" href="https://identity.netlify.com">
-  <link rel="preconnect" href="https://i.imgur.com">
   <link rel="preconnect" href="https://www.gstatic.com">
   <link rel="preconnect" href="https://firestore.googleapis.com">
   <link rel="icon" type="image/png" sizes="96x96" href="https://bereraci.md/favicon-96x96.png">
@@ -1568,10 +1567,18 @@
 
     .category-preview img,
     .product-image-button img {
+      display: block;
       width: 100%;
       height: 100%;
       object-fit: cover;
       object-position: center;
+    }
+
+    .category-preview img.is-fallback,
+    .product-image-button img.is-fallback {
+      object-fit: contain;
+      padding: 14px;
+      background: #100b07;
     }
 
     .category-more {
@@ -2863,119 +2870,119 @@
 
         <template id="legacyCatalog">
           <article class="card">
-            <figure><img src="https://i.imgur.com/Ag7e3OD.jpeg" alt="Produs Bere și Raci 1" loading="eager"></figure>
+            <figure><img src="assets/products/product-01.jpg" alt="Produs Bere și Raci 1" loading="eager" decoding="async"></figure>
             <div class="card-body"><span class="tag">Produse noi</span><h3>Selecție proaspătă</h3><p>O alegere potrivită pentru platouri și seri cu bere rece.</p><a class="mini-link" href="tel:+37378767849">Comandă telefonic</a></div>
           </article>
           <article class="card">
-            <figure><img src="https://i.imgur.com/K4th85h.jpeg" alt="Produs Bere și Raci 2" loading="lazy"></figure>
+            <figure><img src="assets/products/product-02.jpg" alt="Produs Bere și Raci 2" loading="lazy" decoding="async"></figure>
             <div class="card-body"><span class="tag">Bere</span><h3>Bere pentru gustări</h3><p>Combinații bune lângă raci, pește uscat și produse afumate.</p><a class="mini-link" href="tel:+37378767849">Comandă telefonic</a></div>
           </article>
           <article class="card">
-            <figure><img src="https://i.imgur.com/qQINk9r.jpeg" alt="Produs Bere și Raci 3" loading="lazy"></figure>
+            <figure><img src="assets/products/product-03.jpg" alt="Produs Bere și Raci 3" loading="lazy" decoding="async"></figure>
             <div class="card-body"><span class="tag">Pește uscat</span><h3>Pește uscat</h3><p>Gust sărat, intens și perfect pentru o bere rece.</p><a class="mini-link" href="tel:+37378767849">Comandă telefonic</a></div>
           </article>
           <article class="card">
-            <figure><img src="https://i.imgur.com/BxdV9OY.jpeg" alt="Produs Bere și Raci 4" loading="lazy"></figure>
+            <figure><img src="assets/products/product-04.jpg" alt="Produs Bere și Raci 4" loading="lazy" decoding="async"></figure>
             <div class="card-body"><span class="tag">Carne afumată</span><h3>Carne afumată</h3><p>Arome pline, textură apetisantă și aspect de vitrină premium.</p><a class="mini-link" href="tel:+37378767849">Comandă telefonic</a></div>
           </article>
           <article class="card">
-            <figure><img src="https://i.imgur.com/aHh7krQ.jpeg" alt="Produs Bere și Raci 5" loading="lazy"></figure>
+            <figure><img src="assets/products/product-05.jpg" alt="Produs Bere și Raci 5" loading="lazy" decoding="async"></figure>
             <div class="card-body"><span class="tag">Raci</span><h3>Raci savuroși</h3><p>Produsul semnătură pentru mese cu prieteni și gust marin.</p><a class="mini-link" href="tel:+37378767849">Comandă telefonic</a></div>
           </article>
           <article class="card">
-            <figure><img src="https://i.imgur.com/HoMO8N3.jpeg" alt="Produs Bere și Raci 6" loading="lazy"></figure>
+            <figure><img src="assets/products/product-06.jpg" alt="Produs Bere și Raci 6" loading="lazy" decoding="async"></figure>
             <div class="card-body"><span class="tag">Caracatiță</span><h3>Caracatiță afumată</h3><p>O delicatesă cu personalitate, pentru clienți care caută ceva special.</p><a class="mini-link" href="tel:+37378767849">Comandă telefonic</a></div>
           </article>
           <article class="card">
-            <figure><img src="https://i.imgur.com/aPgKDw4.jpeg" alt="Produs Bere și Raci 7" loading="lazy"></figure>
+            <figure><img src="assets/products/product-07.jpg" alt="Produs Bere și Raci 7" loading="lazy" decoding="async"></figure>
             <div class="card-body"><span class="tag">Somon roșu</span><h3>Somon roșu afumat</h3><p>Fin, aromat și potrivit pentru platouri reci.</p><a class="mini-link" href="tel:+37378767849">Comandă telefonic</a></div>
           </article>
           <article class="card">
-            <figure><img src="https://i.imgur.com/B01Ft8k.jpeg" alt="Produs Bere și Raci 8" loading="lazy"></figure>
+            <figure><img src="assets/products/product-08.jpg" alt="Produs Bere și Raci 8" loading="lazy" decoding="async"></figure>
             <div class="card-body"><span class="tag">Delicatese</span><h3>Gustări alese</h3><p>Produse pentru completarea platourilor gourmet.</p><a class="mini-link" href="tel:+37378767849">Comandă telefonic</a></div>
           </article>
           <article class="card">
-            <figure><img src="https://i.imgur.com/T9iOB1G.jpeg" alt="Produs Bere și Raci 9" loading="lazy"></figure>
+            <figure><img src="assets/products/product-09.jpg" alt="Produs Bere și Raci 9" loading="lazy" decoding="async"></figure>
             <div class="card-body"><span class="tag">Produse noi</span><h3>Recomandarea casei</h3><p>Arome puternice, selectate pentru clienți pofticioși.</p><a class="mini-link" href="tel:+37378767849">Comandă telefonic</a></div>
           </article>
           <article class="card">
-            <figure><img src="https://i.imgur.com/ZCxCb2t.jpeg" alt="Produs Bere și Raci 11" loading="lazy"></figure>
+            <figure><img src="assets/products/product-10.jpg" alt="Produs Bere și Raci 10" loading="lazy" decoding="async"></figure>
             <div class="card-body"><span class="tag">Afumături</span><h3>Afumătură de vitrină</h3><p>Pregătită pentru prezentare curată și alegere rapidă.</p><a class="mini-link" href="tel:+37378767849">Comandă telefonic</a></div>
           </article>
           <article class="card">
-            <figure><img src="https://i.imgur.com/099slau.jpeg" alt="Produs Bere și Raci 12" loading="lazy"></figure>
+            <figure><img src="assets/products/product-11.jpg" alt="Produs Bere și Raci 11" loading="lazy" decoding="async"></figure>
             <div class="card-body"><span class="tag">Bere</span><h3>Pereche pentru bere</h3><p>Gustări care merg natural lângă băuturi reci.</p><a class="mini-link" href="tel:+37378767849">Comandă telefonic</a></div>
           </article>
           <article class="card">
-            <figure><img src="https://i.imgur.com/osF34xN.jpeg" alt="Produs Bere și Raci 13" loading="lazy"></figure>
+            <figure><img src="assets/products/product-12.jpg" alt="Produs Bere și Raci 12" loading="lazy" decoding="async"></figure>
             <div class="card-body"><span class="tag">Raci</span><h3>Mix marin</h3><p>Produse cu personalitate pentru mese relaxate.</p><a class="mini-link" href="tel:+37378767849">Comandă telefonic</a></div>
           </article>
           <article class="card">
-            <figure><img src="https://i.imgur.com/MRBIhV0.jpeg" alt="Produs Bere și Raci 14" loading="lazy"></figure>
+            <figure><img src="assets/products/product-13.jpg" alt="Produs Bere și Raci 13" loading="lazy" decoding="async"></figure>
             <div class="card-body"><span class="tag">Carne afumată</span><h3>Felii afumate</h3><p>Aspect apetisant și gust bogat pentru platouri.</p><a class="mini-link" href="tel:+37378767849">Comandă telefonic</a></div>
           </article>
           <article class="card">
-            <figure><img src="https://i.imgur.com/t1ZiAb3.jpeg" alt="Produs Bere și Raci 15" loading="lazy"></figure>
+            <figure><img src="assets/products/product-14.jpg" alt="Produs Bere și Raci 14" loading="lazy" decoding="async"></figure>
             <div class="card-body"><span class="tag">Somon roșu</span><h3>Somon pentru platouri</h3><p>O opțiune fină pentru clienți care vor ceva premium.</p><a class="mini-link" href="tel:+37378767849">Comandă telefonic</a></div>
           </article>
           <article class="card">
-            <figure><img src="https://i.imgur.com/xhf6KZa.jpeg" alt="Produs Bere și Raci 16" loading="lazy"></figure>
+            <figure><img src="assets/products/product-15.jpg" alt="Produs Bere și Raci 15" loading="lazy" decoding="async"></figure>
             <div class="card-body"><span class="tag">Caracatiță</span><h3>Specialitate afumată</h3><p>Un produs memorabil, bun de scos în față în catalog.</p><a class="mini-link" href="tel:+37378767849">Comandă telefonic</a></div>
           </article>
           <article class="card">
-            <figure><img src="https://i.imgur.com/9sJ7k3M.jpeg" alt="Produs Bere și Raci 17" loading="lazy"></figure>
+            <figure><img src="assets/products/product-16.jpg" alt="Produs Bere și Raci 16" loading="lazy" decoding="async"></figure>
             <div class="card-body"><span class="tag">Delicatese</span><h3>Alegere gourmet</h3><p>Pentru completarea coșului cu produse deosebite.</p><a class="mini-link" href="tel:+37378767849">Comandă telefonic</a></div>
           </article>
           <article class="card">
-            <figure><img src="https://i.imgur.com/UesiYpq.jpeg" alt="Produs Bere și Raci 18" loading="lazy"></figure>
+            <figure><img src="assets/products/product-17.jpg" alt="Produs Bere și Raci 17" loading="lazy" decoding="async"></figure>
             <div class="card-body"><span class="tag">Pește uscat</span><h3>Gust marin</h3><p>Produs potrivit pentru pofta de sărat și afumat.</p><a class="mini-link" href="tel:+37378767849">Comandă telefonic</a></div>
           </article>
           <article class="card">
-            <figure><img src="https://i.imgur.com/RaaNyta.jpeg" alt="Produs Bere și Raci 19" loading="lazy"></figure>
+            <figure><img src="assets/products/product-18.jpg" alt="Produs Bere și Raci 18" loading="lazy" decoding="async"></figure>
             <div class="card-body"><span class="tag">Afumături</span><h3>Platou afumat</h3><p>Un reper vizual bun pentru oferta magazinului.</p><a class="mini-link" href="tel:+37378767849">Comandă telefonic</a></div>
           </article>
           <article class="card">
-            <figure><img src="https://i.imgur.com/rhATkZj.jpeg" alt="Produs Bere și Raci 20" loading="lazy"></figure>
+            <figure><img src="assets/products/product-19.jpg" alt="Produs Bere și Raci 19" loading="lazy" decoding="async"></figure>
             <div class="card-body"><span class="tag">Produse noi</span><h3>Produs de sezon</h3><p>Disponibilitatea poate fi confirmată rapid telefonic.</p><a class="mini-link" href="tel:+37378767849">Comandă telefonic</a></div>
           </article>
           <article class="card">
-            <figure><img src="https://i.imgur.com/rTn3Vbl.jpeg" alt="Produs Bere și Raci 21" loading="lazy"></figure>
+            <figure><img src="assets/products/product-20.jpg" alt="Produs Bere și Raci 20" loading="lazy" decoding="async"></figure>
             <div class="card-body"><span class="tag">Bere</span><h3>Gustare pentru bere</h3><p>O combinație simplă, clară și ușor de comandat.</p><a class="mini-link" href="tel:+37378767849">Comandă telefonic</a></div>
           </article>
           <article class="card">
-            <figure><img src="https://i.imgur.com/aaFDK1V.jpeg" alt="Produs Bere și Raci 23" loading="lazy"></figure>
+            <figure><img src="assets/products/product-21.jpg" alt="Produs Bere și Raci 21" loading="lazy" decoding="async"></figure>
             <div class="card-body"><span class="tag">Carne afumată</span><h3>Afumătură consistentă</h3><p>O categorie ușor de remarcat în catalogul vizual.</p><a class="mini-link" href="tel:+37378767849">Comandă telefonic</a></div>
           </article>
           <article class="card">
-            <figure><img src="https://i.imgur.com/zNPW4dJ.jpeg" alt="Produs Bere și Raci 24" loading="lazy"></figure>
+            <figure><img src="assets/products/product-22.jpg" alt="Produs Bere și Raci 22" loading="lazy" decoding="async"></figure>
             <div class="card-body"><span class="tag">Raci</span><h3>Ofertă pentru raci</h3><p>Disponibilă pentru comenzi și detalii la telefon.</p><a class="mini-link" href="tel:+37378767849">Comandă telefonic</a></div>
           </article>
           <article class="card">
-            <figure><img src="https://i.imgur.com/IGvcDnP.jpeg" alt="Produs Bere și Raci 25" loading="lazy"></figure>
+            <figure><img src="assets/products/product-23.jpg" alt="Produs Bere și Raci 23" loading="lazy" decoding="async"></figure>
             <div class="card-body"><span class="tag">Somon roșu</span><h3>Delicatesă roșie</h3><p>Aspect premium pentru prezentarea produselor fine.</p><a class="mini-link" href="tel:+37378767849">Comandă telefonic</a></div>
           </article>
           <article class="card">
-            <figure><img src="https://i.imgur.com/te79zpG.jpeg" alt="Produs Bere și Raci 26" loading="lazy"></figure>
+            <figure><img src="assets/products/product-24.jpg" alt="Produs Bere și Raci 24" loading="lazy" decoding="async"></figure>
             <div class="card-body"><span class="tag">Caracatiță</span><h3>Aromă afumată</h3><p>Produs diferit, bun pentru clienți curioși.</p><a class="mini-link" href="tel:+37378767849">Comandă telefonic</a></div>
           </article>
           <article class="card">
-            <figure><img src="https://i.imgur.com/AIkyNpg.jpeg" alt="Produs Bere și Raci 27" loading="lazy"></figure>
+            <figure><img src="assets/products/product-25.jpg" alt="Produs Bere și Raci 25" loading="lazy" decoding="async"></figure>
             <div class="card-body"><span class="tag">Delicatese</span><h3>Specialitate gourmet</h3><p>Un accent bun pentru diversitatea magazinului.</p><a class="mini-link" href="tel:+37378767849">Comandă telefonic</a></div>
           </article>
           <article class="card">
-            <figure><img src="https://i.imgur.com/AiJATJA.jpeg" alt="Produs Bere și Raci 28" loading="lazy"></figure>
+            <figure><img src="assets/products/product-26.jpg" alt="Produs Bere și Raci 26" loading="lazy" decoding="async"></figure>
             <div class="card-body"><span class="tag">Produse noi</span><h3>Noutate în raft</h3><p>Poate fi actualizată rapid cu numele exact al produsului.</p><a class="mini-link" href="tel:+37378767849">Comandă telefonic</a></div>
           </article>
           <article class="card">
-            <figure><img src="https://i.imgur.com/d4fSI30.jpeg" alt="Produs Bere și Raci 29" loading="lazy"></figure>
+            <figure><img src="assets/products/product-27.jpg" alt="Produs Bere și Raci 27" loading="lazy" decoding="async"></figure>
             <div class="card-body"><span class="tag">Pește uscat</span><h3>Produs pescăresc</h3><p>O opțiune vizuală bună pentru zona de pește și bere.</p><a class="mini-link" href="tel:+37378767849">Comandă telefonic</a></div>
           </article>
           <article class="card">
-            <figure><img src="https://i.imgur.com/30H2bIp.jpeg" alt="Produs Bere și Raci 30" loading="lazy"></figure>
+            <figure><img src="assets/products/product-28.jpg" alt="Produs Bere și Raci 28" loading="lazy" decoding="async"></figure>
             <div class="card-body"><span class="tag">Carne afumată</span><h3>Gust intens</h3><p>Produs cu impact vizual pentru secțiunea de afumături.</p><a class="mini-link" href="tel:+37378767849">Comandă telefonic</a></div>
           </article>
           <article class="card">
-            <figure><img src="https://i.imgur.com/qjinQOG.jpeg" alt="Produs Bere și Raci 31" loading="lazy"></figure>
+            <figure><img src="assets/products/product-29.jpg" alt="Produs Bere și Raci 29" loading="lazy" decoding="async"></figure>
             <div class="card-body"><span class="tag">Recomandări</span><h3>Produs recomandat</h3><p>Pregătit pentru descrierea exactă după validarea clientului.</p><a class="mini-link" href="tel:+37378767849">Comandă telefonic</a></div>
           </article>
         </template>
@@ -3195,7 +3202,7 @@
     </div>
     <button class="lightbox-nav lightbox-prev" type="button" aria-label="Imaginea precedentă">&lsaquo;</button>
     <figure class="lightbox-stage">
-      <img src="" alt="">
+      <img src="" alt="" decoding="async">
       <figcaption class="lightbox-caption">
         <span id="lightboxTitle">Produs Bere & Raci</span>
         <span class="lightbox-counter" id="lightboxCounter">1 / 1</span>
@@ -3218,6 +3225,7 @@
     const lightboxProductDetail = document.getElementById("lightboxProductDetail");
     const lightboxProductPrice = document.getElementById("lightboxProductPrice");
 
+    const PRODUCT_IMAGE_FALLBACK = "logo-raci.jpg";
     const hiddenLegacyProductNumbers = new Set([1, 2, 4, 5, 8, 9, 11, 12, 14, 16, 17, 19, 22, 27, 29]);
     const legacyProductDetails = {
       3: { title: "Raci", description: "Găleată", price: "480 lei", unit: "Găleată" },
@@ -3350,17 +3358,44 @@
       return image.replace(/^\/+/, "").replace(/^\.?\//, "");
     }
 
+    function isExternalImage(src) {
+      return /^(?:https?:|data:|blob:)/i.test(String(src || ""));
+    }
+
     function cacheBustImage(src) {
-      if (!src || /^(?:data:|blob:)/i.test(src)) {
+      if (!src || isExternalImage(src)) {
         return src;
       }
       const separator = src.includes("?") ? "&" : "?";
       return `${src}${separator}v=${managedAssetsVersion}`;
     }
 
+    function productImageSrc(product) {
+      return product && product.managed ? cacheBustImage(product.src) : product.src;
+    }
+
     function imageSrcForProduct(product) {
-      const src = product.managed ? cacheBustImage(product.src) : product.src;
-      return escapeHtml(src);
+      return escapeHtml(productImageSrc(product));
+    }
+
+    function preloadProductImage(product) {
+      const src = productImageSrc(product);
+      if (!src) {
+        return;
+      }
+      const preloadImage = new Image();
+      preloadImage.decoding = "async";
+      preloadImage.src = src;
+    }
+
+    function preloadNearbyImages() {
+      if (currentGallery.length <= 1) {
+        return;
+      }
+      const previousIndex = (currentGalleryIndex - 1 + currentGallery.length) % currentGallery.length;
+      const nextIndex = (currentGalleryIndex + 1) % currentGallery.length;
+      preloadProductImage(currentGallery[previousIndex]);
+      preloadProductImage(currentGallery[nextIndex]);
     }
 
     function productDetailText(product) {
@@ -3608,7 +3643,7 @@
         const overlay = index === 3 && remainingProducts > 0 ? `<span class="category-more">+${remainingProducts}</span>` : "";
         return `
           <span class="category-preview-item${onlyClass}">
-            <img src="${imageSrcForProduct(product)}" alt="${escapeHtml(product.alt)}" loading="${index === 0 ? "eager" : "lazy"}" data-product-image="${escapeHtml(product.src)}">
+            <img src="${imageSrcForProduct(product)}" alt="${escapeHtml(product.alt)}" loading="${index === 0 ? "eager" : "lazy"}" decoding="async" fetchpriority="${index === 0 ? "high" : "auto"}" data-product-image="${escapeHtml(product.src)}" data-fallback-image="${PRODUCT_IMAGE_FALLBACK}">
             ${overlay}
           </span>
         `;
@@ -3659,7 +3694,7 @@
           ${productList.map((product, index) => `
             <article class="product-card">
               <button class="product-image-button" type="button" data-gallery-index="${index}" aria-label="Deschide ${escapeHtml(product.title)}">
-                <img src="${imageSrcForProduct(product)}" alt="${escapeHtml(product.alt)}" loading="${index < 4 ? "eager" : "lazy"}" data-product-image="${escapeHtml(product.src)}">
+                <img src="${imageSrcForProduct(product)}" alt="${escapeHtml(product.alt)}" loading="${index < 4 ? "eager" : "lazy"}" decoding="async" fetchpriority="${index < 4 ? "high" : "auto"}" data-product-image="${escapeHtml(product.src)}" data-fallback-image="${PRODUCT_IMAGE_FALLBACK}">
               </button>
               <div class="product-body">
                 <span class="tag">${escapeHtml(title)}</span>
@@ -3705,11 +3740,14 @@
       lightbox.classList.add("is-open");
       lightbox.setAttribute("aria-hidden", "false");
       document.body.style.overflow = "hidden";
+      preloadNearbyImages();
     }
 
     function updateLightboxImage() {
       const product = currentGallery[currentGalleryIndex];
-      lightboxImage.src = product.managed ? cacheBustImage(product.src) : product.src;
+      lightboxImage.dataset.fallbackTried = "false";
+      lightboxImage.classList.remove("is-fallback");
+      lightboxImage.src = productImageSrc(product);
       lightboxImage.alt = product.alt || "Imagine produs";
       lightboxTitle.textContent = product.title;
       lightboxCounter.textContent = `${currentGalleryIndex + 1} / ${currentGallery.length}`;
@@ -3734,6 +3772,7 @@
       }
       currentGalleryIndex = (currentGalleryIndex + direction + currentGallery.length) % currentGallery.length;
       updateLightboxImage();
+      preloadNearbyImages();
     }
 
     function showAdjacentImageFromGesture(direction) {
@@ -3794,9 +3833,18 @@
         return;
       }
       image.dataset.fallbackTried = "true";
-      const fallbackSrc = normalizeImagePath(image.dataset.productImage);
-      image.src = cacheBustImage(fallbackSrc);
+      image.classList.add("is-fallback");
+      image.src = normalizeImagePath(image.dataset.fallbackImage || PRODUCT_IMAGE_FALLBACK);
     }, true);
+
+    lightboxImage.addEventListener("error", () => {
+      if (lightboxImage.dataset.fallbackTried === "true") {
+        return;
+      }
+      lightboxImage.dataset.fallbackTried = "true";
+      lightboxImage.classList.add("is-fallback");
+      lightboxImage.src = PRODUCT_IMAGE_FALLBACK;
+    });
 
     closeLightbox.addEventListener("click", hideLightbox);
     previousLightbox.addEventListener("click", () => showAdjacentImage(-1));
