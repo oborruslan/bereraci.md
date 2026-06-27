@@ -2596,7 +2596,7 @@
       <nav class="menu" aria-label="Categorii produse">
         <a href="#catalog" data-route="categories">Categorii</a>
         <a href="#toate-produsele" data-route="all">Toate produsele</a>
-        <a href="#tombola">Tombolă</a>
+        <a href="#tombola" data-route="tombola">Tombolă</a>
         <a href="#categorie-raci" data-route="category" data-category="raci">Raci</a>
         <a href="#categorie-raci-vii" data-route="category" data-category="raci-vii">Raci vii</a>
         <a href="#categorie-peste" data-route="category" data-category="peste">Pește</a>
@@ -3157,6 +3157,7 @@
 
     let currentGallery = [];
     let currentGalleryIndex = 0;
+    let activeNavigationScope = "";
     let touchStartX = 0;
     let touchStartY = 0;
     let touchStarted = false;
@@ -3295,6 +3296,9 @@
       if (hash === "toate-produsele") {
         return { type: "all" };
       }
+      if (hash === "tombola") {
+        return { type: "tombola" };
+      }
       if (hash.startsWith("categorie-")) {
         const categoryId = hash.replace("categorie-", "");
         if (getCategory(categoryId)) {
@@ -3308,17 +3312,45 @@
       if (route === "all") {
         return "#toate-produsele";
       }
+      if (route === "tombola") {
+        return "#tombola";
+      }
       if (route === "category") {
         return `#categorie-${categoryId}`;
       }
       return "#catalog";
     }
 
+    function navigationScopeForLink(link) {
+      if (link.closest("#catalogNav")) {
+        return "catalog";
+      }
+      if (link.closest(".menu")) {
+        return "menu";
+      }
+      return "";
+    }
+
+    function navigationLinksForScope() {
+      if (activeNavigationScope === "catalog") {
+        return document.querySelectorAll("#catalogNav [data-route]");
+      }
+      if (activeNavigationScope === "menu") {
+        return document.querySelectorAll(".menu [data-route]");
+      }
+      return document.querySelectorAll("[data-route]");
+    }
+
     function updateActiveNavigation(route) {
-      document.querySelectorAll("[data-route]").forEach((link) => {
+      document.querySelectorAll("[data-route].is-active").forEach((link) => {
+        link.classList.remove("is-active");
+      });
+
+      navigationLinksForScope().forEach((link) => {
         const isActive =
           (route.type === "categories" && link.dataset.route === "categories") ||
           (route.type === "all" && link.dataset.route === "all") ||
+          (route.type === "tombola" && link.dataset.route === "tombola") ||
           (route.type === "category" && link.dataset.category === route.categoryId);
         link.classList.toggle("is-active", isActive);
       });
@@ -3328,10 +3360,21 @@
       catalogSection.scrollIntoView({ behavior: "smooth", block: "start" });
     }
 
+    function scrollToHash(hash) {
+      const targetId = decodeURIComponent(String(hash || "").replace("#", ""));
+      const target = document.getElementById(targetId);
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }
+
     function navigateTo(hash) {
       if (window.location.hash === hash) {
-        renderCatalog();
-        scrollToCatalog();
+        if (hash === "#catalog" || hash === "#toate-produsele" || hash.startsWith("#categorie-")) {
+          renderCatalog();
+        }
+        updateActiveNavigation(routeFromHash());
+        scrollToHash(hash);
         return;
       }
       window.location.hash = hash;
@@ -3426,6 +3469,13 @@
         renderProductView(category.title, category.description, category.products, route);
         return;
       }
+      if (route.type === "tombola") {
+        if (!catalogContent.children.length) {
+          renderCategories();
+        }
+        updateActiveNavigation(route);
+        return;
+      }
       renderCategories();
     }
 
@@ -3498,18 +3548,21 @@
       const routeLink = event.target.closest("[data-route]");
       if (routeLink) {
         event.preventDefault();
+        activeNavigationScope = navigationScopeForLink(routeLink);
         navigateTo(hashForRoute(routeLink.dataset.route, routeLink.dataset.category));
         return;
       }
 
       const categoryButton = event.target.closest("[data-open-category]");
       if (categoryButton) {
+        activeNavigationScope = "catalog";
         navigateTo(hashForRoute("category", categoryButton.dataset.openCategory));
         return;
       }
 
       const backButton = event.target.closest("[data-open-categories]");
       if (backButton) {
+        activeNavigationScope = "catalog";
         navigateTo("#catalog");
         return;
       }
@@ -3616,6 +3669,12 @@
       }
     });
     window.addEventListener("hashchange", () => {
+      const route = routeFromHash();
+      if (route.type === "tombola") {
+        updateActiveNavigation(route);
+        return;
+      }
+
       renderCatalog();
       if (window.location.hash === "#toate-produsele" || window.location.hash.startsWith("#categorie-")) {
         scrollToCatalog();
