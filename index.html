@@ -3413,10 +3413,26 @@
       return Math.max(0, Math.min(targetTop, maxTop));
     }
 
-    function easeInOutCubic(progress) {
-      return progress < .5
-        ? 4 * progress * progress * progress
-        : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+    function easeInOutSine(progress) {
+      return -(Math.cos(Math.PI * progress) - 1) / 2;
+    }
+
+    function scrollDurationForDistance(distance) {
+      const absoluteDistance = Math.abs(distance);
+      const isMobile = window.matchMedia("(max-width: 700px)").matches;
+      const baseDuration = isMobile ? 1300 : 720;
+      const distanceDuration = absoluteDistance * (isMobile ? .82 : .42);
+      const maxDuration = isMobile ? 4200 : 1800;
+      return Math.min(Math.max(baseDuration, distanceDuration), maxDuration);
+    }
+
+    function scrollStepLimitForDistance(distance) {
+      const absoluteDistance = Math.abs(distance);
+      const isMobile = window.matchMedia("(max-width: 700px)").matches;
+      if (isMobile) {
+        return absoluteDistance > 1800 ? 180 : 90;
+      }
+      return absoluteDistance > 1800 ? 220 : 120;
     }
 
     function smoothScrollToElement(target) {
@@ -3427,7 +3443,8 @@
       const targetTop = scrollTargetTop(target);
       const startTop = window.scrollY;
       const distance = targetTop - startTop;
-      const duration = window.matchMedia("(max-width: 700px)").matches ? 980 : 640;
+      const duration = scrollDurationForDistance(distance);
+      const maxStep = scrollStepLimitForDistance(distance);
       const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
       scrollAnimationId += 1;
@@ -3440,20 +3457,31 @@
 
       const startedAt = performance.now();
 
-      function step(now) {
+      function step() {
         if (currentAnimationId !== scrollAnimationId) {
           return;
         }
 
-        const progress = Math.min((now - startedAt) / duration, 1);
-        window.scrollTo({ top: startTop + distance * easeInOutCubic(progress), left: 0, behavior: "auto" });
+        const elapsed = performance.now() - startedAt;
+        const progress = Math.min(elapsed / duration, 1);
+        const desiredTop = startTop + distance * easeInOutSine(progress);
+        const currentTop = window.scrollY;
+        const remaining = targetTop - currentTop;
+        const absoluteRemaining = Math.abs(remaining);
 
-        if (progress < 1) {
-          window.requestAnimationFrame(step);
+        if (progress >= 1 && absoluteRemaining <= 1.5) {
+          window.scrollTo({ top: targetTop, left: 0, behavior: "auto" });
+          return;
         }
+
+        const desiredDelta = desiredTop - currentTop;
+        const stepDirection = Math.sign(desiredDelta || remaining);
+        const stepSize = Math.min(Math.abs(desiredDelta || remaining), maxStep, absoluteRemaining);
+        window.scrollTo({ top: currentTop + stepDirection * stepSize, left: 0, behavior: "auto" });
+        window.setTimeout(step, 16);
       }
 
-      window.requestAnimationFrame(step);
+      window.setTimeout(step, 16);
     }
 
     function scrollToCatalog() {
