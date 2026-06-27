@@ -1,1 +1,4 @@
 *.zip
+firebase-private/
+coduri-promo-*.txt
+*firebase-adminsdk*.json
