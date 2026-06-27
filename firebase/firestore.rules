@@ -16,6 +16,9 @@ service cloud.firestore {
         && activePromoCode(code)
         && request.resource.data.keys().hasOnly([
           'promoCode',
+          'customerName',
+          'customerPhone',
+          'customerPhoneNormalized',
           'eligibleForAllDraws',
           'status',
           'source',
@@ -25,6 +28,15 @@ service cloud.firestore {
           'lastAuthUid'
         ])
         && request.resource.data.promoCode == code
+        && request.resource.data.customerName is string
+        && request.resource.data.customerName.size() >= 2
+        && request.resource.data.customerName.size() <= 80
+        && request.resource.data.customerPhone is string
+        && request.resource.data.customerPhone.size() >= 7
+        && request.resource.data.customerPhone.size() <= 24
+        && request.resource.data.customerPhoneNormalized is string
+        && request.resource.data.customerPhoneNormalized.size() >= 7
+        && request.resource.data.customerPhoneNormalized.size() <= 16
         && request.resource.data.eligibleForAllDraws == true
         && request.resource.data.status == 'active'
         && request.resource.data.source == 'bereraci.md'

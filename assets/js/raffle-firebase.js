@@ -15,6 +15,8 @@ const STORAGE_KEY = "bereraciPromoCode";
 
 const form = document.getElementById("promoCodeForm");
 const input = document.getElementById("promoCodeInput");
+const nameInput = document.getElementById("promoNameInput");
+const phoneInput = document.getElementById("promoPhoneInput");
 const submitButton = document.getElementById("promoCodeSubmit");
 const submitButtonLabel = document.getElementById("promoCodeSubmitLabel");
 const statusNode = document.getElementById("promoCodeStatus");
@@ -119,6 +121,49 @@ function normalizePromoCode(value) {
   return `${CODE_PREFIX}-${withoutPrefix.slice(0, 4)}-${withoutPrefix.slice(4)}`;
 }
 
+function normalizeName(value) {
+  return String(value || "")
+    .trim()
+    .replace(/\s+/g, " ");
+}
+
+function normalizePhone(value) {
+  const cleaned = String(value || "")
+    .trim()
+    .replace(/[^\d+]/g, "");
+
+  if (!cleaned) {
+    return "";
+  }
+
+  const plus = cleaned.startsWith("+") ? "+" : "";
+  return `${plus}${cleaned.replace(/\+/g, "")}`;
+}
+
+function phoneDigits(value) {
+  return String(value || "").replace(/\D/g, "");
+}
+
+function readCustomerProfile() {
+  const customerName = normalizeName(nameInput ? nameInput.value : "");
+  const customerPhone = normalizePhone(phoneInput ? phoneInput.value : "");
+  const customerPhoneNormalized = phoneDigits(customerPhone);
+
+  if (customerName.length < 2) {
+    throw new Error("missing-customer-name");
+  }
+
+  if (customerPhoneNormalized.length < 7) {
+    throw new Error("missing-customer-phone");
+  }
+
+  return {
+    customerName,
+    customerPhone,
+    customerPhoneNormalized
+  };
+}
+
 function rememberCode(code) {
   try {
     window.localStorage.setItem(STORAGE_KEY, code);
@@ -151,7 +196,7 @@ async function ensureFirebase() {
   }
 }
 
-async function registerPromoCode(code) {
+async function registerPromoCode(code, customerProfile) {
   const isAllowedLocally = await isCodeInEmbeddedAllowlist(code);
   if (!isAllowedLocally) {
     throw new Error("invalid-promo-code");
@@ -175,6 +220,9 @@ async function registerPromoCode(code) {
   const participantSnapshot = await getDoc(participantRef);
   const participantData = {
     promoCode: code,
+    customerName: customerProfile.customerName,
+    customerPhone: customerProfile.customerPhone,
+    customerPhoneNormalized: customerProfile.customerPhoneNormalized,
     eligibleForAllDraws: true,
     status: "active",
     source: "bereraci.md",
@@ -193,6 +241,14 @@ async function registerPromoCode(code) {
 }
 
 function friendlyError(error) {
+  if (error && error.message === "missing-customer-name") {
+    return "Scrie numele persoanei care participă la tombolă.";
+  }
+
+  if (error && error.message === "missing-customer-phone") {
+    return "Scrie un număr de telefon valid pentru contactarea câștigătorului.";
+  }
+
   if (error && error.message === "firebase-not-configured") {
     return "Firebase nu este configurat încă. Adaugă datele proiectului în assets/js/firebase-config.js.";
   }
@@ -232,8 +288,27 @@ function initializeForm() {
     input.value = input.value.toUpperCase();
   });
 
+  if (phoneInput) {
+    phoneInput.addEventListener("input", () => {
+      phoneInput.value = normalizePhone(phoneInput.value);
+    });
+  }
+
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
+    let customerProfile;
+
+    try {
+      customerProfile = readCustomerProfile();
+    } catch (error) {
+      setStatus(friendlyError(error), "error");
+      if (error.message === "missing-customer-name" && nameInput) {
+        nameInput.focus();
+      } else if (phoneInput) {
+        phoneInput.focus();
+      }
+      return;
+    }
 
     const code = normalizePromoCode(input.value);
     if (!code) {
@@ -247,7 +322,7 @@ function initializeForm() {
     setStatus("Verificăm promo codul...");
 
     try {
-      const result = await registerPromoCode(code);
+      const result = await registerPromoCode(code, customerProfile);
       const suffix = result.mode === "firebase"
         ? "Ești înscris la tombolele viitoare Bere & Raci."
         : "Codul este valid în lista locală. Pentru înscriere online permanentă, configurează Firebase și importă codurile.";

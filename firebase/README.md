@@ -24,6 +24,33 @@ node scripts/import-promo-codes-to-firestore.mjs firebase-private/promo-codes-10
 
 Pentru fiecare tombolă viitoare poți extrage participanții din `tombolaParticipants` unde `eligibleForAllDraws == true` și `status == "active"`.
 
+## Unde vezi participanții
+
+În Firebase Console intră la Firestore Database -> Data -> `tombolaParticipants`.
+
+Fiecare document are ID-ul promo codului și câmpuri pentru:
+
+- `customerName`
+- `customerPhone`
+- `promoCode`
+- `status`
+- `eligibleForAllDraws`
+- `createdAt`
+- `lastLoginAt`
+
+## Export participanți CSV
+
+```powershell
+$env:GOOGLE_APPLICATION_CREDENTIALS="C:\cale\spre\service-account.json"
+node scripts/export-tombola-participants.mjs
+```
+
+Fișierul se va crea în:
+
+```text
+firebase-private/tombola-participants.csv
+```
+
 ## Important
 
 Folderul `firebase-private/` conține cele 1000 coduri reale și este ignorat de Git. Nu îl încărca pe site-ul public.

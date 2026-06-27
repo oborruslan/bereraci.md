@@ -1747,6 +1747,17 @@
       gap: 12px;
     }
 
+    .promo-field-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .promo-field {
+      display: grid;
+      gap: 7px;
+    }
+
     .promo-form label,
     .raffle-requirements h3 {
       color: var(--amber);
@@ -1762,7 +1773,8 @@
       gap: 10px;
     }
 
-    .promo-input-row input {
+    .promo-input-row input,
+    .promo-field input {
       width: 100%;
       min-height: 52px;
       border: 1px solid rgba(255, 244, 223, .18);
@@ -1772,12 +1784,16 @@
       color: #fff4df;
       font: inherit;
       font-weight: 900;
-      letter-spacing: .08em;
-      text-transform: uppercase;
       outline: none;
     }
 
-    .promo-input-row input:focus {
+    .promo-input-row input {
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .promo-input-row input:focus,
+    .promo-field input:focus {
       border-color: rgba(230, 168, 59, .72);
       box-shadow: 0 0 0 4px rgba(230, 168, 59, .12);
     }
@@ -2390,6 +2406,10 @@
         grid-template-columns: 1fr;
       }
 
+      .promo-field-grid {
+        grid-template-columns: 1fr;
+      }
+
       .promo-input-row .btn {
         width: 100%;
       }
@@ -2846,6 +2866,16 @@
 
         <div class="raffle-panel">
           <form class="promo-form" id="promoCodeForm" novalidate>
+            <div class="promo-field-grid">
+              <div class="promo-field">
+                <label for="promoNameInput">Nume</label>
+                <input id="promoNameInput" name="customerName" type="text" autocomplete="name" maxlength="80" placeholder="Nume și prenume" required>
+              </div>
+              <div class="promo-field">
+                <label for="promoPhoneInput">Telefon</label>
+                <input id="promoPhoneInput" name="customerPhone" type="tel" inputmode="tel" autocomplete="tel" maxlength="24" placeholder="+373..." required>
+              </div>
+            </div>
             <label for="promoCodeInput">Promo code</label>
             <div class="promo-input-row">
               <input id="promoCodeInput" name="promoCode" type="text" inputmode="latin" autocomplete="one-time-code" autocapitalize="characters" spellcheck="false" placeholder="BR-XXXX-XXXX" maxlength="16" required>
