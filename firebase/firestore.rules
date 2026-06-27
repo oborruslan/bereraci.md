@@ -53,8 +53,8 @@ service cloud.firestore {
 
     match /tombolaParticipants/{code} {
       allow get: if signedIn() && activePromoCode(code);
-      allow create, update: if validParticipantWrite(code);
-      allow list, delete: if false;
+      allow create: if validParticipantWrite(code);
+      allow update, list, delete: if false;
     }
 
     match /{document=**} {

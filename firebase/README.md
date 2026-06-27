@@ -22,6 +22,8 @@ node scripts/import-promo-codes-to-firestore.mjs firebase-private/promo-codes-10
 - `promoCodes/{code}`: coduri create de administrator, de exemplu `BR-ABCD-2345`.
 - `tombolaParticipants/{code}`: participanți validați. Documentul este creat automat când clientul introduce un cod valid.
 
+Un promo cod poate crea un singur document în `tombolaParticipants`. Dacă același cod este introdus a doua oară, pagina afișează eroarea că promo codul este deja înregistrat, iar regulile Firestore blochează actualizarea documentului existent.
+
 Pentru fiecare tombolă viitoare poți extrage participanții din `tombolaParticipants` unde `eligibleForAllDraws == true` și `status == "active"`.
 
 ## Unde vezi participanții

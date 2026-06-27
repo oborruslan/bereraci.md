@@ -218,6 +218,10 @@ async function registerPromoCode(code, customerProfile) {
 
   const participantRef = doc(firestoreDb, raffleCollections.participants, code);
   const participantSnapshot = await getDoc(participantRef);
+  if (participantSnapshot.exists()) {
+    throw new Error("promo-code-already-registered");
+  }
+
   const participantData = {
     promoCode: code,
     customerName: customerProfile.customerName,
@@ -228,14 +232,11 @@ async function registerPromoCode(code, customerProfile) {
     source: "bereraci.md",
     lastAuthUid: firebaseAuth.currentUser.uid,
     lastLoginAt: serverTimestamp(),
-    updatedAt: serverTimestamp()
+    updatedAt: serverTimestamp(),
+    createdAt: serverTimestamp()
   };
 
-  if (!participantSnapshot.exists()) {
-    participantData.createdAt = serverTimestamp();
-  }
-
-  await setDoc(participantRef, participantData, { merge: true });
+  await setDoc(participantRef, participantData);
   rememberCode(code);
   return { mode: "firebase" };
 }
@@ -261,8 +262,12 @@ function friendlyError(error) {
     return "Promo codul introdus nu este valid. Verifică literele și cifrele de pe cod.";
   }
 
+  if (error && error.message === "promo-code-already-registered") {
+    return "Acest promo cod deja este înregistrat.";
+  }
+
   if (error && String(error.code || "").includes("permission-denied")) {
-    return "Codul pare valid, dar regulile Firestore nu permit înscrierea. Verifică regulile din firebase/firestore.rules.";
+    return "Acest promo cod deja este înregistrat sau nu mai poate fi folosit.";
   }
 
   return "Nu am putut verifica promo codul acum. Încearcă din nou peste câteva momente.";
@@ -277,7 +282,7 @@ function initializeForm() {
   const rememberedCode = readRememberedCode();
   if (rememberedCode) {
     input.value = rememberedCode;
-    setStatus(`Cod salvat: ${rememberedCode}. Acest cod rămâne participant la tombolele viitoare.`, "success");
+    setStatus(`Cod salvat local: ${rememberedCode}. Dacă este deja înregistrat, nu poate fi folosit încă o dată.`);
   } else if (allowlist && allowlist.count) {
     setStatus(`${allowlist.count} promo coduri sunt pregătite pentru tombolă. Introdu codul primit în magazin.`);
   } else if (!isFirebaseConfigured(firebaseConfig)) {
