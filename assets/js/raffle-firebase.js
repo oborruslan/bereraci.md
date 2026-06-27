@@ -263,11 +263,11 @@ function friendlyError(error) {
   }
 
   if (error && error.message === "promo-code-already-registered") {
-    return "Acest promo cod deja este înregistrat.";
+    return "Acest cod este deja inregistrat.";
   }
 
   if (error && String(error.code || "").includes("permission-denied")) {
-    return "Acest promo cod deja este înregistrat sau nu mai poate fi folosit.";
+    return "Acest cod este deja inregistrat.";
   }
 
   return "Nu am putut verifica promo codul acum. Încearcă din nou peste câteva momente.";
