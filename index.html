@@ -1778,8 +1778,7 @@
       gap: 7px;
     }
 
-    .promo-form label,
-    .raffle-requirements h3 {
+    .promo-form label {
       color: var(--amber);
       font-size: .82rem;
       font-weight: 950;
@@ -1830,8 +1829,7 @@
     }
 
     .promo-help,
-    .promo-status,
-    .raffle-requirements p {
+    .promo-status {
       color: #c9b18c;
       font-size: .92rem;
     }
@@ -1850,10 +1848,109 @@
       color: #ff9b86;
     }
 
-    .raffle-requirements {
-      margin-top: 22px;
-      padding-top: 18px;
-      border-top: 1px solid rgba(255, 244, 223, .12);
+    .promo-modal-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 1200;
+      display: grid;
+      place-items: center;
+      padding: 18px;
+      background: rgba(5, 3, 2, .72);
+      backdrop-filter: blur(10px);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .22s ease;
+    }
+
+    .promo-modal-backdrop.is-open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .promo-modal {
+      position: relative;
+      width: min(92vw, 420px);
+      border: 1px solid rgba(230, 168, 59, .48);
+      border-radius: 8px;
+      padding: clamp(22px, 5vw, 30px);
+      text-align: center;
+      background:
+        linear-gradient(135deg, rgba(187, 38, 31, .2), transparent 46%),
+        linear-gradient(180deg, rgba(255, 244, 223, .08), transparent),
+        #0c0906;
+      box-shadow: 0 28px 80px rgba(0, 0, 0, .46), 0 0 0 1px rgba(255, 244, 223, .05) inset;
+      transform: translateY(12px) scale(.98);
+      transition: transform .22s ease;
+    }
+
+    .promo-modal-backdrop.is-open .promo-modal {
+      transform: translateY(0) scale(1);
+    }
+
+    .promo-modal-close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      display: inline-grid;
+      width: 36px;
+      height: 36px;
+      place-items: center;
+      border: 1px solid rgba(255, 244, 223, .14);
+      border-radius: 8px;
+      color: #fff0c8;
+      background: rgba(255, 244, 223, .06);
+      cursor: pointer;
+    }
+
+    .promo-modal-close:hover,
+    .promo-modal-close:focus-visible {
+      border-color: rgba(230, 168, 59, .55);
+      outline: none;
+      box-shadow: 0 0 0 4px rgba(230, 168, 59, .12);
+    }
+
+    .promo-modal-close svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .promo-modal-icon {
+      display: inline-grid;
+      width: 58px;
+      height: 58px;
+      place-items: center;
+      margin-bottom: 14px;
+      border-radius: 50%;
+      color: #161008;
+      background: linear-gradient(135deg, #f7c866, #8ee6b8);
+      box-shadow: 0 14px 34px rgba(142, 230, 184, .18);
+    }
+
+    .promo-modal-icon svg {
+      width: 30px;
+      height: 30px;
+    }
+
+    .promo-modal h3 {
+      margin: 0 34px 10px;
+      color: #fff0c8;
+      font-size: clamp(1.18rem, 4vw, 1.45rem);
+      line-height: 1.15;
+    }
+
+    .promo-modal p {
+      margin: 0;
+      color: #f7e4be;
+      font-size: clamp(1rem, 3.8vw, 1.08rem);
+      font-weight: 850;
+      line-height: 1.45;
+    }
+
+    .promo-modal .btn {
+      width: 100%;
+      margin-top: 20px;
+      border: 0;
+      cursor: pointer;
     }
 
     .about-grid {
@@ -2935,14 +3032,27 @@
             <p class="promo-help">Dacă promo codul este corect, înscrierea se salvează automat pentru tombolele viitoare.</p>
             <p class="promo-status" id="promoCodeStatus" role="status" aria-live="polite"></p>
           </form>
-
-          <div class="raffle-requirements">
-            <h3>Cerințe de participare</h3>
-            <p>Cerințele complete pentru tombolă vor fi adăugate aici înainte de extragere.</p>
-          </div>
         </div>
       </div>
     </section>
+
+    <div class="promo-modal-backdrop" id="promoSuccessModal" hidden>
+      <div class="promo-modal" role="dialog" aria-modal="true" aria-labelledby="promoSuccessTitle" aria-describedby="promoSuccessMessage">
+        <button class="promo-modal-close" id="promoSuccessClose" type="button" aria-label="Închide">
+          <svg viewBox="0 0 24 24" aria-hidden="true" fill="none">
+            <path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+        <span class="promo-modal-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="m5 12 4 4L19 6" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <h3 id="promoSuccessTitle">Înscriere confirmată</h3>
+        <p id="promoSuccessMessage">Cod valid: BR-22BB-SPMM. Ești înscris la tombolele viitoare Bere & Raci.</p>
+        <button class="btn primary" id="promoSuccessOk" type="button">Am înțeles</button>
+      </div>
+    </div>
 
     <section class="about">
       <div class="shell about-grid">
@@ -3837,6 +3947,6 @@
       window.addEventListener("load", openIdentityForToken);
     }
   </script>
-  <script type="module" src="assets/js/raffle-firebase.js?v=20260627-duplicate-message"></script>
+  <script type="module" src="assets/js/raffle-firebase.js?v=20260627-promo-modal"></script>
 </body>
 </html>

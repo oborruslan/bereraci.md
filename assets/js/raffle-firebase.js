@@ -20,11 +20,16 @@ const phoneInput = document.getElementById("promoPhoneInput");
 const submitButton = document.getElementById("promoCodeSubmit");
 const submitButtonLabel = document.getElementById("promoCodeSubmitLabel");
 const statusNode = document.getElementById("promoCodeStatus");
+const successModal = document.getElementById("promoSuccessModal");
+const successModalMessage = document.getElementById("promoSuccessMessage");
+const successModalClose = document.getElementById("promoSuccessClose");
+const successModalOk = document.getElementById("promoSuccessOk");
 
 let firebaseApp;
 let firebaseAuth;
 let firestoreDb;
 let embeddedAllowlist;
+let successModalLastFocus = null;
 
 function isFirebaseConfigured(config) {
   return Boolean(
@@ -54,6 +59,67 @@ function setLoading(isLoading) {
   if (submitButtonLabel) {
     submitButtonLabel.textContent = isLoading ? "Se verifică..." : "Participă";
   }
+}
+
+function closeSuccessModal() {
+  if (!successModal) {
+    return;
+  }
+
+  successModal.classList.remove("is-open");
+  window.setTimeout(() => {
+    if (!successModal.classList.contains("is-open")) {
+      successModal.hidden = true;
+    }
+  }, 220);
+
+  if (successModalLastFocus && typeof successModalLastFocus.focus === "function") {
+    successModalLastFocus.focus();
+  }
+}
+
+function openSuccessModal(message) {
+  if (!successModal || !successModalMessage) {
+    return;
+  }
+
+  successModalLastFocus = document.activeElement;
+  successModalMessage.textContent = message;
+  successModal.hidden = false;
+  window.requestAnimationFrame(() => {
+    successModal.classList.add("is-open");
+    if (successModalOk) {
+      successModalOk.focus();
+    } else if (successModalClose) {
+      successModalClose.focus();
+    }
+  });
+}
+
+function initializeSuccessModal() {
+  if (!successModal) {
+    return;
+  }
+
+  successModal.addEventListener("click", (event) => {
+    if (event.target === successModal) {
+      closeSuccessModal();
+    }
+  });
+
+  if (successModalClose) {
+    successModalClose.addEventListener("click", closeSuccessModal);
+  }
+
+  if (successModalOk) {
+    successModalOk.addEventListener("click", closeSuccessModal);
+  }
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && !successModal.hidden) {
+      closeSuccessModal();
+    }
+  });
 }
 
 function readEmbeddedAllowlist() {
@@ -273,6 +339,14 @@ function friendlyError(error) {
   return "Nu am putut verifica promo codul acum. Încearcă din nou peste câteva momente.";
 }
 
+function isAlreadyRegisteredError(error) {
+  return Boolean(error && error.message === "promo-code-already-registered");
+}
+
+function successPromoMessage(code) {
+  return `Cod valid: ${code}. Ești înscris la tombolele viitoare Bere & Raci.`;
+}
+
 function initializeForm() {
   if (!form || !input) {
     return;
@@ -327,17 +401,23 @@ function initializeForm() {
     setStatus("Verificăm promo codul...");
 
     try {
-      const result = await registerPromoCode(code, customerProfile);
-      const suffix = result.mode === "firebase"
-        ? "Ești înscris la tombolele viitoare Bere & Raci."
-        : "Codul este valid în lista locală. Pentru înscriere online permanentă, configurează Firebase și importă codurile.";
-      setStatus(`Cod valid: ${code}. ${suffix}`, "success");
+      await registerPromoCode(code, customerProfile);
+      const successMessage = successPromoMessage(code);
+      setStatus(successMessage, "success");
+      openSuccessModal(successMessage);
     } catch (error) {
-      setStatus(friendlyError(error), "error");
+      if (isAlreadyRegisteredError(error)) {
+        const successMessage = successPromoMessage(code);
+        setStatus(successMessage, "success");
+        openSuccessModal(successMessage);
+      } else {
+        setStatus(friendlyError(error), "error");
+      }
     } finally {
       setLoading(false);
     }
   });
 }
 
+initializeSuccessModal();
 initializeForm();
