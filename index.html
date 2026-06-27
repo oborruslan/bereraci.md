@@ -3403,28 +3403,88 @@
       });
     }
 
+    let scrollAnimationId = 0;
+
+    function scrollTargetTop(target) {
+      const topbar = document.querySelector(".topbar");
+      const topbarHeight = topbar ? topbar.getBoundingClientRect().height : 0;
+      const targetTop = target.getBoundingClientRect().top + window.scrollY - topbarHeight - 10;
+      const maxTop = document.documentElement.scrollHeight - window.innerHeight;
+      return Math.max(0, Math.min(targetTop, maxTop));
+    }
+
+    function easeInOutCubic(progress) {
+      return progress < .5
+        ? 4 * progress * progress * progress
+        : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+    }
+
+    function smoothScrollToElement(target) {
+      if (!target) {
+        return;
+      }
+
+      const targetTop = scrollTargetTop(target);
+      const startTop = window.scrollY;
+      const distance = targetTop - startTop;
+      const duration = window.matchMedia("(max-width: 700px)").matches ? 980 : 640;
+      const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      scrollAnimationId += 1;
+      const currentAnimationId = scrollAnimationId;
+
+      if (prefersReducedMotion || Math.abs(distance) < 2) {
+        window.scrollTo({ top: targetTop, left: 0, behavior: "auto" });
+        return;
+      }
+
+      const startedAt = performance.now();
+
+      function step(now) {
+        if (currentAnimationId !== scrollAnimationId) {
+          return;
+        }
+
+        const progress = Math.min((now - startedAt) / duration, 1);
+        window.scrollTo({ top: startTop + distance * easeInOutCubic(progress), left: 0, behavior: "auto" });
+
+        if (progress < 1) {
+          window.requestAnimationFrame(step);
+        }
+      }
+
+      window.requestAnimationFrame(step);
+    }
+
     function scrollToCatalog() {
-      catalogSection.scrollIntoView({ behavior: "smooth", block: "start" });
+      smoothScrollToElement(catalogSection);
     }
 
     function scrollToHash(hash) {
       const targetId = decodeURIComponent(String(hash || "").replace("#", ""));
       const target = document.getElementById(targetId);
       if (target) {
-        target.scrollIntoView({ behavior: "smooth", block: "start" });
+        smoothScrollToElement(target);
       }
     }
 
     function navigateTo(hash) {
-      if (window.location.hash === hash) {
-        if (hash === "#catalog" || hash === "#toate-produsele" || hash.startsWith("#categorie-")) {
-          renderCatalog();
-        }
-        updateActiveNavigation(routeFromHash());
+      const sameHash = window.location.hash === hash;
+      if (!sameHash) {
+        window.history.pushState(null, "", hash);
+      }
+
+      const route = routeFromHash();
+      if (route.type === "tombola") {
+        updateActiveNavigation(route);
         scrollToHash(hash);
         return;
       }
-      window.location.hash = hash;
+
+      renderCatalog();
+      if (hash === "#catalog" || hash === "#toate-produsele" || hash.startsWith("#categorie-")) {
+        scrollToCatalog();
+      }
     }
 
     function renderCategoryPreview(category) {
@@ -3715,17 +3775,27 @@
         hideLightbox();
       }
     });
-    window.addEventListener("hashchange", () => {
+    function syncRouteFromLocation(shouldScroll = false) {
       const route = routeFromHash();
       if (route.type === "tombola") {
         updateActiveNavigation(route);
+        if (shouldScroll) {
+          scrollToHash(window.location.hash);
+        }
         return;
       }
 
       renderCatalog();
-      if (window.location.hash === "#toate-produsele" || window.location.hash.startsWith("#categorie-")) {
+      if (shouldScroll && (window.location.hash === "#catalog" || window.location.hash === "#toate-produsele" || window.location.hash.startsWith("#categorie-"))) {
         scrollToCatalog();
       }
+    }
+
+    window.addEventListener("hashchange", () => {
+      syncRouteFromLocation(true);
+    });
+    window.addEventListener("popstate", () => {
+      syncRouteFromLocation(true);
     });
     document.addEventListener("keydown", (event) => {
       if (!lightbox.classList.contains("is-open")) {
