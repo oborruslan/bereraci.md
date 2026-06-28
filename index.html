@@ -1894,6 +1894,14 @@
       transform: translateY(0) scale(1);
     }
 
+    .promo-modal-backdrop.is-error .promo-modal {
+      border-color: rgba(255, 155, 134, .56);
+      background:
+        linear-gradient(135deg, rgba(187, 38, 31, .28), transparent 48%),
+        linear-gradient(180deg, rgba(255, 244, 223, .08), transparent),
+        #0c0906;
+    }
+
     .promo-modal-close {
       position: absolute;
       top: 10px;
@@ -1933,9 +1941,20 @@
       box-shadow: 0 14px 34px rgba(142, 230, 184, .18);
     }
 
+    .promo-modal-backdrop.is-error .promo-modal-icon {
+      color: #240804;
+      background: linear-gradient(135deg, #ffbd8e, #ff6f59);
+      box-shadow: 0 14px 34px rgba(255, 111, 89, .2);
+    }
+
     .promo-modal-icon svg {
       width: 30px;
       height: 30px;
+    }
+
+    .promo-modal-backdrop.is-error .promo-modal-check,
+    .promo-modal-backdrop:not(.is-error) .promo-modal-x {
+      display: none;
     }
 
     .promo-modal h3 {
@@ -1951,6 +1970,10 @@
       font-size: clamp(1rem, 3.8vw, 1.08rem);
       font-weight: 850;
       line-height: 1.45;
+    }
+
+    .promo-modal-backdrop.is-error .promo-modal p {
+      color: #ffd7cb;
     }
 
     .promo-modal .btn {
@@ -3051,8 +3074,11 @@
           </svg>
         </button>
         <span class="promo-modal-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none">
+          <svg class="promo-modal-check" viewBox="0 0 24 24" fill="none">
             <path d="m5 12 4 4L19 6" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <svg class="promo-modal-x" viewBox="0 0 24 24" fill="none">
+            <path d="M7 7l10 10M17 7 7 17" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/>
           </svg>
         </span>
         <h3 id="promoSuccessTitle">Înscriere confirmată</h3>
@@ -3995,6 +4021,6 @@
       window.addEventListener("load", openIdentityForToken);
     }
   </script>
-  <script type="module" src="assets/js/raffle-firebase.js?v=20260627-promo-modal"></script>
+  <script type="module" src="assets/js/raffle-firebase.js?v=20260628-duplicate-modal"></script>
 </body>
 </html>

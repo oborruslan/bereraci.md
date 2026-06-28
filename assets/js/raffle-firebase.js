@@ -21,6 +21,7 @@ const submitButton = document.getElementById("promoCodeSubmit");
 const submitButtonLabel = document.getElementById("promoCodeSubmitLabel");
 const statusNode = document.getElementById("promoCodeStatus");
 const successModal = document.getElementById("promoSuccessModal");
+const successModalTitle = document.getElementById("promoSuccessTitle");
 const successModalMessage = document.getElementById("promoSuccessMessage");
 const successModalClose = document.getElementById("promoSuccessClose");
 const successModalOk = document.getElementById("promoSuccessOk");
@@ -78,13 +79,17 @@ function closeSuccessModal() {
   }
 }
 
-function openSuccessModal(message) {
+function openSuccessModal(message, type = "success", title = "Înscriere confirmată") {
   if (!successModal || !successModalMessage) {
     return;
   }
 
   successModalLastFocus = document.activeElement;
+  if (successModalTitle) {
+    successModalTitle.textContent = title;
+  }
   successModalMessage.textContent = message;
+  successModal.classList.toggle("is-error", type === "error");
   successModal.hidden = false;
   window.requestAnimationFrame(() => {
     successModal.classList.add("is-open");
@@ -329,22 +334,32 @@ function friendlyError(error) {
   }
 
   if (error && error.message === "promo-code-already-registered") {
-    return "Acest cod este deja inregistrat.";
+    return "Acest cod este deja înregistrat.";
   }
 
   if (error && String(error.code || "").includes("permission-denied")) {
-    return "Acest cod este deja inregistrat.";
+    return "Acest cod este deja înregistrat.";
   }
 
   return "Nu am putut verifica promo codul acum. Încearcă din nou peste câteva momente.";
 }
 
 function isAlreadyRegisteredError(error) {
-  return Boolean(error && error.message === "promo-code-already-registered");
+  return Boolean(
+    error &&
+    (
+      error.message === "promo-code-already-registered" ||
+      String(error.code || "").includes("permission-denied")
+    )
+  );
 }
 
 function successPromoMessage(code) {
   return `Cod valid: ${code}. Ești înscris la tombolele viitoare Bere & Raci.`;
+}
+
+function alreadyRegisteredPromoMessage(code) {
+  return `Codul ${code} este deja înregistrat.`;
 }
 
 function initializeForm() {
@@ -407,9 +422,9 @@ function initializeForm() {
       openSuccessModal(successMessage);
     } catch (error) {
       if (isAlreadyRegisteredError(error)) {
-        const successMessage = successPromoMessage(code);
-        setStatus(successMessage, "success");
-        openSuccessModal(successMessage);
+        const alreadyRegisteredMessage = alreadyRegisteredPromoMessage(code);
+        setStatus(alreadyRegisteredMessage, "error");
+        openSuccessModal(alreadyRegisteredMessage, "error", "Cod deja înregistrat");
       } else {
         setStatus(friendlyError(error), "error");
       }
