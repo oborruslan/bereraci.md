@@ -334,11 +334,11 @@ function friendlyError(error) {
   }
 
   if (error && error.message === "promo-code-already-registered") {
-    return "Acest cod este deja înregistrat.";
+    return "Acest Promo Cod este deja inregistrat";
   }
 
   if (error && String(error.code || "").includes("permission-denied")) {
-    return "Acest cod este deja înregistrat.";
+    return "Acest Promo Cod este deja inregistrat";
   }
 
   return "Nu am putut verifica promo codul acum. Încearcă din nou peste câteva momente.";
@@ -359,7 +359,7 @@ function successPromoMessage(code) {
 }
 
 function alreadyRegisteredPromoMessage(code) {
-  return `Codul ${code} este deja înregistrat.`;
+  return "Acest Promo Cod este deja inregistrat";
 }
 
 function initializeForm() {
@@ -424,7 +424,7 @@ function initializeForm() {
       if (isAlreadyRegisteredError(error)) {
         const alreadyRegisteredMessage = alreadyRegisteredPromoMessage(code);
         setStatus(alreadyRegisteredMessage, "error");
-        openSuccessModal(alreadyRegisteredMessage, "error", "Cod deja înregistrat");
+        openSuccessModal(alreadyRegisteredMessage, "error", "Cod deja inregistrat");
       } else {
         setStatus(friendlyError(error), "error");
       }
