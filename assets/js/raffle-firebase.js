@@ -373,7 +373,7 @@ function initializeForm() {
     input.value = rememberedCode;
     setStatus(`Cod salvat local: ${rememberedCode}. Dacă este deja înregistrat, nu poate fi folosit încă o dată.`);
   } else if (allowlist && allowlist.count) {
-    setStatus(`${allowlist.count} promo coduri sunt pregătite pentru tombolă. Introdu codul primit în magazin.`);
+    setStatus("Introdu codul primit în magazin.");
   } else if (!isFirebaseConfigured(firebaseConfig)) {
     setStatus("Firebase este pregătit în site, dar trebuie completată configurația proiectului.", "error");
   }
