@@ -1537,6 +1537,10 @@
       transition: transform .18s ease, border-color .18s ease, background .18s ease;
     }
 
+    .product-card {
+      position: relative;
+    }
+
     .category-card:hover {
       transform: translateY(-2px);
       border-color: rgba(230, 168, 59, .46);
@@ -1685,6 +1689,30 @@
       padding: 0;
       border-radius: 0;
       cursor: zoom-in;
+    }
+
+    .product-new-badge {
+      position: absolute;
+      z-index: 1;
+      top: 12px;
+      right: 12px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 58px;
+      border: 1px solid rgba(255, 244, 223, .48);
+      border-radius: 8px;
+      padding: 7px 11px;
+      background: linear-gradient(180deg, #ffe58d, #e6a83b);
+      color: #180b04;
+      font-size: .74rem;
+      font-weight: 950;
+      letter-spacing: .08em;
+      line-height: 1;
+      text-align: center;
+      box-shadow: 0 8px 22px rgba(0, 0, 0, .36);
+      cursor: default;
+      user-select: none;
     }
 
     .tag {
@@ -3457,6 +3485,7 @@
         price: product.price || "",
         unit: product.unit || "",
         specs: Array.isArray(product.specs) ? product.specs.filter(Boolean) : [],
+        isNew: product.isNew === true,
         managed: true
       };
     }
@@ -3715,6 +3744,7 @@
         <div class="product-grid">
           ${productList.map((product, index) => `
             <article class="product-card">
+              ${product.isNew ? '<span class="product-new-badge" aria-label="Produs nou">NOU</span>' : ""}
               <button class="product-image-button" type="button" data-gallery-index="${index}" aria-label="Deschide ${escapeHtml(product.title)}">
                 <img src="${imageSrcForProduct(product)}" alt="${escapeHtml(product.alt)}" loading="${index < 4 ? "eager" : "lazy"}" decoding="async" fetchpriority="${index < 4 ? "high" : "auto"}" data-product-image="${escapeHtml(product.src)}" data-fallback-image="${PRODUCT_IMAGE_FALLBACK}">
               </button>

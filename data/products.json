@@ -1,6 +1,58 @@
 {
   "products": [
     {
+      "id": "bere-arc-craft",
+      "active": true,
+      "title": "ARC Craft Beer",
+      "category": "bere",
+      "image": "assets/products/catalog/bere-arc-craft.jpg",
+      "description": "1L",
+      "specs": [],
+      "alt": "ARC Craft Beer Bere și Raci",
+      "unit": "1L",
+      "price": "45 lei",
+      "isNew": true
+    },
+    {
+      "id": "peste-ocuni",
+      "active": true,
+      "title": "Ocuni",
+      "category": "peste",
+      "image": "assets/products/catalog/peste-ocuni.jpg",
+      "description": "100g",
+      "specs": [],
+      "alt": "Ocuni Bere și Raci",
+      "unit": "100g",
+      "price": "40 lei",
+      "isNew": true
+    },
+    {
+      "id": "peste-cihoni",
+      "active": true,
+      "title": "Cihoni",
+      "category": "peste",
+      "image": "assets/products/catalog/peste-cihoni.jpg",
+      "description": "100g",
+      "specs": [],
+      "alt": "Cihoni Bere și Raci",
+      "unit": "100g",
+      "price": "59 lei",
+      "isNew": true
+    },
+    {
+      "id": "peste-lesi-cu-icre",
+      "active": true,
+      "title": "Leși cu icre",
+      "category": "peste",
+      "image": "assets/products/catalog/peste-lesi-cu-icre.jpg",
+      "description": "100g",
+      "specs": [],
+      "alt": "Leși cu icre Bere și Raci",
+      "unit": "100g",
+      "price": "45 lei",
+      "isNew": true
+    },
+    {
       "id": "cascaval-impletit-01",
       "active": true,
       "title": "Cașcaval împletit",

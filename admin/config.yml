@@ -29,6 +29,11 @@ collections:
                 name: "active"
                 widget: "boolean"
                 default: true
+              - label: "Etichetă NOU"
+                name: "isNew"
+                widget: "boolean"
+                default: false
+                required: false
               - label: "Denumire produs"
                 name: "title"
                 widget: "string"
