@@ -1391,196 +1391,6 @@
       object-fit: contain;
     }
 
-    .hero-raffle-ticket {
-      appearance: none;
-      position: absolute;
-      top: -108px;
-      right: 255px;
-      z-index: 3;
-      width: 275px;
-      margin: 0;
-      padding: 0;
-      border: 0;
-      background: transparent;
-      color: #170a04;
-      cursor: pointer;
-      filter: drop-shadow(0 22px 24px rgba(0, 0, 0, .42));
-      transform: rotate(5deg) translateZ(0);
-      transform-origin: center;
-      transition: transform .22s ease, filter .22s ease;
-    }
-
-    .hero-raffle-ticket:hover {
-      filter: drop-shadow(0 26px 28px rgba(0, 0, 0, .52));
-      transform: rotate(2deg) scale(1.035) translateZ(0);
-    }
-
-    .hero-raffle-ticket:focus-visible {
-      outline: 3px solid rgba(255, 207, 110, .78);
-      outline-offset: 5px;
-      border-radius: 28px;
-    }
-
-    .hero-raffle-ticket img {
-      width: 100%;
-      height: auto;
-      pointer-events: none;
-      user-select: none;
-    }
-
-    .ticket-action-label {
-      position: absolute;
-      right: 8%;
-      bottom: 4%;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 34px;
-      padding: 7px 12px;
-      border: 1px solid rgba(255, 207, 110, .42);
-      border-radius: 999px;
-      background: rgba(8, 6, 4, .9);
-      color: #ffe7a6;
-      box-shadow: 0 10px 24px rgba(0, 0, 0, .3);
-      font-size: .76rem;
-      font-weight: 850;
-      letter-spacing: .02em;
-      white-space: nowrap;
-      transform: rotate(-5deg);
-    }
-
-    .raffle-winner-backdrop {
-      position: fixed;
-      inset: 0;
-      z-index: 1300;
-      display: grid;
-      place-items: center;
-      padding: 18px;
-      background: rgba(5, 3, 2, .8);
-      backdrop-filter: blur(12px);
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity .22s ease;
-    }
-
-    .raffle-winner-backdrop[hidden] {
-      display: none;
-    }
-
-    .raffle-winner-backdrop.is-open {
-      opacity: 1;
-      pointer-events: auto;
-    }
-
-    .raffle-winner-dialog {
-      position: relative;
-      width: min(94vw, 680px);
-      overflow: hidden;
-      border: 1px solid rgba(230, 168, 59, .5);
-      border-radius: 18px;
-      padding: clamp(24px, 5vw, 42px);
-      background:
-        radial-gradient(circle at 100% 0%, rgba(230, 168, 59, .18), transparent 22rem),
-        linear-gradient(135deg, rgba(187, 38, 31, .18), transparent 48%),
-        #0c0906;
-      box-shadow: 0 30px 90px rgba(0, 0, 0, .58), 0 0 0 1px rgba(255, 244, 223, .05) inset;
-      transform: translateY(14px) scale(.98);
-      transition: transform .22s ease;
-    }
-
-    .raffle-winner-dialog::before {
-      content: "";
-      position: absolute;
-      inset: 0 0 auto;
-      height: 4px;
-      background: linear-gradient(90deg, var(--red), var(--gold), var(--amber));
-    }
-
-    .raffle-winner-backdrop.is-open .raffle-winner-dialog {
-      transform: translateY(0) scale(1);
-    }
-
-    .raffle-winner-dialog .eyebrow {
-      margin-bottom: 8px;
-    }
-
-    .raffle-winner-dialog h2 {
-      max-width: calc(100% - 48px);
-      margin-bottom: 10px;
-      color: #ffe7a6;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(1.65rem, 5vw, 2.35rem);
-      line-height: 1.08;
-    }
-
-    .raffle-winner-intro {
-      margin-bottom: 22px;
-      color: #d8bf98;
-    }
-
-    .raffle-winner-table-wrap {
-      overflow: hidden;
-      border: 1px solid rgba(230, 168, 59, .28);
-      border-radius: 12px;
-      background: rgba(255, 244, 223, .035);
-    }
-
-    .raffle-winner-table {
-      width: 100%;
-      border-collapse: collapse;
-      text-align: left;
-    }
-
-    .raffle-winner-table th {
-      padding: 12px 16px;
-      color: #f1bc59;
-      background: rgba(230, 168, 59, .1);
-      font-size: .76rem;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-    }
-
-    .raffle-winner-table td {
-      padding: 18px 16px;
-      border-top: 1px solid rgba(255, 244, 223, .1);
-      color: #fff0c8;
-      vertical-align: middle;
-    }
-
-    .raffle-winner-table td:last-child {
-      font-size: 1.04rem;
-      font-weight: 800;
-    }
-
-    .raffle-winner-status {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      min-width: max-content;
-      padding: 7px 10px;
-      border: 1px solid rgba(230, 168, 59, .3);
-      border-radius: 999px;
-      color: #f4d59d;
-      background: rgba(230, 168, 59, .08);
-      font-size: .8rem;
-      font-weight: 800;
-    }
-
-    .raffle-winner-status::before {
-      content: "";
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--gold);
-      box-shadow: 0 0 0 5px rgba(230, 168, 59, .12);
-    }
-
-    .raffle-winner-note {
-      margin: 15px 0 0;
-      color: #a99170;
-      font-size: .84rem;
-    }
-
     .badges {
       display: flex;
       gap: 10px;
@@ -1605,11 +1415,6 @@
         width: 280px;
       }
 
-      .hero-raffle-ticket {
-        top: -82px;
-        right: 225px;
-        width: 235px;
-      }
     }
 
     .badge {
@@ -2646,29 +2451,9 @@
 
       .hero-visual {
         justify-self: start;
-        display: grid;
-        grid-template-columns: minmax(0, 240px) minmax(0, 300px);
-        align-items: end;
+        align-items: flex-start;
         gap: 14px;
-        width: min(100%, 560px);
-      }
-
-      .hero-social-links-desktop {
-        grid-column: 1 / -1;
-        grid-row: 1;
-        justify-self: start;
-      }
-
-      .hero-raffle-ticket {
-        position: static;
-        grid-column: 2;
-        grid-row: 2;
-        align-self: end;
-        justify-self: start;
-        width: 100%;
-        max-width: 300px;
-        margin-bottom: 6px;
-        transform: rotate(5deg) translateZ(0);
+        width: min(100%, 300px);
       }
 
       .category-grid,
@@ -2737,23 +2522,6 @@
       .hero-logo {
         width: 100%;
         max-width: 180px;
-      }
-
-      .hero-visual {
-        grid-template-columns: minmax(0, .94fr) minmax(0, 1.06fr);
-        width: 100%;
-        gap: 10px;
-      }
-
-      .hero-raffle-ticket {
-        max-width: 240px;
-        margin-bottom: 2px;
-      }
-
-      .ticket-action-label {
-        min-height: 29px;
-        padding: 5px 9px;
-        font-size: .65rem;
       }
 
       h1 {
@@ -2846,25 +2614,6 @@
 
       .promo-input-row .btn {
         width: 100%;
-      }
-
-      .raffle-winner-dialog {
-        padding: 26px 18px 22px;
-      }
-
-      .raffle-winner-intro {
-        margin-bottom: 16px;
-      }
-
-      .raffle-winner-table th,
-      .raffle-winner-table td {
-        padding-right: 11px;
-        padding-left: 11px;
-      }
-
-      .raffle-winner-table th:first-child,
-      .raffle-winner-table td:first-child {
-        width: 1%;
       }
 
       .back-link {
@@ -2983,15 +2732,6 @@
       .hero-logo {
         width: 100%;
         max-width: 168px;
-      }
-
-      .raffle-winner-table td:last-child {
-        font-size: .94rem;
-      }
-
-      .raffle-winner-status {
-        padding: 6px 8px;
-        font-size: .72rem;
       }
 
       .category-grid,
@@ -3157,43 +2897,9 @@
           <div class="hero-logo" aria-label="Logo Bere & Raci">
             <img src="logo-raci.jpg" alt="Bere & Raci - logo cu halbă și raci">
           </div>
-          <button class="hero-raffle-ticket" id="raffleWinnerTrigger" type="button" aria-haspopup="dialog" aria-controls="raffleWinnerModal" aria-label="Vezi câștigătorul tombolei Bere și Raci">
-            <img src="assets/tombola-bife-sim.png" alt="Tombola Bere și Raci" width="1046" height="644">
-            <span class="ticket-action-label">Vezi câștigătorul</span>
-          </button>
         </div>
       </div>
     </section>
-
-    <div class="raffle-winner-backdrop" id="raffleWinnerModal" hidden aria-hidden="true">
-      <section class="raffle-winner-dialog" role="dialog" aria-modal="true" aria-labelledby="raffleWinnerTitle" aria-describedby="raffleWinnerDescription">
-        <button class="promo-modal-close" id="raffleWinnerClose" type="button" aria-label="Închide rezultatul tombolei">
-          <svg viewBox="0 0 24 24" aria-hidden="true" fill="none">
-            <path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          </svg>
-        </button>
-        <p class="eyebrow">Tombola Bere & Raci</p>
-        <h2 id="raffleWinnerTitle">Câștigătorul tombolei</h2>
-        <p class="raffle-winner-intro" id="raffleWinnerDescription">Rezultatul extragerii va fi publicat aici.</p>
-        <div class="raffle-winner-table-wrap">
-          <table class="raffle-winner-table">
-            <thead>
-              <tr>
-                <th scope="col">Status</th>
-                <th scope="col">Câștigător</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><span class="raffle-winner-status">În pregătire</span></td>
-                <td>În curând aici va fi afișat numele câștigătorului.</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <p class="raffle-winner-note">Revino după extragere pentru anunțul oficial.</p>
-      </section>
-    </div>
 
     <section id="catalog">
       <div class="shell">
@@ -3577,69 +3283,6 @@
     const lightboxProductName = document.getElementById("lightboxProductName");
     const lightboxProductDetail = document.getElementById("lightboxProductDetail");
     const lightboxProductPrice = document.getElementById("lightboxProductPrice");
-    const raffleWinnerTrigger = document.getElementById("raffleWinnerTrigger");
-    const raffleWinnerModal = document.getElementById("raffleWinnerModal");
-    const raffleWinnerClose = document.getElementById("raffleWinnerClose");
-
-    let raffleWinnerLastFocus = null;
-    let raffleWinnerCloseTimer = null;
-
-    function openRaffleWinnerModal() {
-      if (!raffleWinnerModal) {
-        return;
-      }
-
-      window.clearTimeout(raffleWinnerCloseTimer);
-      raffleWinnerLastFocus = document.activeElement;
-      raffleWinnerModal.hidden = false;
-      raffleWinnerModal.setAttribute("aria-hidden", "false");
-      document.body.style.overflow = "hidden";
-      window.requestAnimationFrame(() => {
-        raffleWinnerModal.classList.add("is-open");
-        raffleWinnerClose?.focus();
-      });
-    }
-
-    function closeRaffleWinnerModal() {
-      if (!raffleWinnerModal || raffleWinnerModal.hidden) {
-        return;
-      }
-
-      raffleWinnerModal.classList.remove("is-open");
-      raffleWinnerModal.setAttribute("aria-hidden", "true");
-      document.body.style.overflow = "";
-      raffleWinnerCloseTimer = window.setTimeout(() => {
-        if (!raffleWinnerModal.classList.contains("is-open")) {
-          raffleWinnerModal.hidden = true;
-        }
-      }, 220);
-
-      if (raffleWinnerLastFocus && typeof raffleWinnerLastFocus.focus === "function") {
-        raffleWinnerLastFocus.focus();
-      }
-    }
-
-    if (raffleWinnerTrigger && raffleWinnerModal && raffleWinnerClose) {
-      raffleWinnerTrigger.addEventListener("click", openRaffleWinnerModal);
-      raffleWinnerClose.addEventListener("click", closeRaffleWinnerModal);
-      raffleWinnerModal.addEventListener("click", (event) => {
-        if (event.target === raffleWinnerModal) {
-          closeRaffleWinnerModal();
-        }
-      });
-      document.addEventListener("keydown", (event) => {
-        if (raffleWinnerModal.hidden) {
-          return;
-        }
-        if (event.key === "Escape") {
-          closeRaffleWinnerModal();
-        } else if (event.key === "Tab") {
-          event.preventDefault();
-          raffleWinnerClose.focus();
-        }
-      });
-    }
-
     const PRODUCT_IMAGE_FALLBACK = "logo-raci.jpg";
     const hiddenLegacyProductNumbers = new Set([1, 2, 4, 5, 8, 9, 11, 12, 14, 16, 17, 19, 22, 27, 29]);
     const legacyProductDetails = {
